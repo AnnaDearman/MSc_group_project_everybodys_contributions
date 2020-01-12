@@ -1,0 +1,29 @@
+Human Kinase Dataframe Explanation file
+
+COLUMN HEADER MEANINGS
+- Entry_name: UniProt entry name, containing "_HUMAN"
+- UniProt_ID: Unique UniProt accession number in the form of letters (capitalised) and numbers
+- Primary_Protein_Name: Main name given to the kinase, i.e. most common name
+- Alternate_Protein_Names(s): Other names the kinase goes by
+- Gene_Symbol: Main symbol given to the gene encoding the kinase, i.e. most common symbol
+- Alternative_Gene_Name(s): Other gene symbols the gene encoding the kinase goes by
+- Families: The superfamily and family the kinase belongs to
+- AA_Seq: Amino acid sequence of the kinase
+- Molecular_Mass_(Da): The molecular mass of the kinase in daltons
+- Subcellular_Location: Cellular location in which the kinase is found to be active within
+
+MANUAL CLEAN UP OF RESULTING FILE
+*** This was done in Excel and a text editor ***
+Excel -> using the find and replace function
+- Column D (Alternate_Protein_Name(s)):
+	- Remove "[", "]" and "'"
+- Column F (Alternative_Gene_Name(s)): 
+	- Remove "[", "]" and "'"
+- Column J (Subcellular_Location):
+	- Remove ", .", ",.", "NA.", "}" and "{"
+Text editor -> manually going to the TITIN_HUMAN entry
+- In Excel, the TITIN_HUMAN sequence is too large for an excel cell, and thus spans multiple cells
+- Going to a text editor and merging these cells (removing commas) restores this entry to the way it originally was
+
+WARNING!!!
+- If going to open this file in excel, do not save it as it will remove the formatting of the TITIN_HUMAN entry
