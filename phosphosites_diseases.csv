@@ -1,4 +1,4 @@
-DISEASE,ALTERATION,PMIDs,LT_LIT,MS_LIT,MS_CST,CST_CAT#,NOTES,PHOS_ID,PRIMARY_KEY
+DISEASE,ALTERATION,PMIDs,LT_LIT,MS_LIT,MS_CST,CST_CAT#,NOTES,PHOS_ID,ID_DP
 Alzheimer's disease,mutation of site,16554819,36,5,3,6986; 3823,Pin1 binds to the pT668-Pro motif but not when mutated to Ala. ,APP_HUMAN(T668),DP0000001
 breast cancer,increased,12244301,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,Expression of phosphorylated S473 in invasive breast carcinomas correlates with cytosolic p27.  ,AKT1_HUMAN(S473),DP0000002
 Alzheimer's disease,increased,14970211,36,5,3,6986; 3823,,APP_HUMAN(T668),DP0000003
