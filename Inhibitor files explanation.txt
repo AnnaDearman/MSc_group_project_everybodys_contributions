@@ -1,0 +1,29 @@
+2020_01_15
+
+inhib_kin.csv
+- Kinase
+--- Kinase
+- Inhibitor name
+--- Inhibitor
+- ID_KI
+--- Primary key
+
+inhibitors.csv
+- Inhibitor
+--- Inhibitor name
+- Ki_nM
+--- 
+- IC50_nM
+--- 
+- Kd_nM
+--- 
+- EC50_nM
+--- 
+- POC
+--- 
+- Source
+--- Source of image
+- IMG_URL
+--- URL to image
+- ID_IN
+--- Primary key
