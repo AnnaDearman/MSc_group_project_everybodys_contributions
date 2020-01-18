@@ -1,0 +1,4 @@
+The file mock_kinases_v2.1 is a database with 5 tables which relationships are shown in figures mock database.png and mock database_keys.png.
+The records included are supposed to match properly among tables, so it can be a proper example for related tables in a database. 
+Althoug this is not the final schema of the database, it can be used to start writing queries and try the connection with Flask. 
+
