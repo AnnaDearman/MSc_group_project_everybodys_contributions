@@ -64,7 +64,7 @@ phosphosites.csv
 --- Longest string = 66
 - SEQUENCE
 --- Protein amino acid sequence for records from phospho.ELM
---- Longest string = 
+--- Longest string = 8797
 - PMID
 --- Evidentiary research article's PubMed ID for records from phospho.ELM
 --- Longest string = 8
