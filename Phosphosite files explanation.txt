@@ -1,4 +1,4 @@
-2020_01_18
+2020_01_19
 
 N.B. Do not save any of these files after opening in Excel! Some gene names are e.g. MARCH1 and they become converted to dates!
 
@@ -96,7 +96,7 @@ kinases_phosphosites.csv
 --- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";".
 --- Longest string = 141
 - PHOS_ID
---- Phosphosite ID made by combining SUB_GENE, SUB_ORGANISM and SUB_MOD_RSD. Use this ID to link to phosphosites.csv and phosphosites_diseases.csv
+--- Phosphosite ID made by combining SUB_GENE, SUB_ORGANISM and SUB_MOD_RSD.
 --- Longest string = 31
 - PHOS_ID2
 --- Phosphosite ID made by combining SUBSTRATE and SUB_MOD_RSD
