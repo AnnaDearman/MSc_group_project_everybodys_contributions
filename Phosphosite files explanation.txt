@@ -80,8 +80,7 @@ kinases_phosphosites.csv
 --- Gene name / GENENAME for the kinase
 --- Longest string = 13
 - KIN_ACC_ID
---- UniProt accession ID for the kinase.
---- FOREIGN KEY FOR human_kinase_dataframe.csv
+--- UniProt accession ID for the kinase
 --- Longest string = 9
 - SUB_ACC_ID
 --- UniProt accession ID for the substrate
@@ -93,7 +92,7 @@ kinases_phosphosites.csv
 --- Evidence is from in vitro reaction (to confirm)
 --- Longest string = 1
 - CST_CAT#
---- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";".
+--- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";"
 --- Longest string = 141
 - PHOS_ID
 --- Phosphosite ID made by combining SUB_GENE, SUB_ORGANISM and SUB_MOD_RSD.
@@ -122,6 +121,10 @@ kinases_phosphosites.csv
 - PMID
 --- Evidentiary research article's PubMed ID for records from phospho.ELM
 --- Longest string = 8
+-KIN_ACC_ID_2
+--- UniProt accession ID for the kinase MINUS ISOFORM FLAG IF PREVIOUSLY PRESENT
+--- FOREIGN KEY FOR human_kinase_dataframe.csv
+--- Longest string = 6
 - ID_KS
 --- PRIMARY KEY
 --- Longest string = 9
