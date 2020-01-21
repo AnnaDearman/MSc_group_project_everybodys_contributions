@@ -38,9 +38,6 @@ inhibitors.csv
 - Source
 --- Source of image
 --- Longest string = 9
-- UniProt_ID
---- Ignore, each inhibitor could work for multiple kinases, see inhib_kin.csv for this information
---- Longest string = 6
 - IMG_URL
 --- URL to image
 --- Longest string = 79
