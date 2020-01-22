@@ -1,4 +1,4 @@
-2020_01_19
+2020_01_22
 
 N.B. Do not save any of these files after opening in Excel! Some gene names are e.g. MARCH1 and they become converted to dates!
 
@@ -42,6 +42,20 @@ phosphosites.csv
 - CST_CAT#
 --- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";".
 --- Longest string = 141
+- SOURCE
+--- URL for the substrate's phosphosite.org web page, where applicable
+--- or "phospsho.ELM"
+--- Longest string = 66
+- SEQUENCE
+--- Protein amino acid sequence for records from phospho.ELM
+--- Longest string = 8797
+- PMID
+--- Evidentiary research article's PubMed ID for records from phospho.ELM
+--- Longest string = 8
+- PHOS_ID5
+--- Phosphosite ID made by combining ACC_ID and MOD_RSD
+--- FOREIGN KEY FOR phosphosites_diseases.csv and kinases_phosphosites.csv
+--- Longest string = 24
 - PHOS_ID
 --- Phosphosite ID made by combining GENE, ORGANISM and MOD_RSD. 
 --- Longest string = 31
@@ -54,20 +68,6 @@ phosphosites.csv
 - PHOS_ID4
 --- Phosphosite ID made by combining GENE and MOD_RSD
 --- Longest string = 25
-- PHOS_ID5
---- Phosphosite ID made by combining ACC_ID and MOD_RSD
---- FOREIGN KEY FOR phosphosites_diseases.csv and kinases_phosphosites.csv
---- Longest string = 24
-- SOURCE
---- URL for the substrate's phosphosite.org web page, where applicable
---- or "phospsho.ELM"
---- Longest string = 66
-- SEQUENCE
---- Protein amino acid sequence for records from phospho.ELM
---- Longest string = 8797
-- PMID
---- Evidentiary research article's PubMed ID for records from phospho.ELM
---- Longest string = 8
 - ISOFORM
 --- "0" or "1" to indicate whether record relates to an isoform ("1" = isoform). Use records with "0" for canonical protein.
 --- Integer
@@ -94,6 +94,21 @@ kinases_phosphosites.csv
 - CST_CAT#
 --- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";"
 --- Longest string = 141
+- SOURCE
+--- URL for the substrate's phosphosite.org web page, where applicable
+--- or "phospsho.ELM"
+--- MUST BE DISPLAYED ON WEB SITE AS PER TERMS AND CONDITIONS OF DATA USAGE
+--- Longest string = 64
+- SEQUENCE
+--- Protein amino acid sequence for records from phospho.ELM
+--- Longest string = 8797
+- PMID
+--- Evidentiary research article's PubMed ID for records from phospho.ELM
+--- Longest string = 8
+- PHOS_ID5
+--- Phosphosite ID made by combining SUB_ACC_ID and SUB_MOD_RSD
+--- FOREIGN KEY FOR phosphosites.csv
+--- Longest string = 23
 - PHOS_ID
 --- Phosphosite ID made by combining SUB_GENE, SUB_ORGANISM and SUB_MOD_RSD.
 --- Longest string = 31
@@ -106,21 +121,6 @@ kinases_phosphosites.csv
 - PHOS_ID4
 --- Phosphosite ID made by combining SUB_GENE and SUB_MOD_RSD
 --- Longest string = 25
-- PHOS_ID5
---- Phosphosite ID made by combining SUB_ACC_ID and SUB_MOD_RSD
---- FOREIGN KEY FOR phosphosites.csv
---- Longest string = 23
-- SOURCE
---- URL for the substrate's phosphosite.org web page, where applicable
---- or "phospsho.ELM"
---- MUST BE DISPLAYED ON WEB SITE AS PER TERMS AND CONDITIONS OF DATA USAGE
---- Longest string = 64
-- SEQUENCE
---- Protein amino acid sequence for records from phospho.ELM
---- Longest string = 8797
-- PMID
---- Evidentiary research article's PubMed ID for records from phospho.ELM
---- Longest string = 8
 - KIN_ACC_ID_2
 --- UniProt accession ID for the kinase MINUS ISOFORM FLAG IF PREVIOUSLY PRESENT
 --- FOREIGN KEY FOR human_kinase_dataframe.csv
