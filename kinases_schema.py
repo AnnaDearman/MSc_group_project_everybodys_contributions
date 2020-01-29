@@ -1,9 +1,3 @@
-
-# coding: utf-8
-
-# In[2]:
-
-
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
 engine = create_engine('sqlite:///c:\\sqlite\\kinase_schema.db', echo=True)
 from sqlalchemy.ext.declarative import declarative_base
