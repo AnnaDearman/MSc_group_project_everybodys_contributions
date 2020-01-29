@@ -1,8 +1,11 @@
 Human Kinase Dataframe Explanation file
 
 COLUMN HEADER MEANINGS
-- Entry_name: UniProt entry name, containing "_HUMAN"
 - UniProt_ID: Unique UniProt accession number in the form of letters (capitalised) and numbers
+- PDB_ID: The Protein Data Bank (PDB) identification number that the UniProt accession number corresponds to
+- PDB_URL: The URL of the structure image of the kinase that correlates to the aforementioned PDB ID
+- PDB_title: The given name of the structure corresponding to the image URL and PDB ID
+- Entry_name: UniProt entry name, containing "_HUMAN"
 - Primary_Protein_Name: Main name given to the kinase, i.e. most common name
 - Alternative_Protein_Names(s): Other names the kinase goes by
 - Gene_Symbol: Main symbol given to the gene encoding the kinase, i.e. most common symbol
