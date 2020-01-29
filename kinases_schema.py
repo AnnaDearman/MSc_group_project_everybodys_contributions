@@ -5,14 +5,17 @@
 
 
 from sqlalchemy import create_engine, Column, Integer, String, ForeignKey
-engine = create_engine('sqlite:///c:\\sqlite\\kinases_v3_schema.db', echo=True)
+engine = create_engine('sqlite:///c:\\sqlite\\kinase_schema.db', echo=True)
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
 from sqlalchemy.orm import relationship
 class HumanKinases(Base):
     __tablename__ = 'human_kinases'
-    Entry_name = Column(String (15))
-    UniProt_ID = Column(String (10),primary_key=True) 
+    UniProt_ID = Column(String (15),primary_key=True)
+    PDB_ID = Column(String(5))
+    PDB_URL = Column(String(60))
+    PDB_title = Column(String(250))
+    Entry_name = Column(String (15)) 
     Primary_Protein_Name = Column (String (100))
     Alternative_Protein_Name= Column("Alternate_Protein_Name(s)",String (350)) 
     Gene_Symbol = Column(String (15))
@@ -40,7 +43,7 @@ class Phosphosites(Base):
     MS_CST = Column(Integer)
     CST_CAT = Column("CST_CAT#", String(141))
     SOURCE = Column (String(66))
-    SEQUENCE = Column(String (8797)) 
+    SEQUENCE = Column(String (3500)) 
     PMID = Column(String (8))
     PHOS_ID5 = Column(String(24), primary_key=True)
     PHOS_ID = Column(String(31))
@@ -54,15 +57,15 @@ class Phosphosites(Base):
 
 class Inhibitors(Base):
     __tablename__ = 'inhibitors'
-    Inhibitor = Column (String (134), primary_key=True)
-    Ki_nM = Column (String(7))
-    IC50_nM = Column (String(10))
-    Kd_nM = Column (String(7))
-    EC50_nM = Column (String(11))
-    POC = Column (String(5))
-    Source = Column (String(9))
-    IMG_URL = Column (String (79))
-    ID_IN = Column (String (9))
+    Inhibitor = Column (String (150), primary_key=True)
+    Ki_nM = Column (Integer)
+    IC50_nM = Column (Integer)
+    Kd_nM = Column (Integer)
+    EC50_nM = Column (Integer)
+    POC = Column (Integer)
+    Source = Column (String(15))
+    IMG_URL = Column (String (100))
+    ID_IN = Column (String (10))
     inhib_kin = relationship("InhibKin", backref="inhibitors")
     #tablename_to_link = relationship("Class_of_tablename_to_link",backref="this_tablename" )
 
