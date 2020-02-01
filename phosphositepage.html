@@ -1,0 +1,162 @@
+<doctype html>
+
+<html>
+<head>
+    <title>{{PHOS_ID}}</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+</head>
+
+
+<body>
+
+<div class="header">
+
+  <h1 >KinDB </h1>
+
+  <div style="position: relative;left: 850px; top:21px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="/phos/">Phosphosite</option>
+    <option value="kin/">Kinase</option>
+    <option value="inh/">Inhibitor</option>
+    </select>
+    </div>
+
+    <div style="position: relative;left: 970px; top:0px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="">Browse by</option>
+    <option value="/prot/">Protein</option>
+    <option value="/phoskin/">Phosphorylated by</option>
+    <option value="/nseq/">Neighbouring Sequence</option>
+    <option value="/gen/">Genomic Location</option>
+    </select>
+    </div>
+
+
+</div>
+
+<div class="subheader">
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
+<span style="font-family: verdana">Upload phosphoproteomics data:</span>
+    <input type="file" class="upload" />
+    <button type="submit">Submit</button>
+ </form>
+
+</div>
+
+<h2> {{PHOS_ID}} </h2>
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px">
+<table border="1" >
+<tr>
+<th>Go to:</th>
+</tr>
+<tr>
+<td><a href="#Entry">Entry</a></td>
+</tr>
+<tr>
+<td><a href="#Phosphorylation">Phosphorylation</a></td>
+</tr>
+<tr>
+<td><a href="#disease">Disease</a></td>
+</tr>
+</table>
+</form>
+
+<div id="boxheader">
+
+<a id="Entry">Entry</a>
+
+</div>
+
+<div id="entrybox">
+
+<p> <b>Phosphosite ID:</b> &nbsp; {{ID_PH}} </p>
+<p> <b>Source:</b> &nbsp; <a href="{{SOURCE}}">{{SOURCE}}</a></p>
+<p> <b>Protein</b> &nbsp; {{PROTEIN}} </p>
+<p> <b>Domain</b> &nbsp; {{DOMAIN}} </p>
+<p> <b>Residue</b> &nbsp; {{MOD_RSD}} </p>
+<p> <b>Neighbouring Sequence</b> &nbsp; {{SITE_7_AA}} </p>
+<p> <b>Molecular Weight (kD):</b> &nbsp; {{MW_kD}} </p>
+<p> <b>Gene Name</b> &nbsp; {{GENE}} </p>
+<p> <b>Human Chromosomal Location</b> &nbsp; {{HU_CHR_LOC}} </p>
+
+
+
+</div>
+
+<div id="spacebox"></div>
+
+
+<div id="boxheader">
+
+<a id="Phosphorylation">Phosphorylation</a>
+
+</div>
+
+<div id="targetbox">
+
+<table border="1" id="subsection-table">
+
+<tr>
+<th><b>Phosphorylated by</b></th>
+<th><b>UniProt_ID</b></th>
+<th><b>Families</b></th>
+<th><b>Subcellular location</b></th>
+</tr>
+
+<h1>{% for x in searchphoskin %}</h1>
+<tr>
+<td><a href="/kin/{{x.Entry_name}}"> {{x.Entry_name}} </a></td>
+<td> {{x.UniProt_ID}} </td>
+<td> {{x.Families}} </td>
+<td> {{x.Subcellular_Location}} </td>
+
+</tr>
+<h1>{%  endfor %}</h1>
+
+</table>
+
+</div>
+
+<div id="spacebox"></div>
+
+
+<div id="boxheader">
+
+<a id="disease">Disease</a>
+
+</div>
+
+<div id="targetbox">
+
+<table border="1" id="subsection-table">
+
+<tr>
+<th><b>Disease</b></th>
+<th><b>Alteration</b></th>
+</tr>
+
+<h1>{% for x in searchphosdis %}</h1>
+
+<tr>
+<td> {{x.DISEASE}} </td>
+<td> {{x.ALTERATION}} </td>
+</tr>
+
+<h1>{%  endfor %}</h1>
+
+</table>
+
+</div>
+
+
+</body>
+
+</html>
+
+
+
+
+
+
