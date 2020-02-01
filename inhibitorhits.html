@@ -1,0 +1,62 @@
+<doctype html>
+
+<html>
+<head>
+    <title>Kinase Database</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+</head>
+
+
+<body>
+
+<div class="header">
+
+  <h1 >KinDB </h1>
+
+<div style="position: relative;left: 810px; top:18px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="/inh/">Inhibitor</option>
+    <option value="phos/">Phosphosite</option>
+    <option value="kin/">Kinase</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 950px; bottom:5px">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.protein_name.label }} {{ form.protein_name() }}
+    {{ form.submit() }}  
+    </form>
+    </div>
+
+</div>
+
+<div class="subheader">
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
+<span style="font-family: verdana">Upload phosphoproteomics data:</span>
+    <input type="file" class="upload" />
+    <button type="submit">Submit</button>
+ </form>
+
+</div>
+
+<table border="1" style="position: relative;right: 120px; top:10px">
+    <thead>
+    <tr>
+        <th><b>Inhibitor name</b></th>
+        <th><b>Source</b></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        {% for result in resultss %}
+    <tr>
+        <td><a href="/inh/redirect/{{result.Inhibitor}}">{{result.Inhibitor}}</a> </td>
+        <td> {{result.Source}}</td>
+    </tr>
+    </tr>
+        {% endfor %}
+    </tbody>
+
+</table>
