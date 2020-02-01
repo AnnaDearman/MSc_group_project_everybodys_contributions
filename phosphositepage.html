@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>{{ID_PH}}</title>
+
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
 </head>
 
@@ -44,7 +45,9 @@
 
 </div>
 
+
 <h2> {{ID_PH}} </h2>
+
 
 <form style="float:left;display:inline-block;line-height:25px;padding-left:10px">
 <table border="1" >
@@ -107,7 +110,9 @@
 
 <h1>{% for x in searchphoskin %}</h1>
 <tr>
+
 <td><a href="/kin/redirect/{{x.Entry_name}}"> {{x.Entry_name}} </a></td>
+
 <td> {{x.UniProt_ID}} </td>
 <td> {{x.Families}} </td>
 <td> {{x.Subcellular_Location}} </td>

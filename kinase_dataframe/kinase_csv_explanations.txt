@@ -1,0 +1,24 @@
+Explanations for all .csv files used to create the human_kinase_dataframe.csv
+
+* extra_kinases.csv
+- A small list of kinases that were not present in the https://www.uniprot.org/docs/pkinfam list.
+- This list was derived from the kinase_phosphosites.csv by comparing the list of UniProt entry names acquired from https://www.uniprot.org/docs/pkinfam and the list acquired from files downloaded from phosphosite.org.
+
+* suncellular_locations.csv
+- A list of all the possible subcellular locations found on UniProt.
+- This list was acquired from https://www.uniprot.org/locations/, downloaded and edited to only include the last column, the list of subcellular locations.
+- This list is used to extract the subcellular locations of the kinases from the UniProt API, as the entry within the API contains a lot of references, extracting this information using regular expressions would be too difficult.
+
+* uniprot_acc_nums.csv
+- This list contains all the UniProt accession numbers for all the human kinases in the dataframe, after adding on the extra kinases from extra_kinases.csv.
+- This list is used to convert all the UniProt accession numbers into PDB IDs, which are then used to acquire structure images for the website.
+
+* uniprot_to_pdb.csv
+- This list was acquired from inputting the accession numbers from the uniprot_acc_nums.csv list into https://www.uniprot.org/uploadlists/ and converting them from UniProtKB AC/ID to PDB.
+- The PDB IDs in this list can be incorporated into an image URL and entry page URL to extract the structure title.
+- WARNING: do not open this .csv in excel, because some PDB IDs become converted into scientific style numbers, such as 3E87 becomes 3.00E+87.
+
+* uniprot_not_mapped.csv
+- Another list acquired from inputting the accession numbers from the uniprot_acc_nums.csv list into https://www.uniprot.org/uploadlists/.
+- This list contains all the UniProt accession numbers that couldn't be mapped to PDB IDs.
+- It is then possible to merge this list with the uniprot_to_pdb.csv list and acquire all the structural information for all the human kinases.

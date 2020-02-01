@@ -1,8 +1,9 @@
 
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
-from sqlalchemy import Column, Integer, String, ForeignKey
-from sqlalchemy import create_engine, or_
+
+
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, or_
 engine = create_engine('sqlite:///c__sqlite_final_database.db', echo = True, connect_args={'check_same_thread': False})
 from sqlalchemy.ext.declarative import declarative_base
 Base = declarative_base()
@@ -12,8 +13,10 @@ session = Session()
 
 #from database import engine, Session, session, Base, HumanKinases, Phosphosites, Inhibitors, KinasesPhosphosites, PhosphositesDiseases, InhibKin
 
+
 from scipy.stats import norm
 import math
+
 from flask import Flask, flash, render_template, request, redirect, url_for, jsonify, send_from_directory, send_file
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
@@ -124,8 +127,10 @@ class InhibKin(Base):
 
 kinases_phosphosites = relationship("KinasesPhosphosites", backref="human_kinases")
 inhibitors_kinases = relationship("Inhibitors", backref="human_kinases")
+
 phosphosites_kinases = relationship("KinasesPhosphosites", backref="phosphosites")
 phosphosites_diseases = relationship("PhosphositesDiseases", backref="phosphosites")
+
 inhib_kin = relationship("InhibKin", backref="inhibitors")
 
 Base.metadata.create_all(engine)
@@ -155,8 +160,10 @@ def process_file(path, filename):
     #def Analysis_df1(path, filename):
    ### import sample data
     data_raw = pd.read_table(path, sep = "\t")
-    #data_raw = data_raw.iloc[:,0:7] # Added by Anna
+    
+
     data_raw = data_raw.loc[:, ~data_raw.columns.str.contains('^Unnamed')]
+
     data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value', 'ctrlCV', 'treatCV']
     ### drop any rows have a NAN
     global df1
@@ -219,9 +226,11 @@ def process_file(path, filename):
     ### calculate Z_score and convert Z_score to P_value
     df_submean['p_value'] = df_submean['Log_F'].apply(Z_score)
 
+
     ### calculate the standard deviation of fold change in each subgroup
     df_std = df_kinase.groupby(['Kinase']).aggregate(np.std)
     df_submean['Std'] = df_std['Log_F']
+
 
 
     ### Calculate the relative kinase activity
@@ -234,8 +243,10 @@ def process_file(path, filename):
     # Resets the index
     df_submean.reset_index(drop=True, inplace=True)
 
+
     ### set a count colum to show the number of substrates of each group
     df_submean['count'] = list(df_kinase['Kinase'].value_counts().sort_index())
+
 
     df_submean.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table4_analysis.csv'))
 
@@ -258,9 +269,11 @@ def process_file(path, filename):
     df_subgroub.loc[df_subgroub['Kinase_relative_activity_score'] >= 0, 'color'] = 'Treat_up'
 
     ### set a text colum to show significance of the p_value
+
     df_subgroub.loc[df_subgroub['p_value'] <= 0.05, 'Significance'] = '*'
     df_subgroub.loc[df_subgroub['p_value'] > 0.05, 'Significance'] = ''
     df_subgroub.loc[df_subgroub['p_value'] == 0, 'Significance'] = ' '
+
 
     ### show relative activity by a bar plot
     global fig2
@@ -270,7 +283,8 @@ def process_file(path, filename):
                  color = 'color',
                  text = 'Significance',
                  error_y = 'Std',
-                 hover_data = ['p_value'])
+                 hover_data = ['p_value', 'count'])
+    
     fig2.update_traces(textposition='outside')
     fig2.write_html("downloads/Kinase_RKA_barplot.html") #Convert the figure to HTML, so it can be accessed on the web application
 
@@ -507,7 +521,9 @@ def phosphositesearchnseq(phosphosite_search):
     if form.validate_on_submit():
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchnseq', phosphosite_search=protein_name))
+
     return render_template('phoshits.html', resultss=resultss, form=form)
+
 
 #Phosphosite search by protein results page
 @application.route('/prot/<phosphosite_search>', methods=['GET', 'POST'])
@@ -597,7 +613,6 @@ def kinase(kinase_name):
 @application.route('/phos/<phosphosite_search>/<phosphosite_name>', methods=['GET', 'POST'])
 def phosphositepage(phosphosite_search, phosphosite_name):
     form = SearchForm()
-
     searchphos = session.query(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).first()
     searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID==phosphosite_name).all()
     searchphosdis = session.query(PhosphositesDiseases).filter(PhosphositesDiseases.PHOS_ID==phosphosite_name).all()
@@ -606,6 +621,7 @@ def phosphositepage(phosphosite_search, phosphosite_name):
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchprot', phosphosite_search=protein_name))
     return render_template('phosphositepage.html', form=form, ID_PH=searchphos.ID_PH, GENE=searchphos.GENE, PROTEIN=searchphos.PROTEIN, HU_CHR_LOC=searchphos.HU_CHR_LOC, MOD_RSD=searchphos.MOD_RSD, MW_kD=searchphos.MW_kD, SITE_7_AA=searchphos.SITE_7_AA, DOMAIN=searchphos.DOMAIN, SOURCE=searchphos.SOURCE, searchphoskin=searchphoskin, searchphosdis=searchphosdis )
+
 
 #Inhibitor page
 @application.route('/inh/redirect/<inhibitor_name>', methods=['GET', 'POST'])
