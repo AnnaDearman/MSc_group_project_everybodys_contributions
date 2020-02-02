@@ -1,0 +1,211 @@
+<doctype html>
+
+<html>
+<head>
+    <title> kinase_name </title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+</head>
+
+
+<body>
+
+
+
+<div class="header">
+
+  <h1 >KinDB </h1>
+
+    <div style="position: relative;left: 810px; top:18px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="kin/">Kinase</option>
+    <option value="phos/">Phosphosite</option>
+    <option value="inh/">Inhibitor</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 950px; bottom:5px">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.protein_name.label }} {{ form.protein_name() }}
+    {{ form.submit() }}  
+    </form>
+    </div>
+
+
+</div>
+
+<div class="subheader">
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
+<span style="font-family: verdana">Upload phosphoproteomics data:</span>
+    <input type="file" class="upload" />
+    <button type="submit" name="datanalysis">Submit</button>
+ </form>
+
+</div>
+
+
+<h2> {{kinase_name}} </h2>
+
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px">
+<table border="1" >
+<tr>
+<th>Go to:</th>
+</tr>
+<tr>
+<td><a href="#Entry">Entry</a></td>
+</tr>
+<tr>
+<td><a href="#Structure">Structure</a></td>
+</tr>
+<tr>
+<td><a href="#Sequences">Sequence</a></td>
+</tr>
+<tr>
+<td><a href="#Targets">Targets</a></td>
+</tr>
+<tr>
+<td><a href="#Inhibitors">Inhibitors</a></td>
+</tr>
+</table>
+</form>  
+
+
+<div id="boxheader">
+
+<a id="Entry">Entry</a>
+
+</div>
+
+<div id="entrybox" style="width: 300px; height: 240px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA">
+
+<p> <b>Kinase Name</b> &nbsp;{{kinase_name}}</p>
+<p> <b>Also known as</b> &nbsp;{{Alternate_Protein_Name}}</p>
+<p> <b>UniProtKB</b> &nbsp; {{UniProt_ID}} </p>
+<p> <b>Families</b> &nbsp; {{Families}} </p>
+<p> <b>Cellular Location</b> &nbsp; {{Subcellular_Location}} </p>
+<p> <b>Gene Name</b> &nbsp; {{Gene_Symbol}} </p>
+<p> <b>Gene also known as</b> &nbsp; {{Alternative_Gene_Name}} </p>
+
+</div>
+
+<div id="spacebox"></div>
+
+<div id="boxheader">
+
+<a id="Structure">Structure</a>
+
+</div>
+
+<div id="structurebox" style="width: 300px; height: 640px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA, overflow:scroll">
+
+
+<p> 
+ <b> PDB ID :</b> &nbsp; {{PDB_ID}}
+ </p>
+
+<p>
+<b> PDB URL : </b> &nbsp; <a href="{{PDB_URL}}"> {{PDB_URL}} </a>
+</p>
+
+<p > <b>{{PDB_title}} </b> </p> 
+
+<img src="{{PDB_URL}}">
+
+</div>
+
+<div id="spacebox"></div>
+
+<div id="boxheader">
+
+<a id="Sequences">Aminoacid Sequence</a>
+
+</div>
+
+<div id="sequencebox" style="width: 300px; height: 200px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA; overflow: scroll">
+
+<p> <b>{{kinase_name}} [UniParc]. </b> Canonical sequence </p>
+<p> Molecular weight (Da): {{Molecular_Mass}} </p>
+<p> Sequence: </p>
+<textarea rows=100 cols=100>
+{{AA_sequence}}
+</textarea>
+
+</div>
+
+<div id="spacebox"></div>
+
+<div id="boxheader">
+
+<a id="Targets">Targets</a>
+
+</div>
+
+<div id="targetbox">
+<table border="1" style="background: white">
+
+<thead>
+<tr>
+<th><b>Phosphosite ID</b></th>
+<th><b>Protein</b></th>
+<th ><b>Gene</b></th>
+<th><b>Residue</b></th>
+</tr>
+</thead>
+
+<tbody>
+    {% for x in searchkinphos %}
+<tr>
+<td> <a href="/phos/redirect/{{x.PHOS_ID}}"> {{x.ID_PH}} </a></td>
+<td> {{x.PROTEIN}} </td>
+<td> {{x.GENE}} </td>
+<td> {{x.MOD_RSD}}</td>
+</tr>
+    {% endfor %}
+
+</tbody>
+
+
+</table>
+</div>
+
+<div id="spacebox"></div>
+
+<div id="boxheader">
+
+<a id="Inhibitors">Inhibitors</a>
+
+</div>
+
+
+<div id="targetbox">
+
+<table border="1" style="background: white">
+
+    
+<tr>
+<th><b>Name</b></th>
+<th ><b>Source</b></th>
+</tr>
+
+{% for x in searchkininhibitors %}
+<tr>
+<td> <a href="/inh/redirect/{{x.Inhibitor}}"> {{x.Inhibitor}}</a></td>
+<td> {{x.Source}} </td>
+</tr>
+    {% endfor %}
+
+
+</table>
+
+</div>
+
+</body>
+
