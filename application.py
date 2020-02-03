@@ -149,9 +149,8 @@ ALLOWED_EXTENSIONS = {'tsv'}
 def allowed_file(filename):
    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
-
-application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
+#DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
+#application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 
 
 #----------------------------------------------------------------------------------------------------------
@@ -194,14 +193,16 @@ def process_file(path, filename):
     df_merge = df_merge.drop_duplicates(subset = 'Substrate', keep = False)
     df1= df_merge
  
-    df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
+    #df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
+    df1.to_csv(r'downloads/table1_analysis.csv'))
 
 
     ### drop rows contain Not_Found in Kinase column
     global df_kinase
     df_kinase = df1[df1.Kinase != "Not_Found"]
 
-    df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
+    #df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
+    df_kinase.to_csv(r'downloads/table2_analysis.csv'))
 ##########################################################################
 ### Function to get the table with substrates without kinases
     ### select rows contain Not_Found in Kinase column
@@ -209,7 +210,9 @@ def process_file(path, filename):
     df_no_kinase = df1[df1.Kinase == "Not_Found"]
 
 
-    df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
+    #df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
+    df_no_kinase.to_csv(r'downloads/table3_analysis.csv'))
+    
     ### calculate the subgroup mean
     global df_submean
     df_submean = df_kinase.groupby(['Kinase']).mean()
