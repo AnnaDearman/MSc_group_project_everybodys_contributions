@@ -260,7 +260,7 @@ def process_file(path, filename):
     import plotly.express as px
     global fig
     fig = px.scatter(df1, x = "Log_F", y="-log10p", hover_data=['Substrate'], color = 'color')
-    fig.write_html("downloads/Volcano.html") #Convert the figure to HTML, so it can be accessed on the web application
+    fig.write_html("templates/Volcano.html") #Convert the figure to HTML, so it can be accessed on the web application
 
     ### bar plot of kinase relative activity scores
     global df_subgroub
@@ -286,7 +286,7 @@ def process_file(path, filename):
                  hover_data = ['p_value', 'count'])
     
     fig2.update_traces(textposition='outside')
-    fig2.write_html("downloads/Kinase_RKA_barplot.html") #Convert the figure to HTML, so it can be accessed on the web application
+    fig2.write_html("templates/Kinase_RKA_barplot.html") #Convert the figure to HTML, so it can be accessed on the web application
 
 
 #--------------------------------------------------------------------------------------------------------------------
@@ -615,7 +615,7 @@ def phosphositepage(phosphosite_search, phosphosite_name):
     form = SearchForm()
     searchphos = session.query(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).first()
     searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID==phosphosite_name).all()
-    searchphosdis = session.query(PhosphositesDiseases).filter(PhosphositesDiseases.PHOS_ID==phosphosite_name).all()
+    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).all() #This line has been changed
     protein_name = None
     if form.validate_on_submit():
         protein_name = form.protein_name.data
