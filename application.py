@@ -149,8 +149,8 @@ ALLOWED_EXTENSIONS = {'tsv'}
 def allowed_file(filename):
    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-#DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
-#application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
+DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
+application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
 
 
 #----------------------------------------------------------------------------------------------------------
@@ -193,16 +193,15 @@ def process_file(path, filename):
     df_merge = df_merge.drop_duplicates(subset = 'Substrate', keep = False)
     df1= df_merge
  
-    #df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
-    df1.to_csv(r'downloads/table1_analysis.csv'))
+    df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
 
 
     ### drop rows contain Not_Found in Kinase column
     global df_kinase
     df_kinase = df1[df1.Kinase != "Not_Found"]
 
-    #df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
-    df_kinase.to_csv(r'downloads/table2_analysis.csv'))
+    df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
+    
 ##########################################################################
 ### Function to get the table with substrates without kinases
     ### select rows contain Not_Found in Kinase column
@@ -210,8 +209,8 @@ def process_file(path, filename):
     df_no_kinase = df1[df1.Kinase == "Not_Found"]
 
 
-    #df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
-    df_no_kinase.to_csv(r'downloads/table3_analysis.csv'))
+    df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
+
     
     ### calculate the subgroup mean
     global df_submean
@@ -252,6 +251,7 @@ def process_file(path, filename):
 
 
     df_submean.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table4_analysis.csv'))
+
 
     Bon_cor = -math.log10(0.05/len(df1['p_value']))
 
@@ -452,10 +452,6 @@ def redgen():
 @application.route('/uploads/<filename>')
 def uploaded_file(filename):
     form = SearchForm()
-    #if form.validate_on_submit():
-        #return redirect(url_for('download_file', filename=filename))
-        #return send_from_directory(application.config['DOWNLOAD_FOLDER'], 'listfile20.txt' , as_attachment=True)
-    #process_file(path, filename)
     return render_template('datanalysis.html', filename=filename, tables1=[df1.to_html(classes='data')], titles1=df1.columns.values, tables2=[df_kinase.to_html(classes='data')], titles2=df_kinase.columns.values, tables3=[df_no_kinase.to_html(classes='data')], titles3=df_no_kinase.columns.values, tables4=[df_submean.to_html(classes='data')], titles4=df_submean.columns.values, fig=fig2, form=form)
 
 #Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match
