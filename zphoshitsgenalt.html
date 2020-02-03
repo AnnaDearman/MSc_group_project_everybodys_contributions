@@ -31,9 +31,9 @@
 
 
 <p> To filter phosphosites by genomic location: </p>
-<p> Select a chromosome (e.g. click on text 'Chromosome 1'), 1p for all g-bands in the p arm of Chromosome 1, or a specific g-band (e.g. click on '1p36.33') on the image below </p>
+<p> Select a chromosome (e.g. click on text 'Chromosome 1'), or a specific g-band (e.g. click on '1p36.33') on the image below </p>
 <p> <b> OR</b></p>
-<p> type the genomic location of interest (e.g. 1 for Chromosome 1, 1p36.33 for g-band 1p36.33, etc.): 
+<p> type the genomic location of interest (e.g. 1 for Chromosome 1, 1p for all g-bands in the p arm of Chromosome 1, 1p36.33 for g-band 1p36.33, etc.) :  
     <form method="POST">
     {{ form.csrf_token }}
     {{ form.protein_name.label }} {{ form.protein_name() }}
