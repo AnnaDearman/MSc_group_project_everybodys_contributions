@@ -540,7 +540,7 @@ def phosphositesearchprot(phosphosite_search):
 @application.route('/phoskin/<phosphosite_search>', methods=['GET', 'POST'])
 def phosphositesearchkin(phosphosite_search):
     form = SearchForm()
-    resultss = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(kinase_search), HumanKinases.Gene_Symbol.startswith(kinase_search)) ).all() #This line has been changed
+    resultss = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(phosphosite_search), HumanKinases.Gene_Symbol.startswith(phosphosite_search)) ).all() #This line has been changed
     protein_name = None
     if form.validate_on_submit():
         protein_name = form.protein_name.data
