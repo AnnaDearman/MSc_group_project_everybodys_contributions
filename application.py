@@ -1,36 +1,72 @@
 
+#Import statements
+#--------------------------------------------------------------------------------------------------------------------------
+#Basic modules for a Flask app to work (set Flask app, return HTML template for specific @application.route, redirect to a different
+#@application.route, generate URL to a given endpoint.
+from flask import Flask, render_template, redirect, url_for
+
+#Modules necessary to set the search engine 
 from flask_wtf import FlaskForm
-from flask_wtf.file import FileField, FileRequired, FileAllowed
-
-
-from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, or_
-engine = create_engine('sqlite:///c__sqlite_final_database.db', echo = True, connect_args={'check_same_thread': False})
-from sqlalchemy.ext.declarative import declarative_base
-Base = declarative_base()
-from sqlalchemy.orm import sessionmaker, relationship
-Session = sessionmaker(bind = engine)
-session = Session()
-
-#from database import engine, Session, session, Base, HumanKinases, Phosphosites, Inhibitors, KinasesPhosphosites, PhosphositesDiseases, InhibKin
-
-
-from scipy.stats import norm
-import math
-
-from flask import Flask, flash, render_template, request, redirect, url_for, jsonify, send_from_directory, send_file
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
+
+#Modules necessary to upload a phosphoproteomics data file to the website, and to be able to download the tables returned
+from flask import request, send_from_directory, send_file
 from werkzeug.utils import secure_filename
+
+#Modules necessary to perform the data analysis of the phosphoproteomics data file uploaded by the user
+from scipy.stats import norm
+import math
 import pandas as pd
 import numpy as np
-import os
 import re
 
-#from datanalysis import Analysis_df1
+#Modules necessary to set the structure of the database used, and make queries to said database
+from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, or_
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy.orm import sessionmaker, relationship
 
-#import KSEA as datanalysis
-
+engine = create_engine('sqlite:///c__sqlite_final_database.db', echo = True, connect_args={'check_same_thread': False}) #Connect database to Flask app
+Base = declarative_base() #Construct a base class for declarative class definitions.
+Session = sessionmaker(bind = engine) #Set Session, necessary to query the database (see any of the classes under #Hits pages for example)
+session = Session()
 #--------------------------------------------------------------------------------------------------------------------------
+
+
+
+#Flask application object & paths to the uploads & downloads folders
+#-------------------------------------------------------------------------------------------------------------------------- 
+#Set Flask application object
+application = Flask(__name__, static_url_path='/static') #Need to define static_url_path in order for images in the static folder to show on the HTML templates
+application.config['SECRET_KEY'] = 'jacky' #SECRET_KEY,necessary for wtforms to work
+
+#Set the path to the uploads folder, in which the phosphoproteomics data files uploaded by the user are stored
+UPLOAD_FOLDER =  os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
+application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+
+#Set the path to the downloads folder, in which files produced from the data analysis of the phosphoproteomics data (see def data_analysis) are stored.
+DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
+application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
+
+#Define allowed extensions for the phosphoproteomics data file uploaded by the user
+ALLOWED_EXTENSIONS = {'tsv'}
+def allowed_file(filename):
+   return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+#-------------------------------------------------------------------------------------------------------------------------- 
+
+#Search form
+#--------------------------------------------------------------------------------------------------------------------------  
+class SearchForm(FlaskForm):
+    protein_name = StringField("", validators=[DataRequired()]) #Box in which to write your search, requires data
+    submit = SubmitField('Submit') #Submit button
+#--------------------------------------------------------------------------------------------------------------------------
+
+
+
+#Database structure
+#--------------------------------------------------------------------------------------------------------------------------
+#Database tables
+
 class HumanKinases(Base):
     __tablename__ = 'human_kinases'
     UniProt_ID = Column(String(15), primary_key=True)
@@ -124,47 +160,29 @@ class InhibKin(Base):
     Inhibitor = Column (String(150), ForeignKey('inhibitors.Inhibitor'))
     ID_KI = Column (String(10), primary_key=True)
     UniProt_ID = Column(String(6), ForeignKey('human_kinases.UniProt_ID'))
-
+    
+    
+#Relationships between the database tables
 kinases_phosphosites = relationship("KinasesPhosphosites", backref="human_kinases")
 inhibitors_kinases = relationship("Inhibitors", backref="human_kinases")
-
 phosphosites_kinases = relationship("KinasesPhosphosites", backref="phosphosites")
 phosphosites_diseases = relationship("PhosphositesDiseases", backref="phosphosites")
-
 inhib_kin = relationship("InhibKin", backref="inhibitors")
 
-Base.metadata.create_all(engine)
+Base.metadata.create_all(engine) #Create the tables in the database 'sqlite:///c__sqlite_final_database.db'
 #--------------------------------------------------------------------------------------------------------------------------
 
 
-#-------------------------------------------------------------------------------------------------------------------------- 
-#Flask application object
-application = Flask(__name__, static_url_path='/static')
-application.config['SECRET_KEY'] = 'jacky'
 
-UPLOAD_FOLDER =  os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
-application.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+#Data Analysis of phosphoproteomics data (from file uploaded by the user)
+#----------------------------------------------------------------------------------------------------------------------------
+def data_analysis(path, filename):
 
-ALLOWED_EXTENSIONS = {'tsv'}
-def allowed_file(filename):
-   return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
-
-DOWNLOAD_FOLDER = os.path.dirname(os.path.abspath(__file__)) + '/downloads/'
-application.config['DOWNLOAD_FOLDER'] = DOWNLOAD_FOLDER
-
-
-#----------------------------------------------------------------------------------------------------------
-
-def process_file(path, filename):
-    #def Analysis_df1(path, filename):
-   ### import sample data
-    data_raw = pd.read_table(path, sep = "\t")
-    
-
+    data_raw = pd.read_table(path, sep = "\t") #Read file uploaded by the user
     data_raw = data_raw.loc[:, ~data_raw.columns.str.contains('^Unnamed')]
 
     data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value', 'ctrlCV', 'treatCV']
-    ### drop any rows have a NAN
+    ### drop any rows that have a NAN
     global df1
     df1 = data_raw.copy()
     df1 = df1.dropna(how="any")
@@ -193,14 +211,14 @@ def process_file(path, filename):
     df_merge = df_merge.drop_duplicates(subset = 'Substrate', keep = False)
     df1= df_merge
  
-    df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
+    df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv')) #Convert table to csv and save on the downloads folder
 
 
     ### drop rows contain Not_Found in Kinase column
     global df_kinase
     df_kinase = df1[df1.Kinase != "Not_Found"]
 
-    df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
+    df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv')) #Convert table to csv and save on the downloads folder
     
 ##########################################################################
 ### Function to get the table with substrates without kinases
@@ -209,7 +227,7 @@ def process_file(path, filename):
     df_no_kinase = df1[df1.Kinase == "Not_Found"]
 
 
-    df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
+    df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv')) #Convert table to csv and save on the downloads folder
 
     
     ### calculate the subgroup mean
@@ -263,7 +281,7 @@ def process_file(path, filename):
     import plotly.express as px
     global fig
     fig = px.scatter(df1, x = "Log_F", y="-log10p", hover_data=['Substrate'], color = 'color')
-    fig.write_html("templates/Volcano.html") #Convert the figure to HTML, so it can be accessed on the web application
+    fig.write_html("templates/Volcano.html") #Convert the figure to HTML, save it on the templates folder
 
     ### bar plot of kinase relative activity scores
     global df_subgroub
@@ -289,111 +307,103 @@ def process_file(path, filename):
                  hover_data = ['p_value', 'count'])
     
     fig2.update_traces(textposition='outside')
-    fig2.write_html("templates/Kinase_RKA_barplot.html") #Convert the figure to HTML, so it can be accessed on the web application
+    fig2.write_html("templates/Kinase_RKA_barplot.html") #Convert the figure to HTML, save it on the templates folder
 
 
 #--------------------------------------------------------------------------------------------------------------------
 
-
-#--------------------------------------------------------------------------------------------------------------------
-
-
-
-
-
-#-------------------------------------------------------------------------------------------------------------------------- 
-
-#Search & Upload File forms
-#--------------------------------------------------------------------------------------------------------------------------  
-class SearchForm(FlaskForm):
-    protein_name = StringField("", validators=[DataRequired()])
-    submit = SubmitField('Submit')
-    datanalysis = SubmitField('Download phosphoproteomics analysis')
-#--------------------------------------------------------------------------------------------------------------------------  
-
+  
 #Main application script
 
 #Homepage(s)
 #--------------------------------------------------------------------------------------------------------------------------  
-#init_db()
-
+#Main homepage
 @application.route('/', methods=['GET', 'POST'])
-#@app.route('/datanalysis', methods = ['GET', 'POST'])
-@application.route('/home') 
+@application.route('/home', methods=['GET', 'POST']) 
 def index():
-    form = SearchForm()
-    #form1 = DocumentUploadForm()
-    if request.method == 'POST':
-        if 'file' not in request.files:
+    form = SearchForm() 
+    #If the user has submitted form (in this clase, clicking on the 'Upload' button of the homepage)
+    if request.method == 'POST': 
+        if 'file' not in request.files: # Check that the post request has the file part
            print('No file attached in request')
            return redirect(request.url)
-        file = request.files['file']
-        if file.filename == '':
-           print('No file selected')
-           return redirect(request.url)
-        if file and allowed_file(file.filename):
+        file = request.files['file'] 
+        #Check that the user has selected a file, if they haven't, return a message asking them to return to the homepage and select one
+        if file.filename == '': 
+           return "You have not selected a file, please return to the homepage, click on 'Choose File', select a phosphoproteomics data file (tsv extension) to upload, and the click on 'Upload'."
+        #If a file has been selected, and it is in the allowed extension (tsv)
+        if file and allowed_file(file.filename): 
            filename = secure_filename(file.filename)
-           file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename))
-           process_file(os.path.join(application.config['UPLOAD_FOLDER'], filename), filename)
-           return redirect(url_for('uploaded_file', filename=filename))
-        else:
+           file.save(os.path.join(application.config['UPLOAD_FOLDER'], filename)) #Save uploaded file to the uploads folder
+           data_analysis(os.path.join(application.config['UPLOAD_FOLDER'], filename), filename) #Perform data analysis of the uploaded folder (def data_analysis function above)
+           return redirect(url_for('uploaded_file', filename=filename)) #Return url showing the results of the data_analysis function
+        #If the file selected is not in the allowed extension, return message asking to upload file with tsv extension
+        else: 
             return "The file uploaded is not in tsv format, please upload a file in this format"
     return render_template('homepage.html', form=form)
 
+#From homepage.html redirects to this URL if you select 'Kinase' on the 'Search' dropdown select menu
 @application.route('/kin/', methods=['GET', 'POST']) 
 def kin():
     form = SearchForm()
     protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('kinasesearch', kinase_search=protein_name))
-    return render_template('homepagekin.html', form=form)
+    if form.validate_on_submit(): #If the user writes in the searchbox (StringField) and clicks Submit/press Enter
+        protein_name = form.protein_name.data #What the user has written in the searchbox
+        return redirect(url_for('kinasesearch', kinase_search=protein_name)) #Redirect to def kinasesearch(kinase_search)
+    return render_template('homepagekin.html', form=form) #Same appearance as the homepage but the dropdown select menu displays the word 'Kinase' instead of 'Search'
 
+
+#From homepage.html redirects to this URL if you select 'Inhibitor' on the 'Search' dropdown select menu
 @application.route('/inh/', methods=['GET', 'POST']) 
 def inh():
     form = SearchForm()
     protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('inhibitorsearch', inhibitor_search=protein_name))
-    return render_template('homepageinh.html',form=form)
+    if form.validate_on_submit(): #If the user writes in the searchbox (StringField) and clicks Submit/press Enter
+        protein_name = form.protein_name.data #What the user has written in the searchbox
+        return redirect(url_for('inhibitorsearch', inhibitor_search=protein_name))#Redirect to def inhibitorsearch(inhibitor_search)
+    return render_template('homepageinh.html',form=form) #Same appearance as the homepage.html but the dropdown select menu displays the word 'Inhibitor' instead of 'Search'
 
-@application.route('/phos/', methods=['GET', 'POST']) #If Phosphosite selected on select search menu, redirects to homepage with an additional select box (genomic location & neighbouring sequence)
+#From homepage.html redirects to this URL if you select 'Phosphosite' on the 'Search' dropdown select menu
+@application.route('/phos/', methods=['GET', 'POST']) 
 def phos():
     form = SearchForm()
-    #protein_name = None
-    return render_template('homepagephos.html', form=form)
+    return render_template('homepagephos.html', form=form) #Same appearance as homepage.html but the dropdown select menu displays the word 'Phosphosite', and there is an additional dropdown select menu (genomic location & neighbouring sequence) compared to the homepage.html
 
-@application.route('/nseq/', methods=['GET', 'POST']) #If Phosphosite selected on select search menu, redirects to homepage with an additional select box (genomic location & neighbouring sequence)
+#From homepagephos.html redirects to this URL if you select 'Phosphosite' on the 'Search' dropdown select menu and then 'Neighbouring Sequence' on the second dropdown select menu
+@application.route('/nseq/', methods=['GET', 'POST']) 
 def phosnseq():
     form = SearchForm()
     protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('phosphositesearchnseq', phosphosite_search=protein_name))
-    return render_template('homepagephos.html', form=form)
+    if form.validate_on_submit(): #If the user writes in the searchbox (StringField) and clicks Submit/press Enter
+        protein_name = form.protein_name.data #What the user has written in the searchbox
+        return redirect(url_for('phosphositesearchnseq', phosphosite_search=protein_name)) #Redirect to def phosphositesearchnseq(phosphosite_search)
+    return render_template('homepagephos.html', form=form) #Same appearance as homepage.html but the dropdown select menu displays the word 'Phosphosite', and there is an additional dropdown select menu (genomic location & neighbouring sequence) compared to the homepage.html 
 
-@application.route('/prot/', methods=['GET', 'POST']) #If Phosphosite selected on select search menu, redirects to homepage with an additional select box (genomic location & neighbouring sequence)
+#From homepagephos.html redirects to this URL if you select 'Phosphosite' on the 'Search' dropdown select menu and then 'Protein' on the second dropdown select menu
+@application.route('/prot/', methods=['GET', 'POST']) 
 def phosprot():
     form = SearchForm()
     protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('phosphositesearchprot', phosphosite_search=protein_name))
-    return render_template('homepagephos.html', form=form)
+    if form.validate_on_submit(): #If the user writes in the searchbox (StringField) and clicks Submit/press Enter
+        protein_name = form.protein_name.data #What the user has written in the searchbox
+        return redirect(url_for('phosphositesearchprot', phosphosite_search=protein_name)) #Redirect to def phosphositesearchprot(phosphosite_search)
+    return render_template('homepagephos.html', form=form) #Same appearance as homepage.html but the dropdown select menu displays the word 'Phosphosite', and there is an additional dropdown select menu (genomic location & neighbouring sequence) compared to the homepage.html
 
-@application.route('/phoskin/', methods=['GET', 'POST']) #If Phosphosite selected on select search menu, redirects to homepage with an additional select box (genomic location & neighbouring sequence)
+#From homepagephos.html redirects to this URL if you select 'Phosphosite' on the 'Search' dropdown select menu and then 'Protein' on the second dropdown select menu
+@application.route('/phoskin/', methods=['GET', 'POST']) 
 def phospkin():
     form = SearchForm()
     protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('phosphositesearchkin', phosphosite_search=protein_name))
-    return render_template('homepagephos.html', form=form)
+    if form.validate_on_submit(): #If the user writes in the searchbox (StringField) and clicks Submit/press Enter
+        protein_name = form.protein_name.data #What the user has written in the searchbox
+        return redirect(url_for('phosphositesearchkin', phosphosite_search=protein_name)) #Redirect to def phosphositesearchkin(phosphosite_search)
+    return render_template('homepagephos.html', form=form) #Same appearance as homepage.html but the dropdown select menu displays the word 'Phosphosite', and there is an additional dropdown select menu (genomic location & neighbouring sequence) compared to the homepage.html
 
 
 
 #The next routes are to redirect to the intended url
+
+#Return to the @application.route('/inh/') if you select 'Inhibitor' on the first select dropdown menu from any other page on the website
 @application.route('/kin/inh/')
 @application.route('/phos/inh/')
 @application.route('/prot/inh/')
@@ -408,6 +418,7 @@ def phospkin():
 def redihn():
     return redirect('/inh/')
 
+#Return to the @application.route('/phos/') if you select 'Phosphosite' on the first select dropdown menu from any other page on the website
 @application.route('/inh/phos/')
 @application.route('/kin/phos/')
 @application.route('/inh/redirect/phos/')
@@ -416,6 +427,7 @@ def redihn():
 def redphos():
     return redirect('/phos/')
 
+#Return to the @application.route('/kin/') if you select 'Kinase' on the select dropdown menu from any other page on the website
 @application.route('/inh/kin/')
 @application.route('/phos/kin/')
 @application.route('/phoskin/kin/')
@@ -428,58 +440,61 @@ def redphos():
 def redkin():
     return redirect('/kin/')
 
+#Return to the @application.route('/nseq/') if you select 'Neighbouring Sequence' on the second select dropdown menu from a different URL
 @application.route('/prot/nseq')
 @application.route('/gen/nseq')
 def rednseq():
     return redirect('/nseq/')
 
+#Return to the @application.route('/prot/') if you select 'Protein' on the second select dropdown menu from a different URL
 @application.route('/nseq/prot')
 @application.route('/gen/prot')
 def redprot():
     return redirect('/prot/')
 
+#Return to the @application.route('/gen/') if you select 'Genomic Location' on the second select dropdown menu from a different URL
 @application.route('/nseq/gen')
 @application.route('/prot/gen')
 def redgen():
     return redirect('/gen/')
-
-
 #------------------------------------------------------------------------------------------------------------------------------------------   
+
+
 
 #Data analysis page
 #-----------------------------------------------------------------------------------------------------------------------------------------------------
-#Display the results of the analysis
+#Display the results of the data analysis
 @application.route('/uploads/<filename>')
 def uploaded_file(filename):
     form = SearchForm()
     return render_template('datanalysis.html', filename=filename, tables1=[df1.to_html(classes='data')], titles1=df1.columns.values, tables2=[df_kinase.to_html(classes='data')], titles2=df_kinase.columns.values, tables3=[df_no_kinase.to_html(classes='data')], titles3=df_no_kinase.columns.values, tables4=[df_submean.to_html(classes='data')], titles4=df_submean.columns.values, fig=fig2, form=form)
 
-#Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match
+#Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match (from the downloads folder)
 @application.route('/download/table1')
 def download_table1():
     return send_from_directory(application.config['DOWNLOAD_FOLDER'], 'table1_analysis.csv' , as_attachment=True)
 
-#Download the phosphosites-kinases table with only the phosphosites for which a kinase match was found
+#Download the phosphosites-kinases table with only the phosphosites for which a kinase match was found (from the downloads folder)
 @application.route('/download/table2')
 def download_table2():
     return send_from_directory(application.config['DOWNLOAD_FOLDER'], 'table2_analysis.csv' , as_attachment=True)
 
-#Download the phosphosites-kinases table with the phosphosites for which no kinase match was found
+#Download the phosphosites-kinases table with the phosphosites for which no kinase match was found (from the downloads folder)
 @application.route('/download/table3')
 def download_table3():
     return send_from_directory(application.config['DOWNLOAD_FOLDER'], 'table3_analysis.csv' , as_attachment=True)
 
-#Download the relative kinase activity table
+#Download the relative kinase activity table (from the downloads folder)
 @application.route('/download/table4')
 def download_table4():
     return send_from_directory(application.config['DOWNLOAD_FOLDER'], 'table4_analysis.csv' , as_attachment=True)
 
-#Interactive version of the volcano plot
+#Show Interactive version of the volcano plot
 @application.route('/volcanoplot')
 def volcanoplot():
     return render_template('Volcano.html')
 
-#Interactive version of the relative kinase activity bar plot
+#Show Interactive version of the relative kinase activity bar plot
 @application.route('/RKAplot')
 def RKAplot():
     return render_template('Kinase_RKA_barplot.html')
@@ -491,10 +506,10 @@ def RKAplot():
 @application.route('/inh/<inhibitor_search>', methods=['GET', 'POST'])
 def inhibitorsearch(inhibitor_search):
     form = SearchForm()
-    inhibitor_search = inhibitor_search.upper()
-    resultss = session.query(Inhibitors).filter(Inhibitors.Inhibitor.startswith(inhibitor_search)).all()
+    inhibitor_search = inhibitor_search.upper() #Make sure that the inhibitor entered by the user is in uppercase
+    resultss = session.query(Inhibitors).filter(Inhibitors.Inhibitor.startswith(inhibitor_search)).all() #Query the Inhibitors table on the database for entries on the Inhibitor column that start with the inhibitor entered by the user
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches for an inhibitor while on this page
         protein_name = form.protein_name.data
         return redirect(url_for('inhibitorsearch', inhibitor_search=protein_name))
     return render_template('inhibitorhits.html', resultss=resultss, form=form)
@@ -503,10 +518,10 @@ def inhibitorsearch(inhibitor_search):
 @application.route('/kin/<kinase_search>', methods=['GET', 'POST'])
 def kinasesearch(kinase_search):
     form = SearchForm()
-    kinase_search = kinase_search.upper()
-    resultss = session.query(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(kinase_search), HumanKinases.Gene_Symbol.startswith(kinase_search)) ).all()
+    kinase_search = kinase_search.upper() #Make sure that the kinase entered by the user is in uppercase
+    resultss = session.query(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(kinase_search), HumanKinases.Gene_Symbol.startswith(kinase_search)) ).all() #Query the HumanKinases table on the database for entries on the Entry_name or Gene_Symbol column that start with the kinase entered by the user
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches for a kinase while being on this page
         protein_name = form.protein_name.data
         return redirect(url_for('kinasesearch', kinase_search=protein_name))
     return render_template('kinasehits.html', resultss=resultss, form=form)
@@ -515,9 +530,9 @@ def kinasesearch(kinase_search):
 @application.route('/nseq/<phosphosite_search>', methods=['GET', 'POST'])
 def phosphositesearchnseq(phosphosite_search):
     form = SearchForm()
-    resultss = session.query(Phosphosites).filter(Phosphosites.SITE_7_AA.startswith(phosphosite_search)).all()
+    resultss = session.query(Phosphosites).filter(Phosphosites.SITE_7_AA.startswith(phosphosite_search)).all() #Query the Phosphosites table on the database for entries on the SITE_7_AA column that start with the sequence entered by the user
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches a phosphosite by neighbouring sequence while being on this page
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchnseq', phosphosite_search=protein_name))
 
@@ -528,9 +543,9 @@ def phosphositesearchnseq(phosphosite_search):
 @application.route('/prot/<phosphosite_search>', methods=['GET', 'POST'])
 def phosphositesearchprot(phosphosite_search):
     form = SearchForm()
-    resultss = session.query(Phosphosites).filter(Phosphosites.PROTEIN.startswith(phosphosite_search)).all()
+    resultss = session.query(Phosphosites).filter(Phosphosites.PROTEIN.startswith(phosphosite_search)).all() #Query the Phosphosites table on the database for entries on the PROTEIN column that start with the protein entered by the user
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches a phosphosite by protein while being on this page
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchprot', phosphosite_search=protein_name))
     return render_template('phoshits.html', resultss=resultss, form=form)
@@ -539,9 +554,9 @@ def phosphositesearchprot(phosphosite_search):
 @application.route('/phoskin/<phosphosite_search>', methods=['GET', 'POST'])
 def phosphositesearchkin(phosphosite_search):
     form = SearchForm()
-    resultss = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(phosphosite_search), HumanKinases.Gene_Symbol.startswith(phosphosite_search)) ).all() #This line has been changed
+    resultss = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(or_(HumanKinases.Entry_name.startswith(phosphosite_search), HumanKinases.Gene_Symbol.startswith(phosphosite_search)) ).all() #Join three tables from the database (Phosphosites, KinasesPhosphosites & HumanKinases), query the joint table for entries on the Entry_name or Gene_Symbol column that start with the kinase entered by the user
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches a phosphosite by kinase that phosphorylates it while being on this page
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchkin', phosphosite_search=protein_name))
     return render_template('phoshits.html', resultss=resultss, form=form)
@@ -550,42 +565,44 @@ def phosphositesearchkin(phosphosite_search):
 @application.route('/gen/', methods=['GET', 'POST'])
 def phosphositesearchgenhome():
     form = SearchForm()
-    resultss = session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('t')).all()
-    if form.validate_on_submit():
+    resultss = session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('t')).all() #Empty query, we just want to return the headers of resultss on phoshitsgen.html
+    if form.validate_on_submit(): #If the user types a genomic location on the genomic browser
         protein_name = form.protein_name.data
         return redirect(url_for('phosphositesearchgen', gen_location=protein_name))
     return render_template('zphoshitsgen.html',form=form, resultss=resultss)
 
-#Phosphosite browse by genomic location page, once you have selected a genomic location
+#Phosphosite browse by genomic location page, once you have selected or typed in a genomic location
 @application.route('/gen/<gen_location>', methods=['GET', 'POST'])
 def phosphositesearchgen(gen_location):
     form = SearchForm()
-    resultss = session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith(gen_location)).all()
+    resultss = session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith(gen_location)).all() #Query the Phosphosites table on the database for entries on the HU_CHR_LOC column that start with the chromosomal location entered/selected by the user 
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user types in the chromosomal location 
         protein_name = form.protein_name.data
         gen_location=protein_name
-        #return redirect(url_for('phosphositesearchgen', gen_location=protein_name))
-        if gen_location== '1':
+        # Since we are using SQLAlchemy queries with 'startwith', if the user selects 1 (for Chromosome 1) it will return not
+        #only phosphosites on Chromosome 1 but also Chromosome 10,11,etc, and if the user selects 2 (for Chromosome 2) it will 
+        #also return phosphosites on Chromosomes 21 and 22, therefore:
+        if gen_location== '1': #If the user selects/types in 1, return only the phosphosites on Chromosome 1
             p= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('1p')).all()
             q= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('1q')).all()
             return render_template('zphoshitsgenalt.html',form=form, p=p, q=q)
-        if gen_location== '2':
+        if gen_location== '2': #If the user selects/types in 2, return only the phosphosites on Chromosome 2
             p2= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('2p')).all()
             q2= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('2q')).all()
             return render_template('zphoshitsgenalt.html',form=form, q=q2, p=p2)
-        else:
+        else: #If the user selects/types in a chromosomal location other than 1 or 2, simply return the resultss query on zphoshitsgen.html
             return render_template('zphoshitsgen.html',form=form, resultss=resultss)
-    else:
-        if gen_location== '1':
+    else: #If the user selects the chromosomal location on the HTML image map 
+        if gen_location== '1': #If the user selects/types in 1, return only the phosphosites on Chromosome 1
             p= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('1p')).all()
             q= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('1q')).all()
             return render_template('zphoshitsgenalt.html',form=form, p=p, q=q)
-        if gen_location== '2':
+        if gen_location== '2': #If the user selects/types in 2, return only the phosphosites on Chromosome 2
             p2= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('2p')).all()
             q2= session.query(Phosphosites).filter(Phosphosites.HU_CHR_LOC.startswith('2q')).all()
             return render_template('zphoshitsgenalt.html',form=form, q=q2, p=p2)
-        else:
+        else: #If the user selects/types in a chromosomal location other than 1 or 2, simply return the resultss query on zphoshitsgen.html
             return render_template('zphoshitsgen.html',form=form, resultss=resultss)
     return render_template('zphoshitsgen.html',form=form, resultss=resultss)
 #--------------------------------------------------------------------------------------------------------------------------  
@@ -598,12 +615,12 @@ def phosphositesearchgen(gen_location):
 @application.route('/kin/redirect/<kinase_name>', methods=['GET', 'POST'])
 def kinase(kinase_name):
     form = SearchForm()
-    searchkin = session.query(HumanKinases).filter(HumanKinases.Entry_name.startswith(kinase_name)).first()
-    searchkinphos = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all()
-    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all()
-    searchkininhibitors = session.query(Inhibitors).join(InhibKin).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all()
+    searchkin = session.query(HumanKinases).filter(HumanKinases.Entry_name.startswith(kinase_name)).first() #Query the HumanKinases table on the database for entries on the Entry_name column that start with the kinase selected on the kinase hits page
+    searchkinphos = session.query(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all() ##Join three tables from the database (Phosphosites, KinasesPhosphosites & HumanKinases), query the joint table for entries on the Entry_name column that start with the kinase selected on the kinase hits page
+    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).join(KinasesPhosphosites).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all() #Join four tables from the database (PhosphositesDiseases, Phosphosites, KinasesPhosphosites & HumanKinases), query the joint table for entries on the Entry_name column that start with the kinase selected on the kinase hits page, query the joint table for entries on the Entry_name column that start with the kinase selected on the kinase hits page
+    searchkininhibitors = session.query(Inhibitors).join(InhibKin).join(HumanKinases).filter(HumanKinases.Entry_name==kinase_name).all() #Join three tables from the database (Inhibitors, InhibKin & HumanKinases), query the joint table for entries on the Entry_name column that start with the kinase selected on the kinase hits page 
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches a Kinase from this page
         protein_name = form.protein_name.data
         return redirect(url_for('kinasesearch', kinase_search=protein_name))
     return render_template('kinasepage.html', kinase_name=kinase_name, UniProt_ID=searchkin.UniProt_ID, PDB_ID=searchkin.PDB_ID, PDB_URL=searchkin.PDB_URL, PDB_title=searchkin.PDB_title, Primary_Protein_Name=searchkin.Primary_Protein_Name, Alternate_Protein_Name=searchkin.Alternative_Protein_Name, Families=searchkin.Families, AA_sequence=searchkin.AA_Seq, Molecular_Mass=searchkin.Molecular_Mass, Subcellular_Location=searchkin.Subcellular_Location, Gene_Symbol=searchkin.Gene_Symbol, Alternative_Gene_Name=searchkin.Alternative_Gene_Name, searchkinphos=searchkinphos, searchkininhibitors=searchkininhibitors, searchphosdis=searchphosdis, form=form)
@@ -612,24 +629,19 @@ def kinase(kinase_name):
 @application.route('/phos/<phosphosite_search>/<phosphosite_name>', methods=['GET', 'POST'])
 def phosphositepage(phosphosite_search, phosphosite_name):
     form = SearchForm()
-    searchphos = session.query(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).first()
-    searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID==phosphosite_name).all()
-    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).all() #This line has been changed
-    protein_name = None
-    if form.validate_on_submit():
-        protein_name = form.protein_name.data
-        return redirect(url_for('phosphositesearchprot', phosphosite_search=protein_name))
+    searchphos = session.query(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).first() #Query the Phosphosites table on the database for entries on the PHOS_ID column that start with the phosphosite selected on the phosphosite hits page
+    searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID==phosphosite_name).all() #Join two tables from the database (HumanKinases, KinasesPhosphosites) to get the entries on the HumanKinases table for kinases which in the KinasesPhosphosites table are in the same row as the phosphosite (PHOS_ID) selected on the phosphosite hits page
+    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).all() #Join two tables from the database (PhosphositesDiseases, Phosphosites) to isolate entries on the PhosphositesDiseases table for the phosphosite selected on the phosphosite hits page
     return render_template('phosphositepage.html', form=form, ID_PH=searchphos.ID_PH, GENE=searchphos.GENE, PROTEIN=searchphos.PROTEIN, HU_CHR_LOC=searchphos.HU_CHR_LOC, MOD_RSD=searchphos.MOD_RSD, MW_kD=searchphos.MW_kD, SITE_7_AA=searchphos.SITE_7_AA, DOMAIN=searchphos.DOMAIN, SOURCE=searchphos.SOURCE, searchphoskin=searchphoskin, searchphosdis=searchphosdis )
-
 
 #Inhibitor page
 @application.route('/inh/redirect/<inhibitor_name>', methods=['GET', 'POST'])
 def inhibitor(inhibitor_name):
     form = SearchForm()
-    searchinh = session.query(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).first()
-    searchinhkin = session.query(HumanKinases).join(InhibKin).join(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).all()
+    searchinh = session.query(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).first() #Query the Inhibitor table on the database for entries on the Inhibitor columns that start with the inhibitor selected on the inhibitor hits page
+    searchinhkin = session.query(HumanKinases).join(InhibKin).join(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).all() #Join three tables from the database (HumanKinases, InhibKin, Inhibitors) to isolate the entries on the HumanKinase table that are for kinases that on the InhibKin table are on the same row as the inhibitor selected on the inhibitor hits page
     protein_name = None
-    if form.validate_on_submit():
+    if form.validate_on_submit(): #If the user searches an Inhibitor from this page
         protein_name = form.protein_name.data
         return redirect(url_for('inhibitorsearch', inhibitor_search=protein_name))
     return render_template('inhibitorpage.html', Inhibitor=inhibitor_name, Ki_nM=searchinh.Ki_nM, IC50_nM=searchinh.IC50_nM, Kd_nM=searchinh.EC50_nM, Source=searchinh.Source, IMG_URL=searchinh.IMG_URL, searchinhkin=searchinhkin, form=form)
