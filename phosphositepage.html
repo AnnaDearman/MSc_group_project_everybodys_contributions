@@ -12,7 +12,7 @@
 
 <div class="header">
 
-  <h1 >KinDB </h1>
+  <h1 >JACKY </h1>
 
   <div style="position: relative;left: 850px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
@@ -36,12 +36,6 @@
 </div>
 
 <div class="subheader">
-
-<form style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
-<span style="font-family: verdana">Upload phosphoproteomics data:</span>
-    <input type="file" class="upload" />
-    <button type="submit">Submit</button>
- </form>
 
 </div>
 
@@ -140,6 +134,7 @@
 <tr>
 <th><b>Disease</b></th>
 <th><b>Alteration</b></th>
+<th><b>Notes</b></th>
 </tr>
 
 <h1>{% for x in searchphosdis %}</h1>
@@ -147,6 +142,7 @@
 <tr>
 <td> {{x.DISEASE}} </td>
 <td> {{x.ALTERATION}} </td>
+<td> {{x.NOTES}} </td>
 </tr>
 
 <h1>{%  endfor %}</h1>
