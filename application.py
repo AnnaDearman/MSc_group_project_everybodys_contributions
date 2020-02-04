@@ -1,5 +1,8 @@
+
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileRequired, FileAllowed
+
+
 from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, or_
 engine = create_engine('sqlite:///c__sqlite_final_database.db', echo = True, connect_args={'check_same_thread': False})
 from sqlalchemy.ext.declarative import declarative_base
@@ -10,8 +13,10 @@ session = Session()
 
 #from database import engine, Session, session, Base, HumanKinases, Phosphosites, Inhibitors, KinasesPhosphosites, PhosphositesDiseases, InhibKin
 
+
 from scipy.stats import norm
 import math
+
 from flask import Flask, flash, render_template, request, redirect, url_for, jsonify, send_from_directory, send_file
 from wtforms import StringField, SelectField, SubmitField
 from wtforms.validators import DataRequired
@@ -122,8 +127,10 @@ class InhibKin(Base):
 
 kinases_phosphosites = relationship("KinasesPhosphosites", backref="human_kinases")
 inhibitors_kinases = relationship("Inhibitors", backref="human_kinases")
+
 phosphosites_kinases = relationship("KinasesPhosphosites", backref="phosphosites")
 phosphosites_diseases = relationship("PhosphositesDiseases", backref="phosphosites")
+
 inhib_kin = relationship("InhibKin", backref="inhibitors")
 
 Base.metadata.create_all(engine)
@@ -152,9 +159,11 @@ def process_file(path, filename):
     #def Analysis_df1(path, filename):
    ### import sample data
     data_raw = pd.read_table(path, sep = "\t")
+    
+
     data_raw = data_raw.loc[:, ~data_raw.columns.str.contains('^Unnamed')]
+
     data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value', 'ctrlCV', 'treatCV']
-   
     ### drop any rows have a NAN
     global df1
     df1 = data_raw.copy()
@@ -162,52 +171,45 @@ def process_file(path, filename):
 
     ### split the first column
     df1[["Gene", "sites"]] = df1.Substrate.str.split("(", expand = True,)
-    df1[["Residue", "junk"]] = df1.sites.str.split(")", expand = True,)
-    df1 = df1[['Substrate','Fold_change','p_value', 'Gene', 'Residue']]
+    df1[["Phosphosite", "junk"]] = df1.sites.str.split(")", expand = True,)
+    df1 = df1[['Substrate','Fold_change','p_value', 'Gene', 'Phosphosite']]
 
-    ### drop rows contain None in Residue column
-    df1 = df1[df1.Residue != "None"]
+    ### drop rows contain None in Phosphosite column
+    df1 = df1[df1.Phosphosite != "None"]
 
     ### transform Fold_change to Log2 and then drop original Fold_change column
-    df1["Log_Fold_Change"] = np.log2(df1['Fold_change'])
+    df1["Log_F"] = np.log2(df1['Fold_change'])
     df1 = df1.drop(['Fold_change'], axis = 1)
 
-    ### transform p_value to -log10 p_value for the volcano plot
+    ### transform p_value to -log10 p_value
     df1["-log10p"] = -np.log10(df1["p_value"])
 
-    ######### Merge user submitted table with kinase-substrate table
+    #########
     df_phos = pd.read_sql(session.query(KinasesPhosphosites).statement, session.query(KinasesPhosphosites).session.bind)
     df_merge = pd.merge(df1, df_phos, how = 'left', left_on = 'Substrate', right_on = 'PHOS_ID4')
-    df_merge = df_merge[['Substrate','p_value','-log10p','Gene','Residue','Log_Fold_Change','GENE']]
+    df_merge = df_merge[['Substrate','p_value','Gene','Phosphosite','Log_F','-log10p','GENE']]
     df_merge['GENE'].fillna('Not_Found', inplace=True)
-    df_merge.columns = ['Substrate','p_value','-log10p','Gene','Residue','Log_Fold_Change','Kinase']
+    df_merge.columns = ['Substrate','p_value','Gene','Phosphosite','Log_F','-log10p','Kinase']
     df_merge = df_merge.drop_duplicates(subset = 'Substrate', keep = False)
-    df1 = df_merge
-    global df2
-    df2 = df1.copy()
-    df2 = df2[['Substrate','Log_Fold_Change','p_value','Kinase']]
+    df1= df_merge
  
-    df2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
+    df1.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table1_analysis.csv'))
 
 
     ### drop rows contain Not_Found in Kinase column
     global df_kinase
     df_kinase = df1[df1.Kinase != "Not_Found"]
-    global df_kinase2
-    df_kinase2 = df_kinase.copy()
-    df_kinase2 = df_kinase2[['Substrate','Kinase','p_value','Log_Fold_Change']]
 
-    df_kinase2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
+    df_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table2_analysis.csv'))
     
 ##########################################################################
 ### Function to get the table with substrates without kinases
     ### select rows contain Not_Found in Kinase column
     global df_no_kinase
     df_no_kinase = df1[df1.Kinase == "Not_Found"]
-    global df_no_kinase2
-    df_no_kinase2 = df_no_kinase.copy()
-    df_no_kinase2 = df_no_kinase2[['Substrate','Kinase','p_value','Log_Fold_Change']]
-    df_no_kinase2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
+
+
+    df_no_kinase.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table3_analysis.csv'))
 
     
     ### calculate the subgroup mean
@@ -218,22 +220,23 @@ def process_file(path, filename):
 
     ### calculate Z_score and convert Z_score to P_value
     def Z_score(mS):
-        Z_score = (mS - df1['Log_Fold_Change'].mean())*(len(df1['Log_Fold_Change'])**(1/2))/np.std(df1['Log_Fold_Change'])
+        Z_score = (mS - df1['Log_F'].mean())*(len(df1['Log_F'])**(1/2))/np.std(df1['Log_F'])
         P_value = norm.sf(abs(Z_score))
-        return(P_value)
-    #Z_score = (mS - df1['Log_Fold_Change'].mean())*(len(df1['Log_Fold_Change'])**(1/2))/np.std(df1['Log_Fold_Change'])
+    #Z_score = (mS - df1['Log_F'].mean())*(len(df1['Log_F'])**(1/2))/np.std(df1['Log_F'])
     #P_value = norm.sf(abs(Z_score))
 
     ### calculate Z_score and convert Z_score to P_value
-    df_submean['p_value'] = df_submean['Log_Fold_Change'].apply(Z_score)
+    df_submean['p_value'] = df_submean['Log_F'].apply(Z_score)
 
 
     ### calculate the standard deviation of fold change in each subgroup
     df_std = df_kinase.groupby(['Kinase']).aggregate(np.std)
-    df_submean['Std_Dev'] = df_std['Log_Fold_Change']
+    df_submean['Std'] = df_std['Log_F']
+
+
 
     ### Calculate the relative kinase activity
-    df_submean['Kinase_RAS'] = df_submean['Log_Fold_Change']/df1['Log_Fold_Change'].mean()
+    df_submean['Kinase_relative_activity_score'] = df_submean['Log_F']/df1['Log_F'].mean()
 
     ### add a kinase column to df_submean
     df_submean['Kinase'] = df_submean.index
@@ -244,30 +247,29 @@ def process_file(path, filename):
 
 
     ### set a count colum to show the number of substrates of each group
-    df_submean['Number_of_substrates'] = list(df_kinase['Kinase'].value_counts().sort_index())
-    global df_submean2
-    df_submean2 = df_submean.copy()
-    df_submean2 = df_submean2[['Kinase','Kinase_RAS','Log_Fold_Change','p_value','Number_of_substrates','Std_Dev']]
-    df_submean2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table4_analysis.csv'))
+    df_submean['count'] = list(df_kinase['Kinase'].value_counts().sort_index())
+
+
+    df_submean.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], r'table4_analysis.csv'))
 
 
     Bon_cor = -math.log10(0.05/len(df1['p_value']))
 
-    ### set a Significant? colum to show significance of the p_value
-    df1.loc[df1['-log10p'] < Bon_cor, 'Significant?'] = 'Non-sig'
-    df1.loc[df1['-log10p'] >= Bon_cor, 'Significant?'] = 'Sig'
+    ### set a color colum to show significance of the p_value
+    df1.loc[df1['-log10p'] < Bon_cor, 'color'] = 'Non-sig'
+    df1.loc[df1['-log10p'] >= Bon_cor, 'color'] = 'Sig'
 
     ### volcano plot ### also need to install nbformat before running plotly
     import plotly.express as px
     global fig
-    fig = px.scatter(df1, x = "Log_Fold_Change", y="-log10p", hover_data=['Substrate'], color = 'Significant?')
+    fig = px.scatter(df1, x = "Log_F", y="-log10p", hover_data=['Substrate'], color = 'color')
     fig.write_html("templates/Volcano.html") #Convert the figure to HTML, so it can be accessed on the web application
 
     ### bar plot of kinase relative activity scores
     global df_subgroub
     df_subgroub = df_submean
-    df_subgroub.loc[df_subgroub['Kinase_RAS'] < 0, 'Effect'] = 'Treat_down'
-    df_subgroub.loc[df_subgroub['Kinase_RAS'] >= 0, 'Effect'] = 'Treat_up'
+    df_subgroub.loc[df_subgroub['Kinase_relative_activity_score'] < 0, 'color'] = 'Treat_down'
+    df_subgroub.loc[df_subgroub['Kinase_relative_activity_score'] >= 0, 'color'] = 'Treat_up'
 
     ### set a text colum to show significance of the p_value
 
@@ -275,17 +277,16 @@ def process_file(path, filename):
     df_subgroub.loc[df_subgroub['p_value'] > 0.05, 'Significance'] = ''
     df_subgroub.loc[df_subgroub['p_value'] == 0, 'Significance'] = ' '
 
-    
 
     ### show relative activity by a bar plot
     global fig2
     fig2 = px.bar(df_subgroub,
                  x = 'Kinase',
-                 y = 'Kinase_RAS',
-                 color = 'Effect',
+                 y = 'Kinase_relative_activity_score',
+                 color = 'color',
                  text = 'Significance',
-                 error_y = 'Std_Dev',
-                 hover_data = ['p_value', 'Number_of_substrates'])
+                 error_y = 'Std',
+                 hover_data = ['p_value', 'count'])
     
     fig2.update_traces(textposition='outside')
     fig2.write_html("templates/Kinase_RKA_barplot.html") #Convert the figure to HTML, so it can be accessed on the web application
@@ -451,7 +452,7 @@ def redgen():
 @application.route('/uploads/<filename>')
 def uploaded_file(filename):
     form = SearchForm()
-    return render_template('datanalysis.html', filename=filename, tables1=[df2.to_html(classes='data')], titles1=df2.columns.values, tables2=[df_kinase2.to_html(classes='data')], titles2=df_kinase2.columns.values, tables3=[df_no_kinase2.to_html(classes='data')], titles3=df_no_kinase2.columns.values, tables4=[df_submean2.to_html(classes='data')], titles4=df_submean2.columns.values, fig=fig2, form=form)
+    return render_template('datanalysis.html', filename=filename, tables1=[df1.to_html(classes='data')], titles1=df1.columns.values, tables2=[df_kinase.to_html(classes='data')], titles2=df_kinase.columns.values, tables3=[df_no_kinase.to_html(classes='data')], titles3=df_no_kinase.columns.values, tables4=[df_submean.to_html(classes='data')], titles4=df_submean.columns.values, fig=fig2, form=form)
 
 #Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match
 @application.route('/download/table1')
@@ -639,3 +640,5 @@ def inhibitor(inhibitor_name):
 #--------------------------------------------------------------------------------------------------------------------------  
 if __name__ == '__main__':
     application.run()
+
+
