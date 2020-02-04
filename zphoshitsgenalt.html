@@ -2,7 +2,7 @@
 
 <html>
 <head>
-    <title>Kinase Database</title>
+    <title>Genome Browser</title>
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
 </head>
 
@@ -11,7 +11,7 @@
 
 <div class="header">
 
-  <h1 >KinDB </h1>
+  <h1 >JACKY </h1>
 
     <div style="position: relative;left: 810px; top:18px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
@@ -25,7 +25,6 @@
 </div>
 
 <div class="subheader">
-    
 
 </div>
 
@@ -33,7 +32,7 @@
 <p> To filter phosphosites by genomic location: </p>
 <p> Select a chromosome (e.g. click on text 'Chromosome 1'), or a specific g-band (e.g. click on '1p36.33') on the image below </p>
 <p> <b> OR</b></p>
-<p> type the genomic location of interest (e.g. 1 for Chromosome 1, 1p for all g-bands in the p arm of Chromosome 1, 1p36.33 for g-band 1p36.33, etc.) :  
+<p> type the genomic location of interest (e.g. 1 for Chromosome 1, 1p for all g-bands in the p arm of Chromosome 1, 1p36.33 for g-band 1p36.33, etc.) : 
     <form method="POST">
     {{ form.csrf_token }}
     {{ form.protein_name.label }} {{ form.protein_name() }}
@@ -62,36 +61,37 @@
     <area target="" alt="Chromosome 10" title="Chromosome 10" href="/gen/10" coords="803,8,915,25" shape="rect">
     <area target="" alt="Chromosome 11" title="Chromosome 11" href="/gen/11" coords="920,8,1148,25" shape="rect">
 
-    <area target="" alt="1p36.33" title="1p36.33" href="/gen/1p36.33" coords="12,30,134,38" shape="rect">
-    <area target="" alt="1p36.32" title="1p36.32" href="/gen/1p36.32" coords="13,38,134,45" shape="rect">
-    <area target="" alt="1p36.31" title="1p36.31" href="/gen/1p36.31" coords="11,45,135,50" shape="rect">
-    <area target="" alt="1p36.23" title="1p36.23" href="/gen/1p36.23" coords="11,50,135,55" shape="rect">
-    <area target="" alt="1p36.22" title="1p36.22" href="/gen/1p36.22" coords="11,55,135,65" shape="rect">
-    <area target="" alt="1p36.21" title="1p36.21" href="/gen/1p36.21" coords="11,65,135,74" shape="rect">
-    <area target="" alt="1p36.13" title="1p36.13" href="/gen/1p36.13" coords="11,74,135,85" shape="rect">
-    <area target="" alt="1p36.12" title="1p36.12" href="/gen/1p36.12" coords="11,85,135,95" shape="rect">
-    <area target="" alt="1p36.11" title="1p36.11" href="/gen/1p36.11" coords="11,95,135,105" shape="rect">
-    <area target="" alt="1p35.3" title="1p35.3" href="/gen/1p35.3" coords="11,105,135,111" shape="rect">
-    <area target="" alt="1p35.2" title="1p35.2" href="/gen/1p35.2" coords="11,111,135,117" shape="rect">
-    <area target="" alt="1p35.1" title="1p35.1" href="/gen/1p35.1" coords="11,117,135,125" shape="rect">
-    <area target="" alt="1p34.3" title="1p34.3" href="/gen/1p34.3" coords="11,125,135,138" shape="rect">
-    <area target="" alt="1p34.2" title="1p34.2" href="/gen/1p34.2" coords="11,138,135,148" shape="rect">
-    <area target="" alt="1p34.1" title="1p34.1" href="/gen/1p34.1" coords="11,148,135,153" shape="rect">
-    <area target="" alt="1p33" title="1p33" href="/gen/1p33" coords="11,153,135,163" shape="rect">
-    <area target="" alt="1p32.3" title="1p32.3" href="/gen/1p32.3" coords="11,163,135,178" shape="rect">
-    <area target="" alt="1p32.2" title="1p32.2" href="/gen/1p32.2" coords="11,178,135,185" shape="rect">
-    <area target="" alt="1p32.1" title="1p32.1" href="/gen/1p32.1" coords="11,185,135,194" shape="rect">
-    <area target="" alt="1p31.3" title="1p31.3" href="/gen/1p31.3" coords="11,194,135,210" shape="rect">
-    <area target="" alt="1p31.2" title="1p31.2" href="/gen/1p31.2" coords="11,210,135,218" shape="rect">
-     <area target="" alt="1p31.1" title="1p31.1" href="/gen/1p31.1" coords="11,218,135,259" shape="rect">
-     <area target="" alt="1p22.3" title="1p22.3" href="/gen/1p22.3" coords="11,260,135,270" shape="rect">
-     <area target="" alt="1p22.2" title="1p22.2" href="/gen/1p22.2" coords="11,270,135,280" shape="rect">
-     <area target="" alt="1p22.1" title="1p22.1" href="/gen/1p22.1" coords="11,280,135,290" shape="rect">
-     <area target="" alt="1p21.3" title="1p21.3" href="/gen/1p21.3" coords="11,290,135,301" shape="rect">
-     <area target="" alt="1p21.2" title="1p21.2" href="/gen/1p21.2" coords="11,301,135,306" shape="rect">
-     <area target="" alt="1p21.1" title="1p21.1" href="/gen/1p21.1" coords="11,306,135,317" shape="rect">
-     <area target="" alt="1p13.3" title="1p13.3" href="/gen/1p13.3" coords="11,317,135,329" shape="rect">
-       <area target="" alt="1p13.2" title="1p13.2" href="/gen/1p13.2" coords="11,329,100,336" shape="rect">
+
+    <area target="" alt="1p36.33" title="1p36.33" href="/gen/1p36.33" coords="12,30,100,38" shape="rect">
+    <area target="" alt="1p36.32" title="1p36.32" href="/gen/1p36.32" coords="13,38,100,45" shape="rect">
+    <area target="" alt="1p36.31" title="1p36.31" href="/gen/1p36.31" coords="11,45,100,50" shape="rect">
+    <area target="" alt="1p36.23" title="1p36.23" href="/gen/1p36.23" coords="11,50,100,55" shape="rect">
+    <area target="" alt="1p36.22" title="1p36.22" href="/gen/1p36.22" coords="11,55,100,65" shape="rect">
+    <area target="" alt="1p36.21" title="1p36.21" href="/gen/1p36.21" coords="11,65,100,74" shape="rect">
+    <area target="" alt="1p36.13" title="1p36.13" href="/gen/1p36.13" coords="11,74,100,85" shape="rect">
+    <area target="" alt="1p36.12" title="1p36.12" href="/gen/1p36.12" coords="11,85,100,95" shape="rect">
+    <area target="" alt="1p36.11" title="1p36.11" href="/gen/1p36.11" coords="11,95,100,105" shape="rect">
+    <area target="" alt="1p35.3" title="1p35.3" href="/gen/1p35.3" coords="11,105,100,111" shape="rect">
+    <area target="" alt="1p35.2" title="1p35.2" href="/gen/1p35.2" coords="11,111,100,117" shape="rect">
+    <area target="" alt="1p35.1" title="1p35.1" href="/gen/1p35.1" coords="11,117,100,125" shape="rect">
+    <area target="" alt="1p34.3" title="1p34.3" href="/gen/1p34.3" coords="11,125,100,138" shape="rect">
+    <area target="" alt="1p34.2" title="1p34.2" href="/gen/1p34.2" coords="11,138,100,148" shape="rect">
+    <area target="" alt="1p34.1" title="1p34.1" href="/gen/1p34.1" coords="11,148,100,153" shape="rect">
+    <area target="" alt="1p33" title="1p33" href="/gen/1p33" coords="11,153,100,163" shape="rect">
+    <area target="" alt="1p32.3" title="1p32.3" href="/gen/1p32.3" coords="11,163,100,178" shape="rect">
+    <area target="" alt="1p32.2" title="1p32.2" href="/gen/1p32.2" coords="11,178,100,185" shape="rect">
+    <area target="" alt="1p32.1" title="1p32.1" href="/gen/1p32.1" coords="11,185,100,194" shape="rect">
+    <area target="" alt="1p31.3" title="1p31.3" href="/gen/1p31.3" coords="11,194,100,210" shape="rect">
+    <area target="" alt="1p31.2" title="1p31.2" href="/gen/1p31.2" coords="11,210,100,218" shape="rect">
+     <area target="" alt="1p31.1" title="1p31.1" href="/gen/1p31.1" coords="11,218,100,259" shape="rect">
+     <area target="" alt="1p22.3" title="1p22.3" href="/gen/1p22.3" coords="11,260,100,270" shape="rect">
+     <area target="" alt="1p22.2" title="1p22.2" href="/gen/1p22.2" coords="11,270,100,280" shape="rect">
+     <area target="" alt="1p22.1" title="1p22.1" href="/gen/1p22.1" coords="11,280,100,290" shape="rect">
+     <area target="" alt="1p21.3" title="1p21.3" href="/gen/1p21.3" coords="11,290,100,301" shape="rect">
+     <area target="" alt="1p21.2" title="1p21.2" href="/gen/1p21.2" coords="11,301,100,306" shape="rect">
+     <area target="" alt="1p21.1" title="1p21.1" href="/gen/1p21.1" coords="11,306,100,317" shape="rect">
+     <area target="" alt="1p13.3" title="1p13.3" href="/gen/1p13.3" coords="11,317,100,329" shape="rect">
+     <area target="" alt="1p13.2" title="1p13.2" href="/gen/1p13.2" coords="11,329,100,336" shape="rect">
      <area target="" alt="1p13.1" title="1p13.1" href="/gen/1p13.1" coords="11,336,100,348" shape="rect">
       <area target="" alt="1p12" title="1p12" href="/gen/1p12" coords="11,348,100,356" shape="rect">
       <area target="" alt="1p11.2" title="1p11.2" href="/gen/1p11.2" coords="11,356,100,364" shape="rect">
@@ -126,10 +126,7 @@
       <area target="" alt="1q43" title="1q43" href="/gen/1q43" coords="11,668,100,684" shape="rect">
       <area target="" alt="1q44" title="1q44" href="/gen/1q44" coords="11,684,100,693" shape="rect">
 
-
-
-
-      <area target="" alt="2p25.3" title="2p25.3" href="/gen/2p25.3" coords="105,30,200,39" shape="rect">
+            <area target="" alt="2p25.3" title="2p25.3" href="/gen/2p25.3" coords="105,30,200,39" shape="rect">
       <area target="" alt="2p25.2" title="2p25.2" href="/gen/2p25.2" coords="105,39,200,50" shape="rect">
       <area target="" alt="2p25.1" title="2p25.1" href="/gen/2p25.1" coords="105,50,200,62" shape="rect">
       <area target="" alt="2p24.3" title="2p24.3" href="/gen/2p24.3" coords="105,62,200,71" shape="rect">
@@ -486,6 +483,60 @@
       <area target="" alt="8q24.23" title="8q24.23" href="/gen/8q24.23" coords="650,635,730,655" shape="rect">
       <area target="" alt="8q24.3" title="8q24.3" href="/gen/8q24.3" coords="650,655,730,675" shape="rect">
 
+      <area target="" alt="9p24.3" title="9p24.3" href="/gen/9p24.2" coords="745,35,800,45" shape="rect">
+    <area target="" alt="9p24.2" title="9p24.2" href="/gen/9p24.2" coords="745,45,800,65" shape="rect">
+      <area target="" alt="9p24.1" title="9p24.1" href="/gen/9p24.1" coords="745,65,800,90" shape="rect">
+      <area target="" alt="9p23" title="9p23" href="/gen/9p23" coords="745,90,800,102" shape="rect">
+      <area target="" alt="9p22.3" title="9p22.3" href="/gen/9p22.3" coords="745,102,800,112" shape="rect">
+      <area target="" alt="9p22.2" title="9p22.2" href="/gen/9p22.2" coords="745,112,800,122" shape="rect">
+      <area target="" alt="9p22.1" title="9p22.1" href="/gen/9p22.1" coords="745,122,800,142" shape="rect">
+      <area target="" alt="9p21.3" title="9p21.3" href="/gen/9p21.3" coords="745,142,800,162" shape="rect">
+      <area target="" alt="9p21.2" title="9p21.2" href="/gen/9p21.2" coords="745,162,800,182" shape="rect">
+      <area target="" alt="9p21.1" title="9p21.1" href="/gen/9p21.1" coords="745,182,800,200" shape="rect">
+      <area target="" alt="9p13.3" title="9p13.3" href="/gen/9p13.3" coords="745,200,800,210" shape="rect">
+      <area target="" alt="9p13.2" title="9p13.2" href="/gen/9p13.2" coords="745,210,800,220" shape="rect">
+      <area target="" alt="9p13.1" title="9p13.1" href="/gen/9p13.1" coords="745,220,800,230" shape="rect">
+      <area target="" alt="9p12" title="9p12" href="/gen/9p12" coords="745,230,800,240" shape="rect">
+      <area target="" alt="9p11.2" title="9p11.2" href="/gen/9p11.2" coords="745,240,800,250" shape="rect">
+      <area target="" alt="9p11.1" title="9p11.1" href="/gen/9p11.1" coords="745,250,800,260" shape="rect">
+
+        <area target="" alt="10p15.3" title="10p15.3" href="/gen/10p15.3" coords="803,35,915,45" shape="rect">
+    <area target="" alt="10p15.2" title="10p15.2" href="/gen/10p15.2" coords="803,45,915,55" shape="rect">
+      <area target="" alt="10p15.1" title="10p15.1" href="/gen/10p15.1" coords="803,55,915,72" shape="rect">
+      <area target="" alt="10p14" title="10p14" href="/gen/10p14" coords="803,72,915,102" shape="rect">
+      <area target="" alt="10p13" title="10p13" href="/gen/10p13" coords="803,102,915,112" shape="rect">
+      <area target="" alt="10p12.33" title="10p12.33" href="/gen/10p12.33" coords="803,112,915,122" shape="rect">
+      <area target="" alt="10p12.32" title="10p12.32" href="/gen/10p12.32" coords="803,122,915,142" shape="rect">
+      <area target="" alt="10p12.31" title="10p12.31" href="/gen/10p12.31" coords="803,142,915,162" shape="rect">
+      <area target="" alt="10p12.2" title="10p12.2" href="/gen/10p12.2" coords="803,162,915,172" shape="rect">
+      <area target="" alt="10p12.1" title="10p12.1" href="/gen/10p12.1" coords="803,172,915,182" shape="rect">
+      <area target="" alt="10p11.23" title="10p11.23" href="/gen/10p11.23" coords="803,182,915,202" shape="rect">
+      <area target="" alt="10p11.22" title="10p11.22" href="/gen/10p11.22" coords="803,202,915,216" shape="rect">
+      <area target="" alt="10p11.21" title="10p11.21" href="/gen/10p11.21" coords="803,209,915,218" shape="rect">
+      <area target="" alt="10p11.1" title="10p11.1" href="/gen/10p11.1" coords="803,218,915,228" shape="rect">
+
+
+      <area target="" alt="11p15.5" title="11p15.5" href="/gen/11p15.5" coords="920,35,1148,62" shape="rect">
+    <area target="" alt="11p15.4" title="11p15.4" href="/gen/11p15.4" coords="920,62,1148,92" shape="rect">
+      <area target="" alt="11p15.3" title="11p15.3" href="/gen/11p15.3" coords="920,92,1148,102" shape="rect">
+      <area target="" alt="11p15.2" title="11p15.2" href="/gen/11p15.2" coords="920,102,1148,112" shape="rect">
+      <area target="" alt="11p15.1" title="11p15.1" href="/gen/11p15.1" coords="920,112,1148,142" shape="rect">
+      <area target="" alt="11p14.3" title="11p14.3" href="/gen/11p14.3" coords="920,142,1148,152" shape="rect">
+      <area target="" alt="11p14.2" title="11p14.2" href="/gen/11p14.2" coords="920,152,1148,162" shape="rect">
+      <area target="" alt="11p14.1" title="11p14.1" href="/gen/11p14.1" coords="920,162,1148,185" shape="rect">
+      <area target="" alt="11p13" title="11p13" href="/gen/11p13" coords="920,185,1148,220" shape="rect">
+      <area target="" alt="11p12" title="11p12" href="/gen/11p12" coords="920,220,1148,255" shape="rect">
+      <area target="" alt="11p11.2" title="11p11.2" href="/gen/11p11.2" coords="920,255,1148,275" shape="rect">
+      <area target="" alt="11p11.12" title="11p11.12" href="/gen/11p11.12" coords="920,275,1148,285" shape="rect">
+      <area target="" alt="11p11.11" title="11p11.11" href="/gen/11p11.11" coords="920,285,1148,295" shape="rect">
+      
+  
+      
+      
+
+      
+
+      
 
 
 </map> 
@@ -509,11 +560,9 @@
 </map> 
 
 
-<img src="https://cdn1.imggmi.com/uploads/2020/1/22/d21ed804a4162aa886d4a0a63bab58a7-full.png" alt="image map example"usemap="#chr1-11" style="position: relative;right: 0px; top:0px">
+<img src="/static/Chromosomes1.jpg" alt="image map example"usemap="#chr1-11" style="position: relative;right: 0px; top:0px; width:1020px; height:720px">
 
-<img src="https://cdn1.imggmi.com/uploads/2020/1/22/02f3178bf5bd5526f09fcb4fd276ba88-full.png" alt="image map example"usemap="#chr12-22" style="position: relative;left: 1025px; bottom:715px">
-
-
+<img src="/static/Chromosomes12.jpg" alt="image map example"usemap="#chr12-22" style="position: relative;left: 1025px; bottom:715px; width:1020px; height:720px">
 
 
 </div>
