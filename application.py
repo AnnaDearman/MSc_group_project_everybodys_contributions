@@ -139,7 +139,7 @@ Base.metadata.create_all(engine)
 
 #-------------------------------------------------------------------------------------------------------------------------- 
 #Flask application object
-application = Flask(__name__)
+application = Flask(__name__, static_url_path='/static')
 application.config['SECRET_KEY'] = 'jacky'
 
 UPLOAD_FOLDER =  os.path.dirname(os.path.abspath(__file__)) + '/uploads/'
