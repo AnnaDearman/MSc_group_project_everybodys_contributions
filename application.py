@@ -448,7 +448,7 @@ def redgen():
 @application.route('/uploads/<filename>')
 def uploaded_file(filename):
     form = SearchForm()
-    return render_template('datanalysis.html', filename=filename, tables1=[df1.to_html(classes='data')], titles1=df1.columns.values, tables2=[df_kinase.to_html(classes='data')], titles2=df_kinase.columns.values, tables3=[df_no_kinase.to_html(classes='data')], titles3=df_no_kinase.columns.values, tables4=[df_submean.to_html(classes='data')], titles4=df_submean.columns.values, fig=fig2, form=form)
+    return render_template('datanalysis.html', filename=filename, tables1=[df2.to_html(classes='data')], titles1=df2.columns.values, tables2=[df_kinase2.to_html(classes='data')], titles2=df_kinase2.columns.values, tables3=[df_no_kinase2.to_html(classes='data')], titles3=df_no_kinase2.columns.values, tables4=[df_submean2.to_html(classes='data')], titles4=df_submean2.columns.values, fig=fig2, form=form)
 
 #Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match
 @application.route('/download/table1')
