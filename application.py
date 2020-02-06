@@ -19,6 +19,7 @@ from scipy.stats import norm
 import math
 import pandas as pd
 import numpy as np
+import os
 import re
 
 #Modules necessary to set the structure of the database used, and make queries to said database
@@ -144,7 +145,7 @@ class PhosphositesDiseases(Base):
     DISEASE = Column(String(92))
     ALTERATION = Column(String(32))
     ACC_ID = Column(String(16))
-    PMIDs = Column(String(8))
+    PMIDs = Column(Integer)
     LT_LIT = Column(Integer)
     MS_LIT = Column(Integer)
     MS_CST = Column(Integer)
@@ -178,7 +179,13 @@ def data_analysis(path, filename):
   
     data_raw = pd.read_table(path, sep = "\t") #Read file uploaded by the user
     data_raw = data_raw.loc[:, ~data_raw.columns.str.contains('^Unnamed')]
-    data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value', 'ctrlCV', 'treatCV']
+    if len(data_raw.columns) == 7:
+    	data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value', 'ctrlCV', 'treatCV']
+	elif len(data_raw.columns) == 5:
+        data_raw.columns = ['Substrate', 'Control_mean', 'Treat_mean','Fold_change', 'p_value']
+
+    ### replace inf or -inf with NaN
+    data_raw = data_raw.replace([np.inf, -np.inf], np.nan)
 
     ### drop any rows that have a NAN
 
