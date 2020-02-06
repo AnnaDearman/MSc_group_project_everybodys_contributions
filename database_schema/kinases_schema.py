@@ -42,7 +42,7 @@ class Phosphosites(Base):
     PHOS_ID2 = Column(String(26))
     PHOS_ID3 = Column(String(32))
     PHOS_ID4 = Column(String(25))
-    ISOFORM = Column(Integer)
+    ISOFORM = Column(String(10))
     ID_PH = Column(String(9))  
     
 class Inhibitors(Base):
@@ -82,10 +82,10 @@ class PhosphositesDiseases(Base):
     DISEASE = Column(String(92))
     ALTERATION = Column(String(32))
     ACC_ID = Column(String(16))
-    PMIDs = Column(String(8))
-    LT_LIT = Column(Integer)
-    MS_LIT = Column(Integer)
-    MS_CST = Column(Integer)
+    PMIDs = Column(String(20))
+    LT_LIT = Column(String(20))
+    MS_LIT = Column(String(20))
+    MS_CST = Column(String(20))
     CST_CAT = Column(String(141))
     NOTES = Column(String(314))
     PHOS_ID = Column(String(22), ForeignKey('phosphosites.PHOS_ID5'))  # duplicates
