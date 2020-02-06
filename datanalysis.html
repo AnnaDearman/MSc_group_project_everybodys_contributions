@@ -46,7 +46,7 @@
 </tr>
 
 <tr>
-<td><a href="#KINRKA"> <p>Kinase(s) Relative </p> <p>Activity </p></a> <p> ------------------------- </p> <p> <a href="/download/table4"> Download this table </a></p> </td>
+    <td><a href="/download/table4"> <p> Download table:</p> </a><p>Kinase(s) Relative </p> <p>Activity</p> </td>
 </tr>
 
 <tr>
@@ -57,7 +57,7 @@
 
 
 <tr>
-<td><a href="#KINPHOSALL"> <p>Kinase-Phosphosite: </p> <p>All phosphosites </p></a> <p> ------------------------- </p> <p> <a href="/download/table1"> Download this table </a> </p></td>
+    <td><a href="/download/table1"> <p>Download table: </p> </a> <p>Kinase-Phosphosite </p> <p>(All phosphosites) </p></td>
 </tr>
 
 <tr>
@@ -69,12 +69,12 @@
 
 
 <tr>
-<td><a href="#KINPHOSRES"> <p>Kinase-Phosphosite: </p>  <p>Phosphosites with </p> <p>a kinase match </p></a> <p> ------------------------- </p> <p> <a href="/download/table2"> Download this table </a></p></td>
+    <td><a href="/download/table2"> <p>Download table: </p> </a><p>Kinase-Phosphosite </p>  <p>(Phosphosites with </p> <p>a kinase match) </p></td>
 </tr>
 
 
 <tr>
-<td><a href="#KINPHOSNOT"> <p>Kinase-Phosphosite: </p> <p>Phosphosites with </p> <p>no kinase match </p></a> <p> -------------------------</p> <p> <a href="/download/table3"> Download this table </a></p></td>
+    <td><a href="/download/table3"> <Download table : </p></a><p>Kinase-Phosphosite </p> <p>(Phosphosites with </p> <p>no kinase match) </p> </td>
 </tr>
 
 
@@ -92,7 +92,7 @@
         font-size:20px;
         border: 2px solid #FFFAFA; font-weight: bold">
 
- <a id="KINRKA"> Kinase(s) Relative Activity</a>
+ <a> Kinase(s) Relative Activity</a>
 
 </div>
 
@@ -116,7 +116,7 @@
         font-size:20px;
         border: 2px solid #FFFAFA; font-weight: bold; padding-right: 810px">
 
- <a id="RKABAR"> Kinase(s) Relative Activity Plot</a>
+ <a> Kinase(s) Relative Activity Plot</a>
 
 </div>
 
@@ -139,19 +139,13 @@
         font-size:20px;
         border: 2px solid #FFFAFA; font-weight: bold; padding-right: 810px">
 
-<a id="KINPHOSALL">Kinase-Phosphosite: All phosphosites</a>
+<a>Kinase-Phosphosite: All phosphosites</a>
 
 </div>
 
 <div style="float: right; line-height: 25px; padding-right: 110px">
 
     <a href="/download/table1"> Download this table </a>
-
-    {% for table in tables1 %}
-            {{titles1[loop.index]}}
-            {{ table|safe }}
-    {% endfor %}
-
 </div>
 
 <div style="float: left; line-height: 25px; width: 950px; height: 23px; background-color:#F0F8FF;
@@ -188,18 +182,13 @@
         font-size:20px;
         border: 2px solid #FFFAFA; font-weight: bold; padding-right: 810px">
 
-<a id="KINPHOSRES">Kinase-Phosphosite: Phosphosites with a kinase match</a>
+<a>Kinase-Phosphosite: Phosphosites with a kinase match</a>
 
 </div>
 
 <div style="float: right; line-height: 25px; padding-right: 310px">
 
     <a href="/download/table2"> Download this table </a>
-
-    {% for table in tables2 %}
-            {{titles2[loop.index]}}
-            {{ table|safe }}
-    {% endfor %}
 
 </div>
 
@@ -212,18 +201,13 @@
         font-size:20px;
         border: 2px solid #FFFAFA; font-weight: bold; padding-right: 810px">
 
-<a id="KINPHOSNOT"> Kinase-Phosphosite: Phosphosites with no kinase match</a>
+<a> Kinase-Phosphosite: Phosphosites with no kinase match</a>
 
 </div>
 
 <div style="float: right; line-height: 25px; padding-right: 210px">
 
     <a href="/download/table3"> Download this table </a>
-
-    {% for table in tables3 %}
-            {{titles3[loop.index]}}
-            {{ table|safe }}
-    {% endfor %}
 
 </div>
 

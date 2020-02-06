@@ -151,6 +151,9 @@
 <th><b>Protein</b></th>
 <th ><b>Gene</b></th>
 <th><b>Residue</b></th>
+<th><b>Neighbouring Sequence</b></th>
+<th><b>Chromosomal Location</b></th>
+<th><b>See all other phosphosites in this chromosomal location</b></th>
 </tr>
 </thead>
 
@@ -161,6 +164,9 @@
 <td> {{x.PROTEIN}} </td>
 <td> {{x.GENE}} </td>
 <td> {{x.MOD_RSD}}</td>
+<td> {{x.SITE_7_AA}}</td>
+<td> {{x.HU_CHR_LOC}}</td>
+<td> <a href="/gen/{{x.HU_CHR_LOC}}"> {{x.HU_CHR_LOC}} </a></td>
 </tr>
     {% endfor %}
 

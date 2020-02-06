@@ -135,6 +135,7 @@
 <th><b>Disease</b></th>
 <th><b>Alteration</b></th>
 <th><b>Notes</b></th>
+<th><b>Phosphosite-Disease Relationship Evidence</b></th>
 </tr>
 
 <h1>{% for x in searchphosdis %}</h1>
@@ -143,6 +144,7 @@
 <td> {{x.DISEASE}} </td>
 <td> {{x.ALTERATION}} </td>
 <td> {{x.NOTES}} </td>
+<td> <a href="https://www.ncbi.nlm.nih.gov/pubmed/?term={{x.PMIDs}}" target="_blank"> {{x.PMIDs}} </a> </td>
 </tr>
 
 <h1>{%  endfor %}</h1>
