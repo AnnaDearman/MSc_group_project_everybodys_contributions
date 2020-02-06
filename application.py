@@ -12,6 +12,7 @@ from wtforms.validators import DataRequired
 
 #Modules necessary to upload a phosphoproteomics data file to the website, and to be able to download the tables returned
 from flask import request, send_from_directory, send_file
+import os
 from werkzeug.utils import secure_filename
 
 #Modules necessary to perform the data analysis of the phosphoproteomics data file uploaded by the user
