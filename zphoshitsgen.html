@@ -16,7 +16,7 @@
 
   <h1 >JACKY </h1>
 
-    <div style="position: relative;left: 660px; top:21px">
+    <div style="position: relative;left: 850px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
     <option value="phos/">Phosphosite</option>
     <option value="kin/">Kinase</option>
@@ -24,16 +24,21 @@
     </select>
     </div>
 
-    <div style="position: relative;left: 770px; top:0px">
+    <div style="position: relative;left: 960px; top:0px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
-    <option value="">Browse by</option>
+    <option value="">Genomic Location</option>
     <option value="/prot/">Protein</option>
     <option value="/phoskin/">Phosphorylated by</option>
     <option value="/nseq/">Neighbouring Sequence</option>
-    <option value="/gen/">Genomic Location</option>
+
     </select>
     </div>
 
+    <map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:35px; width: 150px; height: 45px">
   
 
 </div>
