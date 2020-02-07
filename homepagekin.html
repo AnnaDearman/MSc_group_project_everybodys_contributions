@@ -96,7 +96,7 @@ JACKY was built by retrieving data from the following websites: </p>
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> Submit a tsv file (other extensions won't work) containing phosphoproteomics data by clicking on the 'Choose File' button of this page.</p>
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">
-<b>The file should follow the next format</b> or the analysis won't be correct(the name of the headers does not matter, but the order of the columns does):</p>
+<b>The file should follow the next format</b> or the analysis won't be correct(the name of the headers does not matter, but the order of the columns does), note that the last two columns are dispensable:</p>
 
 <img src="/static/file_structure.jpg" style="width:730px;height:200px;">
 
@@ -106,11 +106,10 @@ The first table shows the RKA of each kinase, as well as other information on ea
 <img src="/static/RKA_table.jpg" style="width:700px;height:70px;">
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The kinases RKA is also shown on a bar plot.</p>
-<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The second one shows each substrate on the file submitted and the kinase that phosphorylates them, as well as other information on each phosphosite:</p>
-
-<img src ="/static/PK_table.jpg" style="width:700px;height:70px;">
-
-<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">For some substrates, a kinase match may not be found on JACKY, the third table has the same columns as the second one, but contains only the substrates fow which a kinase match was not found, while the fourth table contains only the substrates for which a kinase match was found. </p>
+<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The second table shows each substrate on the file submitted and the kinase that phosphorylates them, as well as other information on each phosphosite,</p>
+For some substrates, a kinase match may not be found on JACKY, the third table has the same columns as the second one, but contains only the substrates for which a kinase match was not found, while the fourth table contains only the substrates for which a kinase match was found. </p>
+<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> A volcano plot shows the substrates plotted according to their log fold change (x axis) and their negative log10p (y axis).</p>
+</div>
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> A volcano plot shows the substrates plotted according to their log fold change (x axis) and their negative log10p (y axis).</p>
 </div>
 
