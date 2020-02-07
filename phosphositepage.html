@@ -5,6 +5,10 @@
     <title>{{ID_PH}}</title>
 
     <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
 </head>
 
 
@@ -31,6 +35,12 @@
     <option value="/gen/">Genomic Location</option>
     </select>
     </div>
+    
+<map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:35px; width: 150px; height: 45px">
 
 
 </div>
@@ -92,8 +102,14 @@
 </div>
 
 <div id="targetbox">
+    
+<script>
+$(document).ready( function () {
+    $('#phoskintable').DataTable();
+} );
+</script>
 
-<table border="1" id="subsection-table">
+<table border="1" id="phoskintable">
 
 <tr>
 <th><b>Phosphorylated by</b></th>
