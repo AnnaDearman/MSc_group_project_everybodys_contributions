@@ -17,7 +17,7 @@
 
   <h1 >JACKY </h1>
 
-<div style="position: relative;left: 810px; top:18px">
+<div style="position: relative;left: 840px; top:18px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>  
     <option value="/kin/">Kinase</option>
     <option value="inh/">Inhibitor</option>
@@ -25,13 +25,19 @@
     </select>
     </div>
 
-    <div style="position: relative; left: 950px; bottom:5px">
+    <div style="position: relative; left: 990px; bottom:5px">
     <form method="POST">
     {{ form.csrf_token }}
     {{ form.protein_name.label }} {{ form.protein_name() }}
     {{ form.submit() }}  
     </form>
     </div>
+    
+    <map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:55px; width: 150px; height: 45px">
 
 </div>
 
