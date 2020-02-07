@@ -1,0 +1,68 @@
+
+      .header{
+        width:100%;
+        height:60px;
+        background-color:#87CEFA;
+      }
+      .subheader{
+        width:100%;
+        height:23px;
+        background-color:#ECECEC;
+        font-size:10px;
+        font-family:verdana;
+        border: 2px solid #FFFAFA; }
+      #boxheader { width: 300px; height: 23px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:20px;
+        border: 2px solid #FFFAFA; font-weight: bold}
+
+      #boxheader2 { width: 300px; height: 46px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:20px;
+        border: 2px solid #FFFAFA; font-weight: bold}
+
+
+      #entrybox { width: 300px; height: 250px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA; overflow: scroll}
+
+      #spacebox { width: 300px; height: 23px; float: right; padding-right: 810px;background-color:#F0F8FF}
+
+
+      #targetbox { width: 300px; height: 200px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA; overflow: scroll}
+
+      #homepagesub{ color: #800080;font-family: verdana ; padding-left: 10px; font-size: 20px} 
+
+
+  
+
+th, td {
+      padding-top: 10px;
+      padding-bottom: 10px;
+      padding-right: 10px;
+      padding-left: 10px;
+      text-align: middle
+    }
+
+
+
+a{padding-left: 10px}
+p{padding-left: 10px}
+
+h1{
+  color: #191970;
+        font-size:20px;
+        font-family:verdana;
+        text-align:left;
+        margin-top:0px;
+        float:left;
+        margin:0px;
+        line-height:55px;
+        padding-left:20px;}
+
+body { background-color:#F0F8FF ; margin:0px; padding:0px; border: 2px solid #BDE0FF }
+
+h2 { color: black;font-family: verdana; padding-left: 10px; font-size: 20px}     
+
+
+
