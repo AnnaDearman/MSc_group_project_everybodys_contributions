@@ -30,7 +30,7 @@ import pandas as pd
 
 # engine = create_engine('sqlite:///c:\\sqlite\\final_database.db', echo=True)
 
-engine = create_engine('sqlite:///c__sqlite_final_database_v4.db', echo=True)
+engine = create_engine('sqlite:///c__sqlite_final_database.db', echo=True)
 
 Session = sessionmaker(bind=engine)
 session = Session()
