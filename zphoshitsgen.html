@@ -14,8 +14,6 @@
 
 <div class="header">
 
-  <h1 >JACKY </h1>
-
     <div style="position: relative;left: 850px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
     <option value="phos/">Phosphosite</option>
@@ -700,7 +698,7 @@ $(document).ready( function () {
         {% for result in resultss %}
     <tr>
         <td> {{result.PROTEIN}}</td>
-        <td><a href="/phos/redirect/{{result.PHOS_ID}}">{{result.ID_PH}}</a> </td>
+        <td><a href="/phos/redirect/{{result.PHOS_ID5}}">{{result.ID_PH}}</a> </td>
         <td> {{result.MOD_RSD}}</td>
         <td> {{result.GENE}}</td>
         <td> {{result.SITE_7_AA}}</td>

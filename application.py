@@ -653,8 +653,8 @@ def kinase(kinase_name):
 def phosphositepage(phosphosite_search, phosphosite_name):
     form = SearchForm()
     searchphos = session.query(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).first() #Query the Phosphosites table on the database for entries on the PHOS_ID column that start with the phosphosite selected on the phosphosite hits page
-    searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID==phosphosite_name).all() #Join two tables from the database (HumanKinases, KinasesPhosphosites) to get the entries on the HumanKinases table for kinases which in the KinasesPhosphosites table are in the same row as the phosphosite (PHOS_ID) selected on the phosphosite hits page
-    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).filter(Phosphosites.PHOS_ID==phosphosite_name).all() #Join two tables from the database (PhosphositesDiseases, Phosphosites) to isolate entries on the PhosphositesDiseases table for the phosphosite selected on the phosphosite hits page
+    searchphoskin = session.query(HumanKinases).join(KinasesPhosphosites).filter(KinasesPhosphosites.PHOS_ID5==phosphosite_name).all() #Join two tables from the database (HumanKinases, KinasesPhosphosites) to get the entries on the HumanKinases table for kinases which in the KinasesPhosphosites table are in the same row as the phosphosite (PHOS_ID) selected on the phosphosite hits page
+    searchphosdis = session.query(PhosphositesDiseases).join(Phosphosites).filter(Phosphosites.PHOS_ID5==phosphosite_name).all() #Join two tables from the database (PhosphositesDiseases, Phosphosites) to isolate entries on the PhosphositesDiseases table for the phosphosite selected on the phosphosite hits page
     return render_template('phosphositepage.html', form=form, ID_PH=searchphos.ID_PH, GENE=searchphos.GENE, PROTEIN=searchphos.PROTEIN, HU_CHR_LOC=searchphos.HU_CHR_LOC, MOD_RSD=searchphos.MOD_RSD, MW_kD=searchphos.MW_kD, SITE_7_AA=searchphos.SITE_7_AA, DOMAIN=searchphos.DOMAIN, SOURCE=searchphos.SOURCE, searchphoskin=searchphoskin, searchphosdis=searchphosdis )
 
 #Inhibitor page
