@@ -11,8 +11,6 @@
 
 <div class="header">
 
-  <h1 >JACKY </h1>
-
     <div style="position: relative;left: 700px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
     <option value="phos/">Phosphosite</option>
@@ -59,7 +57,7 @@
 
 <div style="background-color:#F8F8FF; padding-left: 5px; padding-top: 1px; padding-bottom: 10px; height: 140px; width:1235px; position:relative; left:10px; top:1px; border: 2px solid #E6E6FA"> 
 
-<p style="font-family: verdana ; padding-left: 3px; padding-right: 20px; font-size: 11px"> JACKY is a database containing information on 535 human kinases, 243,369 phosphosites, 11,518 human kinase-phosphosite relationships, 1,061 phosphosite-disease relationships, 30,016 human kinase inhibitors, and 58,978 inhibitor-kinase relationships. 
+<p style="font-family: verdana ; padding-left: 3px; padding-right: 20px; font-size: 11px"> JACKY is a database containing information on 535 human kinases, 243,369 phosphosites, 11,456 human kinase-phosphosite relationships, 1,061 phosphosite-disease relationships, 30,016 human kinase inhibitors, and 58,978 inhibitor-kinase relationships. 
 Kinases are enzymes that catalyze the transfer of phosphate groups from ATP to specific substrates/phosphosites located on the same kinase or a different molecule (generally a protein), in a process called phosphorylation. Since kinases are key regulators of most cell signalling networks, kinase mutations often result in diseases such as cancer, making them a target for therapy through the use of kinase inhibitors. 
 JACKY was built by retrieving data from the following websites: </p>
 
@@ -71,7 +69,7 @@ JACKY was built by retrieving data from the following websites: </p>
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px;font-size: 11px">
 <b> Phosphosites:</b> 
-    <a href="https://www.phosphosite.org/homeAction.action"> PhosphoSite </a> ,
+    <a href="https://www.phosphosite.org/homeAction.action"> PhosphoSite </a> please note that phosphosite.org data is <a href="https://www.phosphosite.org/staticDownloads"> not for commercial use </a> ,
     <a href="http://phospho.elm.eu.org"> Phospho.ELM </a>
 </p>
 
@@ -105,7 +103,7 @@ JACKY was built by retrieving data from the following websites: </p>
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> Submit a tsv file (other extensions won't work) containing phosphoproteomics data by clicking on the 'Choose File' button of this page.</p>
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">
-<b>The file should follow the next format</b> or the analysis won't be correct(the name of the headers does not matter, but the order of the columns does), note that the two last columns are dispensable:</p>
+<b>The file should follow the next format</b> for each inhibitor present on your file, or the analysis won't be correct(the name of the headers does not matter, but the order of the columns does), note that <b>the last two columns are dispensable </b>:</p>
 
 <img src="/static/file_structure.jpg" style="width:730px;height:200px;">
 
@@ -115,7 +113,7 @@ The first table shows the RKA of each kinase, as well as other information on ea
 <img src="/static/RKA_table.jpg" style="width:700px;height:70px;">
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The kinases RKA is also shown on a bar plot.</p>
-<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The second table shows each substrate on the file submitted and the kinase that phosphorylates them, as well as other information on each phosphosite,</p>
+<p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">The second table shows each substrate on the file submitted and the kinase that phosphorylates them, as well as other information on each phosphosite,
 For some substrates, a kinase match may not be found on JACKY, the third table has the same columns as the second one, but contains only the substrates for which a kinase match was not found, while the fourth table contains only the substrates for which a kinase match was found. </p>
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> A volcano plot shows the substrates plotted according to their log fold change (x axis) and their negative log10p (y axis).</p>
 </div>

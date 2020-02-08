@@ -14,7 +14,6 @@
 
 <div class="header">
 
-  <h1 >JACKY </h1>
 
 <div style="position: relative;left: 700px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
@@ -75,7 +74,7 @@ $(document).ready( function () {
     <tbody>
         {% for result in resultss %}
     <tr>
-        <td><a href="/phos/redirect/{{result.PHOS_ID}}">{{result.ID_PH}}</a> </td>
+        <td><a href="/phos/redirect/{{result.PHOS_ID5}}">{{result.ID_PH}}</a> </td>
         <td> {{result.PROTEIN}}</td>
         <td> {{result.MOD_RSD}}</td>
         <td> {{result.GENE}}</td>
