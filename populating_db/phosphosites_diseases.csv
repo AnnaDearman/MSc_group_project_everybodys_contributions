@@ -700,363 +700,364 @@ endometrial cancer,increased,O96013,26218748,9,64,140,3241,"nuclear p-Pak4, path
 lung cancer,,P29317,26158630,4,32,171,6347,"co-localized with RSK, associated with overall survival of lung cancer patients",P29317(S897),DP0000699
 breast cancer,increased,P03372,26272591,16,0,0,,AKAP13 mRNA levels correlate with ER-alpha S305 phosphorylation and poor outcome in patients who received tamoxifen treatment  ,P03372(S305),DP0000700
 hepatocellular carcinoma,,P16949,26505358,48,118,91,," there was a signifcant increase of stathmin expression in metastatic hepatic cancer, implying that the phosphorylation status of stathmin S25 may be involved in the invasion and metastasis of HCC",P16949(S25),DP0000701
-PAAND,mutation of site,O15553,27030597,4,6,0,,,O15553(S242),DP0000702
-CRPC,increased,P06748,26993766,21,27,30,3541,,P06748(T199),DP0000703
-CRPC,increased,P06748,26993766,7,25,21,,,P06748(T237),DP0000704
-CRPC,increased,P06748,26993766,7,20,17,,,P06748(T234),DP0000705
-ASD autism spectrum,decreased,Q8N0W4,25675530,1,1,0,,phosphorylation of this site is eliminated in individuals carrying the autism-associated mutation R704C,Q8N0W4(T707),DP0000706
-colorectal carcinoma; non-small cell squamous cell lung carcinoma,decreased,Q13131,25679763,211,14,33,5256; 2535; 4188; 50081; 2531,,Q13131(T183),DP0000707
-multiple sclerosis,increased,Q8NB16,25801023,5,0,1,,MS brain samples,Q8NB16(T357),DP0000708
-multiple sclerosis,increased,Q13546,25801023,2,1,0,,MS brain samples,Q13546(S14),DP0000709
-multiple sclerosis,increased,Q13546,25801023,9,2,0,31122; 65746; 44590,MS brain samples,Q13546(S166),DP0000710
-multiple sclerosis,increased,Q9Y572,25801023,13,2,0,57220; 93654; 91702,MS brain samples,Q9Y572(S227),DP0000711
-multiple sclerosis,increased,Q13546,25801023,2,1,1,,MS brain samples,Q13546(S15),DP0000712
-B cell lymphoma; non-Hodgkin's lymphoma; lymphoplasmacytic lymphoma; follicular lymphoma,increased,P67870,25788269,6,44,58,,,P67870(S209),DP0000713
-B cell lymphoma; non-Hodgkin's lymphoma; lymphoplasmacytic lymphoma; follicular lymphoma,increased,Q16543,25788269,12,29,0,13248,,Q16543(S13),DP0000714
-rheumatoid arthritis; SLE,increased,P28799,26005049,1,0,0,,,P28799(S81),DP0000715
-kidney cancer,,Q14247,21696810,40,61,745,4569,correlated with sarcomatoid renal cell carcinoma,Q14247(Y421),DP0000716
-T-ALL,increased,P51617,26068967,2,1,0,,,P51617(T209),DP0000717
-glioblastoma multiforme,increased,Q07912,25257795,1,2,5,,,Q07912(Y635),DP0000718
-non-small cell squamous cell lung carcinoma,increased,Q16555,26555036,20,47,84,,CRMP2A is present within the nucleus in cancer cells,Q16555(S522),DP0000719
-"obesity, hyperphagic",,Q9Y4H2,26657864,3,37,80,,,Q9Y4H2(S391),DP0000720
-HNSCC,increased,P08559,27498883,34,77,7,,worse clinical outcome,P08559(S232),DP0000721
-tuberous sclerosis,increased,O60716,27516388,11,71,56,,,O60716(S268),DP0000722
-Alzheimer's disease,increased,P29966,27557632,1,33,3,,,P29966(S147),DP0000723
-Alzheimer's disease,increased,P29966,27557632,1,7,0,,,P29966(S132),DP0000724
-Alzheimer's disease,increased,P29966,27557632,1,40,0,,,P29966(S46),DP0000725
-Alzheimer's disease,increased,P29966,27557632,1,68,8,,,P29966(T150),DP0000726
-breast cancer,increased,P49841,27494834,413,40,227,9325; 14332; 8566; 8466; 14310; 14630; 9323; 9336; 9322; 9331; 14026; 9327; 5558,sites correlated and low expression associates with better survival in human breast cancers,P49841(S9),DP0000727
-LBD,increased,Q16555,27609071,22,34,35,9397,,Q16555(T514),DP0000728
-Parkinson's disease,decreased,P49841,27609071,413,40,227,9325; 14332; 8566; 8466; 14310; 14630; 9323; 9336; 9322; 9331; 14026; 9327; 5558,Parkinson's disease dementia,P49841(S9),DP0000729
-Parkinson's disease; LBD,decreased,P49841,27609071,75,125,4206,,Parkinson's disease dementia,P49841(Y216),DP0000730
-leukemia,increased,P24752,27867011,2,1,0,,,P24752(Y407),DP0000731
-Parkinson's disease,decreased,Q6UUV9,27903866,1,0,0,,,Q6UUV9(S215),DP0000732
-mesothelioma,increased,P35240,18835652,26,39,1,9163; 13281,"in patient samples, merlin was truncated or phosphorylated on S518",P35240(S518),DP0000733
-HSAN1,mutation of site,O15270,25567748,1,0,0,,,O15270(S384),DP0000734
-gastric carcinoma,increased,Q9Y6X9,25888627,2,36,8,,associated with the poor prognosis of clinical gastric cancer,Q9Y6X9(S739),DP0000735
-colorectal cancer,increased,P04637,25860929,402,8,0,9235; 8695; 9284; 9286; 8514; 12571; 4030,FBXW7-mutations,P04637(S15),DP0000736
-Alzheimer's disease,increased,P56817,26317805,1,0,0,,,P56817(T252),DP0000737
-ASD autism spectrum,mutation of site,Q05086-2,26255772,3,1,0,,,Q05086-2(T485),DP0000738
-psoriasis,increased,Q16539,24863062,8,1,0,,,Q16539(Y323),DP0000739
-myelodysplastic syndrome,increased,P35611,26578796,21,55,158,,,P35611(S726),DP0000740
-hypertrophic cardiomyopathy,increased,Q92784-2,26582913,1,3,1,,S348 phosphorylation is required for hypertrophy,Q92784-2(S348),DP0000741
-T cell lymphoma,mutation of site,Q9BXL7,26551667,3,0,0,,"Sezary syndrome, cutaneous T cell lymphoma (CTCL)",Q9BXL7(S615),DP0000742
-multiple myeloma,increased,Q15910,26517694,2,0,1,,,Q15910(S21),DP0000743
-microlissencephaly,,Q9NXR1,21529751,2,13,31,,T246 in maybe involved in disease,Q9NXR1(T246),DP0000744
-non-small cell lung adenocarcinoma,increased,P28290,26947549,1,48,2,,high levels of phosphorylation had significantly reduced relapse-free survival (p < 0.01),P28290(S92),DP0000745
-"breast cancer; breast cancer, triple negative",increased,P12931,26923594,346,100,3046,70926; 6943; 2101,higher in basal subtype BC;TNBC,P12931(Y419),DP0000746
-"obesity, hyperphagic",increased,P33778,27151441,7,12,47,,,P33778(S36),DP0000747
-breast cancer,decreased,P46531,27335110,4,1,0,,,P46531(T2511),DP0000748
-breast cancer,decreased,P02786,21859709,1,44,1048,,enhances breast cancer cell survival,P02786(Y20),DP0000749
-breast cancer,increased,Q9UQM7,27605043,127,30,72,12716,primary breast cancer and lymph node metastases tissues,Q9UQM7(T286),DP0000750
-breast cancer,increased,P15407,27816489,2,0,0,,,P15407(T217),DP0000751
-SBMA,increased,P10275,28003546,8,10,0,,,P10275(S96),DP0000752
-myotonic dystrophy type1,increased,Q92879,24376746,3,8,1,,DM1-E2 (classic phenotype),Q92879(S28),DP0000753
-myotonic dystrophy type1,,Q92879,24376746,3,8,1,,"DM1-E1, DM1-CDM, no change",Q92879(S28),DP0000754
-DM2,,Q92879,24376746,3,8,1,,"DM2-PS, DM2-PDM, DM2-PROMM no change",Q92879(S28),DP0000755
-neuroblastoma,increased,Q13443,24349301,0,3,47,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q13443(Y736),DP0000756
-neuroblastoma,increased,Q9H6X2,24349301,1,11,108,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9H6X2(Y425),DP0000757
-neuroblastoma,increased,Q9UPS8,24349301,0,11,67,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9UPS8(Y296),DP0000758
-neuroblastoma,increased,P05067,24349301,11,19,864,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P05067(Y757),DP0000759
-neuroblastoma,increased,P15529-4,24349301,0,18,604,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P15529-4(Y357),DP0000760
-neuroblastoma,increased,P24941,24349301,31,126,3845,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P24941(Y15),DP0000761
-neuroblastoma,increased,Q00535,24349301,15,47,894,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q00535(Y15),DP0000762
-neuroblastoma,increased,P15529-2,24349301,0,18,604,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P15529-2(Y387),DP0000763
-neuroblastoma,increased,P06493,24349301,151,140,3902,4539; 14566; 9111,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06493(Y15),DP0000764
-neuroblastoma,increased,P06493,24349301,23,115,1764,2543,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06493(T14),DP0000765
-neuroblastoma,increased,O60716,24349301,4,35,735,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O60716(Y96),DP0000766
-neuroblastoma,increased,Q8NE01,24349301,0,5,125,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8NE01(Y301),DP0000767
-neuroblastoma,increased,P14923,24349301,0,4,118,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P14923(Y480),DP0000768
-neuroblastoma,increased,Q16832,24349301,1,9,366,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16832(Y740),DP0000769
-neuroblastoma,increased,Q16832,24349301,1,9,409,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16832(Y736),DP0000770
-neuroblastoma,increased,P29317,24349301,2,55,860,8244; 8862,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P29317(Y772),DP0000771
-neuroblastoma,increased,Q9BSJ8,24349301,0,35,1220,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9BSJ8(Y822),DP0000772
-neuroblastoma,increased,Q99613,24349301,0,7,118,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q99613(Y881),DP0000773
-neuroblastoma,increased,Q3V6T2,24349301,4,12,137,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q3V6T2(Y1799),DP0000774
-neuroblastoma,increased,P21802,24349301,1,8,66,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P21802(Y656),DP0000775
-neuroblastoma,increased,P49841,24349301,75,125,4206,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P49841(Y216),DP0000776
-neuroblastoma,increased,P06899,24349301,0,6,33,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06899(Y43),DP0000777
-neuroblastoma,increased,P52272,24349301,0,14,264,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P52272(Y64),DP0000778
-neuroblastoma,increased,P07948,24349301,20,60,2054,70926; 6943; 2101,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P07948(Y397),DP0000779
-neuroblastoma,increased,P08069,24349301,16,31,455,80732; 3021,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08069(Y1161),DP0000780
-neuroblastoma,increased,P53778,24349301,2,33,804,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P53778(Y185),DP0000781
-neuroblastoma,increased,P08069,24349301,13,38,707,3918; 3024; 2969,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08069(Y1165),DP0000782
-neuroblastoma,increased,O60674,24349301,8,40,825,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O60674(Y570),DP0000783
-neuroblastoma,increased,P35580,24349301,0,12,449,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P35580(Y1415),DP0000784
-neuroblastoma,increased,Q96BF3,24349301,0,3,126,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96BF3(Y222),DP0000785
-neuroblastoma,increased,Q9Y4K4,24349301,0,7,161,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9Y4K4(Y31),DP0000786
-neuroblastoma,increased,P06213,24349301,34,31,455,80732; 3021,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06213(Y1185),DP0000787
-neuroblastoma,increased,Q96BF3-2,24349301,0,3,117,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96BF3-2(Y188),DP0000788
-neuroblastoma,increased,P06213,24349301,40,36,707,3918; 3024; 2969,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06213(Y1189),DP0000789
-neuroblastoma,increased,Q9C0B0,24349301,0,1,3,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9C0B0(Y232),DP0000790
-neuroblastoma,increased,P38159,24349301,0,7,70,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P38159(Y255),DP0000791
-neuroblastoma,increased,O95297,24349301,1,57,1101,5543; 8088,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O95297(Y263),DP0000792
-neuroblastoma,increased,Q9Y4G6,24349301,0,5,19,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9Y4G6(Y72),DP0000793
-neuroblastoma,increased,P08670,24349301,0,50,2170,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08670(Y61),DP0000794
-neuroblastoma,increased,Q8N5H7,24349301,0,2,22,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8N5H7(Y316),DP0000795
-neuroblastoma,increased,Q08174,24349301,0,7,63,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q08174(Y897),DP0000796
-neuroblastoma,increased,Q9C0H9,24349301,1,18,217,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9C0H9(Y268),DP0000797
-neuroblastoma,increased,Q8IV08,24349301,0,6,127,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8IV08(Y7),DP0000798
-breast cancer,increased,P03372,24166501,39,5,0,42101; 64508,"S167/S305 and Ser167 alone, but not Ser305 phosphorylation, are significantly associated disease-free survival in breast cancer patients",P03372(S167),DP0000799
-breast cancer,increased,P03372,24166501,16,0,0,,"S167/S305 and Ser167 alone, but not Ser305 phosphorylation, are significantly associated disease-free survival in breast cancer patients",P03372(S305),DP0000800
-Alzheimer's disease,increased,O00429,25192600,2,1,0,,blocking phosphorylation is neuroprotective in models,O00429(S40),DP0000801
-Alzheimer's disease,increased,O00429,25192600,2,1,0,,blocking phosphorylation is neuroprotective in models,O00429(S44),DP0000802
-Parkinson's disease,increased,P37840,25637461,42,5,0,23706,"Lower pS129 levels correlated with worse clinical condition at early stages, but better condition at later stages.",P37840(S129),DP0000803
-neuroblastoma,increased,P34741,24349301,1,5,6,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P34741(Y191),DP0000804
-neuroblastoma,increased,P62140,24349301,0,8,318,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P62140(Y306),DP0000805
-neuroblastoma,increased,P61006,24349301,0,7,76,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P61006(Y5),DP0000806
-neuroblastoma,increased,Q63HR2,24349301,1,44,1536,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q63HR2(Y483),DP0000807
-neuroblastoma,increased,Q16881,24349301,0,21,566,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16881(Y281),DP0000808
-neuroblastoma,increased,P25116,24349301,0,6,121,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P25116(Y420),DP0000809
-neuroblastoma,increased,Q92529,24349301,1,3,27,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q92529(Y406),DP0000810
-neuroblastoma,increased,P18077,24349301,0,7,42,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P18077(Y34),DP0000811
-neuroblastoma,increased,Q96GP6,24349301,0,11,74,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96GP6(Y628),DP0000812
-neuroblastoma,increased,Q05655,24349301,35,58,1707,2055,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q05655(Y313),DP0000813
-vulvar cancer,increased,P06493,25849598,151,140,3902,4539; 14566; 9111,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P06493(Y15),DP0000814
-vulvar cancer,increased,P06493,25849598,24,40,83,9114,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P06493(T161),DP0000815
-vulvar cancer,increased,P14635,25849598,11,2,0,,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P14635(S126),DP0000816
-prostate cancer,increased,Q13501,26279575,3,77,278,13121,,Q13501(S272),DP0000817
-prostate cancer,increased,Q13501,26279575,3,71,136,13121,,Q13501(T269),DP0000818
-Parkinson's disease,increased,P62988,26389970,19,12,0,62802; 37642; 70973,,P62988(S65),DP0000819
-chronic myelogenous leukemia,increased,P16989,21368869,1,30,1,,,P16989(S134),DP0000820
-breast cancer,increased,Q8N6T7,25074979,2,7,23,,poorer overall survival,Q8N6T7(S338),DP0000821
-breast cancer,decreased,P46527,26701207,24,0,1,,correlates with low level of Myc protein,P46527(T157),DP0000822
-pheochromocytoma,mutation of site,P07949,20080836,2,0,0,,double C634Y/Y791F mutant,P07949(Y791),DP0000823
-Parkinson's disease,,Q9BXM7,22238344,1,1,0,,,Q9BXM7(T313),DP0000824
-AIS,mutation of site,P10275,22334658,1,0,0,,,P10275(R407),DP0000825
-hypertrophic cardiomyopathy,mutation of site,Q9BR39,22389502,1,0,0,,Y141H,Q9BR39(Y141),DP0000826
-breast cancer,increased,P16949,27130664,45,110,166,4191; 3426,higher incidence of recurrence,P16949(S38),DP0000827
-anal carcinoma,increased,Q14790,27325299,4,0,0,,overall survival (OS) was superior for tumors showing a high pT273 caspase-8 signal ,Q14790(T273),DP0000828
-breast cancer,mutation of site,P03372,27748765,9,0,0,,"mutated in breast cancer, CRISPR-Cas9 genome editing mutation Y537S. ",P03372(Y537),DP0000829
-Alzheimer's disease,increased,P31994-2,27834631,4,2,1,,,P31994-2(Y273),DP0000830
-"melanoma skin cancer; cancer, squamous cell carcinoma; BCC",increased,Q14934,27893713,1,1,0,,,Q14934(S259),DP0000831
-cervical cancer,increased,P53350,27899378,1,1,0,,higher  PLK1  tyrosine  phosphorylation show  a  poor  5-year  survival  rate,P53350(Y425),DP0000832
-ALS,increased,Q13148,26192745,40,1,0,,,Q13148(S409),DP0000833
-chronic myelogenous leukemia,decreased,P45983,26147002,234,32,392,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,,P45983(T183),DP0000834
-chronic myelogenous leukemia,decreased,P31947,26147002,5,0,0,,,P31947(S186),DP0000835
-chronic lymphocytic leukemia; mantle cell lymphoma,increased,P09917,26210919,7,0,0,,,P09917(S524),DP0000836
-colorectal cancer,increased,P15923,26212009,1,2,1,,,P15923(S39),DP0000837
-HNSCC,increased,P06400,26265441,12,17,36,,,P06400(T356),DP0000838
-"colorectal carcinoma; ovarian cancer; non-small cell lung adenocarcinoma, surrounding tissue",increased,P11387,26248194,3,0,0,,,P11387(S506),DP0000839
-Fanconi's anaemia,decreased,P16949,26466335,34,94,61,3353,,P16949(S16),DP0000840
-Fanconi's anaemia,decreased,P16949,26466335,45,110,166,4191; 3426,,P16949(S38),DP0000841
-hepatocellular carcinoma,increased,P06748,26536659,7,25,21,,,P06748(T237),DP0000842
-hepatocellular carcinoma,increased,P06748,26536659,7,20,17,,,P06748(T234),DP0000843
-pancreatic cancer,increased,P31749,26676747,585,11,18,43506; 48646; 5106; 13842; 2965; 9275; 4056; 86758; 5056; 13038,high BAP28  or low AktT308 increased survival and response to gemcitabine,P31749(T308),DP0000844
-breast cancer,increased,P56945,26867768,3,22,285,,driving mammary carcinoma progression,P56945(Y267),DP0000845
-breast cancer,increased,P56945,26867768,3,15,191,,driving mammary carcinoma progression,P56945(Y306),DP0000846
-breast cancer,increased,P56945,26867768,2,17,284,,driving mammary carcinoma progression,P56945(Y287),DP0000847
-breast cancer,increased,P56945,26867768,12,43,723,4014,driving mammary carcinoma progression,P56945(Y249),DP0000848
-breast cancer,increased,P56945,26867768,3,30,698,,driving mammary carcinoma progression,P56945(Y234),DP0000849
-RTT,mutation of site,P51608,27064487,1,0,0,,,P51608(T158),DP0000850
-Parkinson's disease,increased,P37840,27348587,4,2,11,,accumulates in Lewy bodies,P37840(Y39),DP0000851
-cystic fibrosis,mutation of site,P13569,27261451,1,0,0,,S1045Y-CFTR mutation,P13569(S1045),DP0000852
-non-small cell lung adenocarcinoma,increased,P10244,27212033,3,2,43,,,P10244(T487),DP0000853
-hypertrophic cardiomyopathy,decreased,Q9NPH5,27525436,1,1,0,,,Q9NPH5(Y566),DP0000854
-cardiomyopathy,increased,O00429,27739424,25,74,114,3455; 4494,,O00429(S616),DP0000855
-"breast cancer; obesity, hyperphagic",,Q13485,28115363,3,0,0,,,Q13485(T277),DP0000856
-atherosclerosis,,Q13133,25825525,5,0,0,,,Q13133(S198),DP0000857
-Alzheimer's disease,decreased,Q9NZC7,15126504,19,0,0,,,Q9NZC7(Y33),DP0000858
-Alzheimer's disease,increased,P10636-8,15126504,70,27,33,29957,,P10636-8(S199),DP0000859
-Alzheimer's disease,increased,P10636-8,15126504,86,38,14,,,P10636-8(T231),DP0000860
-Alzheimer's disease,increased,P10636-8,15126504,19,13,10,,,P10636-8(S198),DP0000861
-Alzheimer's disease,increased,P10636-8,15126504,37,13,5,,,P10636-8(T212),DP0000862
-Alzheimer's disease,increased,P05067,25556395,9,0,0,,accumulation in the parenchyma and vasculature and is largely restricted to late-stage AD,P05067(S679),DP0000863
-hepatocellular carcinoma,,P16104,25537504,197,29,29,2577; 9719; 5438; 9720; 20304; 4309; 5763; 85410; 9718; 80312,recurrence/metastasis of HCC,P16104(S139),DP0000864
-non-small cell lung cancer,increased,Q13153,25956913,33,3,11,2601,"Higher in later stages vs lower stage,  inverse correlation with E-cadherin/p120-catenin expression ",Q13153(T423),DP0000865
-non-small cell lung cancer,increased,P46108,25956913,2,17,17,,"Higher in later stages vs lower stage,  inverse correlation with E-cadherin/p120-catenin expression ",P46108(S41),DP0000866
-schizophrenia; bipolar disprder,increased,Q02446,26049820,3,4,0,,"in BD cerebellum postmortem, in cerebellum schizophrenia postmortem",Q02446(S770),DP0000867
-ovarian epithelial carcinoma,increased,Q13131,26068970,211,14,33,5256; 2535; 4188; 50081; 2531,spheroids,Q13131(T183),DP0000868
-ovarian epithelial carcinoma,increased,Q15831,26068970,25,2,3,3482,spheroids,Q15831(S428),DP0000869
-colorectal cancer,,Q7L5N1,26267535,1,0,0,,,Q7L5N1(S148),DP0000870
-PAH,increased,P17655,26248159,3,1,0,,,P17655(S50),DP0000871
-PAH,decreased,P17655,26248159,2,1,2,,,P17655(S369),DP0000872
-"breast cancer, triple negative",,Q15910,26279746,2,5,7,,,Q15910(T416),DP0000873
-melanoma skin cancer,increased,Q13315,26275218,167,22,4,13050; 4526; 5883,"nuclear S1981 is associated with melanoma progression, strong S1981 was associated with worse overall survival ",Q13315(S1981),DP0000874
-breast cancer,decreased,P50552,26336132,3,15,45,,Patients with high expression of PRKD2 showed an increase in relapse-free survival.,P50552(S322),DP0000875
-anal carcinoma,increased,Q14790,27462786,4,0,0,,elevated levels of Plk3 and pT273 caspase-8  are correlated with favorable clinical outcome with  mitomycin C-based chemoradiotherapy (CRT),Q14790(T273),DP0000876
-glioblastoma multiforme,increased,P30304,27485204,1,0,0,,High Cdc25A pY59 levels indicate poor prognosis.,P30304(Y59),DP0000877
-prostate cancer,increased,Q16643,28319065,5,83,28,,,Q16643(S142),DP0000878
-ovarian cancer,increased,Q00613,28415561,34,21,13,,shorter overall survival (OS) ,Q00613(S326),DP0000879
-melanoma skin cancer,increased,Q15046,28394346,4,1,0,,,Q15046(S207),DP0000880
-pancreatic carcinoma,increased,O60331,28388589,3,0,0,,,O60331(Y639),DP0000881
-breast ductal carcinoma,increased,P10275,28415597,9,3,0,,improved cancer-specifc survival in ductal breast cancer ,P10275(S516),DP0000882
-"breast cancer, triple negative",increased,P10275,28415597,9,3,0,,poorer patient survival,P10275(S516),DP0000883
-breast ductal carcinoma,increased,P27361,28415597,1154,100,2017,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P27361(T202),DP0000884
-breast ductal carcinoma,increased,P28482,28415597,1126,149,4003,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P28482(Y187),DP0000885
-breast ductal carcinoma,increased,P27361,28415597,1177,129,3549,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P27361(Y204),DP0000886
-breast ductal carcinoma,increased,P28482,28415597,1104,117,2416,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P28482(T185),DP0000887
-colorectal cancer,increased,Q96S44,28412249,3,0,7,,,Q96S44(S250),DP0000888
-glioma,increased,Q9NR19,28552616,2,1,0,,,Q9NR19(S659),DP0000889
-lung cancer,decreased,Q6U7Q0,28581525,1,1,0,,,Q6U7Q0(S391),DP0000890
-breast cancer,increased,P11802,28566333,8,3,3,,CDK4 T172 phosphorylation best correlated with sensitivity to PD0332991,P11802(T172),DP0000891
-pancreatic cancer,increased,P31749,28363942,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0000892
-FMD,increased,P21333,28348077,16,79,999,4761,,P21333(S2152),DP0000893
-breast cancer,increased,P00338,28218905,3,24,374,8176,progression of metastatic cancer,P00338(Y10),DP0000894
-NAFLD,increased,Q96EB6,28533219,1,4,0,,,Q96EB6(S172),DP0000895
-Alzheimer's disease,increased,P49768,28132667,2,0,0,,,P49768(S310),DP0000896
-chronic lymphocytic leukemia,increased,Q93009,28418900,2,63,5,,,Q93009(S18),DP0000897
-ovarian cancer,increased,P06400,28319064,63,43,112,8974; 8957; 8516; 4277; 9308; 11917,,P06400(S807),DP0000898
-ovarian cancer,increased,P06400,28319064,12,17,36,,,P06400(T356),DP0000899
-CCA,increased,P08047,28574228,5,16,0,,,P08047(S59),DP0000900
-Parkinson's disease,increased,P37840,28636593,42,5,0,23706,,P37840(S129),DP0000901
-Parkinson's disease,increased,P37840,28636593,4,2,11,,,P37840(Y39),DP0000902
-non-small cell lung cancer,increased,O00767,28724430,1,2,6,,poor prognosis,O00767(Y55),DP0000903
-non-small cell lung cancer,increased,P00533,28724430,115,27,352,2236; 3777; 2234; 14565; 8543,poor prognosis,P00533(Y1092),DP0000904
-clear cell kidney cancer,increased,P29350,28692056,16,24,637,,advanced pathologic stage,P29350(Y536),DP0000905
-Alzheimer's disease,increased,Q99538,28826672,1,0,0,,,Q99538(S226),DP0000906
-Alzheimer's disease,increased,P78362,28826672,3,6,0,,,P78362(T492),DP0000907
-Alzheimer's disease,increased,P10636-8,28760828,8,6,2,,,P10636-8(S324),DP0000908
-breast cancer; ovarian cancer,increased,Q15910,29351847,1,1,0,27888,better survival,Q15910(T311),DP0000909
-nephrosis,increased,P29350,28811476,16,24,637,,protects mice against lethal nephritis,P29350(Y536),DP0000910
-SLE,,P29350,28811476,8,2,15,,,P29350(S591),DP0000911
-Alzheimer's disease,increased,P10636-8,28814543,119,41,90,9632,,P10636-8(S396),DP0000912
-Alzheimer's disease,increased,P10636-8,28814543,106,50,116,39357,,P10636-8(S202),DP0000913
-Alzheimer's disease,increased,P10636-8,28814543,105,48,69,91600; 35834; 20194; 98523,,P10636-8(S404),DP0000914
-Alzheimer's disease,increased,P05412,28814543,110,41,4,9261; 5464; 91952; 2361,,P05412(S63),DP0000915
-Alzheimer's disease,decreased,P56817,28946017,6,3,0,,decreased in AD brains,P56817(S498),DP0000916
-Huntington's disease,decreased,P42858,29162692,7,1,0,,,P42858(T3),DP0000917
-hepatocellular carcinoma,increased; mutation of site,P04637,29225033,1,0,0,,,P04637(R249),DP0000918
-chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(S254),DP0000919
-chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(T314),DP0000920
-chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(S265),DP0000921
-acute myelogenous leukemia,increased,P23443,18056483,367,6,1,9209; 9206; 97596; 9234; 9205,,P23443(T412),DP0000922
-non-small cell lung cancer,mutation of site,P00533,20522446,6,0,0,,,P00533(S768),DP0000923
-non-small cell lung cancer,mutation of site,P00533,26870223,6,0,0,,,P00533(S768),DP0000924
-atrial fibrillation,mutation of site,P23327,30840693,2,4,0,,"rs3745297 (T>G, Ser96Ala) single nucleotide polymorphism (SNP) of HRC",P23327(S96),DP0000925
-liver cancer,increased,Q9NZQ7,31305264,1,1,0,,required for liver cancer tumorigenesis in immunocompetent mice,Q9NZQ7(Y112),DP0000926
-lung cancer; non-small cell lung adenocarcinoma; glioblastoma,increased,O95819,12612079,1,9,102,,,O95819(T187),DP0000927
-Parkinson's disease,increased,P30086,25104559,1,15,0,,,P30086(T42),DP0000928
-breast cancer,increased,Q12933,23007157,5,15,0,13908,,Q12933(S11),DP0000929
-Alzheimer's disease,increased,Q16555,17683481,20,47,84,,,Q16555(S522),DP0000930
-Alzheimer's disease,decreased,Q99683,24985705,15,3,1,3764,,Q99683(S966),DP0000931
-depression,increased,Q9UNF0,23918399,1,3,0,,,Q9UNF0(S372),DP0000932
-depression,increased,Q9UNF0,23918399,1,9,0,,,Q9UNF0(S375),DP0000933
-Kaposi's sarcoma,increased,Q16236,25505069,23,0,0,,Inhhibition of NRF2 signaling may serve as a therapeutic approach to improve Kaposi's sarcoma pathology.,Q16236(S40),DP0000934
-HNSCC,increased,O14965,17895985,3,3,0,,,O14965(S51),DP0000935
-Parkinson's disease,increased,P37840,21400129,42,5,0,23706,,P37840(S129),DP0000936
-breast cancer; lung cancer; colorectal cancer; esophageal cancer; gastric cancer,increased,P98170,23749209,8,0,0,,,P98170(S87),DP0000937
-breast cancer,increased,P23771,25479686,4,0,0,,,P23771(S308),DP0000938
-non-small cell squamous cell lung carcinoma,increased,P31749,20008839,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,predicts poor prognosis,P31749(S473),DP0000939
-non-small cell squamous cell lung carcinoma,increased,P06730,20008839,50,3,0,9741,predicts poor prognosis,P06730(S209),DP0000940
-Alzheimer's disease,increased,P05067,21527912,9,0,0,,,P05067(S679),DP0000941
-type 2 diabetes,increased,P45983,21931634,233,47,1269,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,after LPS treatment,P45983(Y185),DP0000942
-HES,mutation of site,P16234,21224473,3,9,59,3170,mutated to Y849S,P16234(Y849),DP0000943
-HER2 positive breast cancer,increased,P08727,25342465,3,14,115,,,P08727(S35),DP0000944
-ovarian epithelial carcinoma,decreased,P51532,25083560,1,56,6,,,P51532(S1452),DP0000945
-multiple myeloma,decreased,Q9NQ25,25312647,1,3,14,,,Q9NQ25(Y284),DP0000946
-HNSCC,increased,O15350,25379016,3,0,0,,,O15350(T27),DP0000947
-type 2 diabetes,increased,P45983,21931634,234,32,392,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,after LPS treatment,P45983(T183),DP0000948
-type 2 diabetes,decreased,Q13131,21931634,211,14,33,5256; 2535; 4188; 50081; 2531,increased in Normal Glucose tolerance (NGT) volunteers after LPS treatment,Q13131(T183),DP0000949
-ovarian cancer,increased,P08559,25237928,77,105,675,31866,,P08559(S293),DP0000950
-ovarian cancer,decreased,Q8NEB9,25416196,2,1,0,,,Q8NEB9(S164),DP0000951
-ovarian cancer,decreased,Q15121,25416196,10,92,1092,,,Q15121(S116),DP0000952
-spinocerebellar ataxia type 1,increased,P54253,24903464,16,25,3,,,P54253(S775),DP0000953
-glioblastoma,increased,P30530,28881571,2,1,2,,significantly shorter overall survival,P30530(Y779),DP0000954
-Alzheimer's disease,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000955
-ADLB,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000956
-DLB,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000957
-Alzheimer's disease,increased,Q8NB16,28758999,16,1,0,91689; 37333,,Q8NB16(S358),DP0000958
-Alzheimer's disease,increased,Q8NB16,28758999,5,0,1,,,Q8NB16(T357),DP0000959
-colorectal cancer,increased,P09651,29344170,2,93,4,,poor prognosis,P09651(S6),DP0000960
-CTE,increased,P10636-8,29298849,86,38,14,,colocalization of pT175 tau with the active pGSK3B,P10636-8(T231),DP0000961
-CTE,increased,P10636-8,29298849,8,8,0,,colocalization of pT175 tau with the active pGSK3B,P10636-8(T175),DP0000962
-ALS; CTE,increased,P10636-8,29298849,8,8,0,,CTE with ALS,P10636-8(T175),DP0000963
-ALS; CTE,increased,P10636-8,29298849,86,38,14,,CTE with ALS,P10636-8(T231),DP0000964
-ALS,mutation of site,P41002,29021214,1,1,0,,,P41002(S621),DP0000965
-hypertrophic cardiomyopathy,increased,Q14738,29294329,7,51,347,,S573 is increased in the setting of pressure overload-induced cardiac hypertrophy.,Q14738(S573),DP0000966
-PAH,increased,P08559,29070699,77,105,675,31866,,P08559(S293),DP0000967
-glioblastoma,increased,Q9Y4P1,29232556,2,37,2,19386,,Q9Y4P1(S383),DP0000968
-acute myelogenous leukemia,increased,Q06413,29431698,1,32,1,,AML chemotherapy resistance ,Q06413(S222),DP0000969
-diabetes mellitus,decreased,P02489,29467334,2,5,0,,,P02489(T148),DP0000970
-glioblastoma,increased,Q9C026-5,29669288,1,0,0,,"stability of TRIM9s-MKK6-p38 complex, and it maintains the high activation state of p38 signaling to suppress glioblastoma progression",Q9C026-5(S76),DP0000971
-glioblastoma,increased,Q9C026-5,29669288,1,0,0,,"stability of TRIM9s-MKK6-p38 complex, and it maintains the high activation state of p38 signaling to suppress glioblastoma progression",Q9C026-5(S80),DP0000972
-Alzheimer's disease; Huntington's disease,decreased,P55212,22433863,3,0,0,,,P55212(S257),DP0000973
-liver disease,,P05783,15368451,14,26,13,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05783(S34),DP0000974
-liver disease,,P05787,15368451,26,8,23,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05787(S432),DP0000975
-liver disease,,P05783,15368451,16,12,14,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05783(S53),DP0000976
-liver disease,,P05787,15368451,26,8,9,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05787(S74),DP0000977
-mutation causing Brugada Syndrom,mutation of site,Q14524,24795344,4,1,1,,expression of R526H and S528A channels were reduced compared with WT,Q14524(S528),DP0000978
-spinocerebellar ataxia type 1,increased,P54253,29758256,16,25,3,,Inhibition of phosphorylation at S776 results in degradation of ataxin which leads to delayed onset of ataxia,P54253(S775),DP0000979
-atherosclerosis,deletion of site,Q96EB6,23754392,4,19,1,2327,,Q96EB6(S27),DP0000980
-atherosclerosis,deletion of site,Q96EB6,23754392,6,48,9,2314,,Q96EB6(S47),DP0000981
-Alzheimer's disease; AD,increased,Q13148,25134727,40,1,0,,,Q13148(S410),DP0000982
-breast cancer,decreased,P21333,20179208,16,79,999,4761,,P21333(S2152),DP0000983
-breast cancer,decreased,P21333,20179208,2,69,16,,,P21333(S1459),DP0000984
-Huntington's disease; LBD; ADLB,increased,P19419,20126313,6,0,1,,,P19419(T417),DP0000985
-"cancer, squamous cell carcinoma",increased,P31749,21795477,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0000986
-Alzheimer's disease; AD,increased,Q13148,25134727,40,1,0,,,Q13148(S409),DP0000987
-breast cancer,decreased,P01106,21808024,56,37,30,46650,,P01106(T58),DP0000988
-"breast cancer, triple negative",increased,Q13323,24637719,1,0,0,,,Q13323(S124),DP0000989
-colorectal cancer,decreased,Q9GZT9,28199842,1,24,5,,,Q9GZT9(S125),DP0000990
-multiple myeloma,increased,Q9UJZ1,24676687,2,1,0,,,Q9UJZ1(S17),DP0000991
-Alzheimer's disease,increased,P10636-8,24116116,42,29,23,12885,,P10636-8(T181),DP0000992
-Alzheimer's disease,increased,P10636-8,24116116,86,38,14,,,P10636-8(T231),DP0000993
-multiple myeloma,increased,P51812,23012246,12,41,151,3556,,P51812(S227),DP0000994
-occular surface disease,increased,Q9NZC7,26120275,19,0,0,,,Q9NZC7(Y33),DP0000995
-hepatocellular carcinoma,decreased,P01106,25893300,52,33,33,13748,,P01106(S62),DP0000996
-hepatocellular carcinoma,decreased,Q9GZU7,25893300,1,0,0,,,Q9GZU7(S245),DP0000997
-T-ALL,mutation of site,P46531,25344755,1,1,0,,,P46531(S2513),DP0000998
-T-ALL,mutation of site,P46531,25344755,4,1,0,,,P46531(T2511),DP0000999
-T-ALL,mutation of site,P46531,25344755,1,1,0,,,P46531(S2516),DP0001000
-breast adenocarcinoma,increased,O75116,22273145,2,4,0,,,O75116(S1366),DP0001001
-glioblastoma,increased,P30530,28881571,1,3,52,44463,significantly shorter overall survival,P30530(Y698),DP0001002
-neuroblastoma,increased,O75116,28739902,1,0,0,,,O75116(T396),DP0001003
-pancreatic ductal adenocarcinoma,increased,Q9NWZ3,29363544,6,3,0,12914; 87995; 80738; 11927,,Q9NWZ3(T345),DP0001004
-pancreatic ductal adenocarcinoma,increased,Q04206,29363544,139,4,0,4887; 3036; 5733; 3031; 4886; 4025; 3033; 13346,,Q04206(S536),DP0001005
-psoriasis,increased,Q15418,29290690,17,16,180,9346,increase in western blot and in nuclei in lesion skin,Q15418(T573),DP0001006
-psoriasis,decreased,Q15418,29290690,55,47,64,13397; 13588; 9341; 9335; 12032; 11989; 13575,increase in western blot and cytosolic in lesion skin,Q15418(S380),DP0001007
-psoriasis,increased,P51812,29290690,9,14,180,,increase in western blot and in nuclei in lesion skin,P51812(T577),DP0001008
-psoriasis,decreased,P51812,29290690,11,18,59,13397; 13588; 9341; 9335; 12032; 11989; 13575,increase in western blot and cytosolic in lesion skin,P51812(S386),DP0001009
-HBL,decreased,P49715,29159818,13,0,0,,C/EBPa-dependent CSCs are observed in patients with aggressive hepatoblastoma and in patients with a predisposition for liver cancer. ,P49715(S190),DP0001010
-lung cancer,increased,P17096,29038488,5,60,173,,involved in lung cancer cell proliferation,P17096(S99),DP0001011
-breast cancer,,O75330,28993511,1,10,6,,predictor  of  breast  cancer-specific  survival  and  relapse-free  survival  in  patients  with  estrogen  receptor (ER)-negative breast cancer,O75330(T703),DP0001012
-pancreatic cancer,increased,Q15691,29228685,3,1,0,,correlated with high ASK1 expression; ASK1-mediated phosphorylation of EB1 may contribute to pancreatic cancer cell proliferation ,Q15691(T206),DP0001013
-hepatocellular carcinoma,increased,P36956,29514980,1,0,0,,T59  phosphorylation is correlated with poor prognosis in HCC patients.,P36956(T59),DP0001014
-non-small cell lung cancer,increased,O94925-3,29515166,1,0,0,,poor survival of NSCLC patients,O94925-3(S314),DP0001015
-T cell lymphoma,increased,O43318,29511289,1,1,0,,,O43318(T344),DP0001016
-T cell lymphoma,increased,O43318,29511289,1,6,0,,,O43318(T444),DP0001017
-breast ductal carcinoma,decreased,P16471,16278670,4,0,0,,,P16471(S349),DP0001018
-colorectal carcinoma,increased,Q9Y3F4,29783958,3,1,0,,,Q9Y3F4(T175),DP0001019
-colorectal carcinoma,increased,Q14680,29783958,2,0,0,,,Q14680(S171),DP0001020
-colorectal carcinoma,increased,Q14680,29783958,3,1,0,,,Q14680(T167),DP0001021
-colorectal carcinoma,increased,Q9Y3F4,29783958,3,0,0,,,Q9Y3F4(S179),DP0001022
-glioblastoma,mutation of site,Q14185,23728337,2,0,0,,"citated in this paper : TCGA portal, https://tcga-data.nci.nih.gov).  "" Dock180 was found to be mutated to L1250 in a clinical glioblastoma sample from a patient after treatment with temozolomide"".",Q14185(S1250),DP0001023
-breast cancer,mutation of site,Q13480,22751113,1,6,0,,T387N mutation,Q13480(T387),DP0001024
-breast ductal carcinoma,mutation of site,Q13480,22751113,2,0,0,,Y83C mutation,Q13480(Y83),DP0001025
-breast cancer,molecular association,Q13761,22580604,1,2,4,,,Q13761(T212),DP0001026
-breast cancer,molecular association,Q13761,22580604,1,6,6,,,Q13761(S214),DP0001027
-breast cancer,molecular association,Q13761,22580604,2,3,0,,,Q13761(T209),DP0001028
-breast cancer,molecular association,Q13761,22580604,1,5,21,,,Q13761(T231),DP0001029
-kidney cancer,increased,Q2PPJ7,22580611,2,19,39,,,Q2PPJ7(S486),DP0001030
-kidney cancer,increased,Q2PPJ7,22580611,2,7,54,,,Q2PPJ7(T715),DP0001031
-kidney cancer,increased,P31749,22580611,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0001032
-FXS,decreased,Q06787,17376973,19,6,0,,Dephosphorylated FMRP leads to decrease in synapse number and function.,Q06787(S500),DP0001033
-Alzheimer's disease; DLB,increased,P10636-8,17761554,42,29,23,12885,,P10636-8(T181),DP0001034
-AC,increased,P17302,18065522,20,19,1,,in UM-X7.1 hamsters,P17302(S255),DP0001035
-glioma,increased,Q13224,25434386,36,11,31,,,Q13224(S1303),DP0001036
-Alzheimer's disease,decreased,Q96C19,24917152,2,79,42,,,Q96C19(S74),DP0001037
-Alzheimer's disease,increased,P05067,25023775,9,0,0,,,P05067(S679),DP0001038
-occular surface disease,increased,O15392,25468890,13,6,7,8888,,O15392(T34),DP0001039
-breast cancer,increased,P38398,21706030,2,13,3,,,P38398(S1191),DP0001040
-breast cancer,increased,O60331,25486426,3,0,0,,metastasis,O60331(Y639),DP0001041
-colorectal cancer,increased,P53355,17803936,1,0,0,,,P53355(Y490),DP0001042
-glioblastoma multiforme,increased,Q14185,25468898,2,0,0,,,Q14185(S1250),DP0001043
-breast cancer,increased,P38398,21706030,4,15,6,,,P38398(S1189),DP0001044
-breast cancer,increased,P38398,21706030,6,4,2,,,P38398(S1497),DP0001045
-prostate cancer,increased,P50549,23774214,3,3,2,,,P50549(S216),DP0001046
-hypertrophic cardiomyopathy,increased,P23443,20190034,367,6,1,9209; 9206; 97596; 9234; 9205,,P23443(T412),DP0001047
-colorectal cancer,increased,P53355,17803936,1,0,0,,,P53355(Y491),DP0001048
-mantle cell lymphoma,mutation of site,O00165,25419709,1,0,0,,,O00165(S210),DP0001049
-"cancer, squamous cell carcinoma",decreased,P05787,22114688,26,8,9,,,P05787(S74),DP0001050
-nephrosis,decreased,O60500,25404734,10,0,0,,,O60500(Y1217),DP0001051
-breast cancer,increased,P01106,21808024,52,33,33,13748,,P01106(S62),DP0001052
-Alzheimer's disease,increased,P10636-8,24757378,70,27,33,29957,,P10636-8(S199),DP0001053
-atrial fibrillation,,O14649,25437921,3,0,0,,Phosphorylation of T383 is not responsible for the phosphorylation-dependent loss of current in chronic AF.,O14649(T383),DP0001054
-mantle cell lymphoma,deletion of site,Q8TCJ0,25419709,1,0,0,,,Q8TCJ0(S178),DP0001055
-Alzheimer's disease,increased,P10636-8,24757378,74,21,26,43964; 49561; 53001,,P10636-8(T205),DP0001056
-Alzheimer's disease,increased,P10636-8,24757378,84,20,2,,,P10636-8(S262),DP0001057
-Alzheimer's disease,increased,P10636-8,24757378,32,7,0,,,P10636-8(S422),DP0001058
-Alzheimer's disease,increased,P10636-8,24757378,106,50,116,39357,,P10636-8(S202),DP0001059
-Alzheimer's disease,increased,P10636-8,24757378,86,38,14,,,P10636-8(T231),DP0001060
-"cancer, squamous cell carcinoma",decreased,P05787,22114688,26,8,23,,,P05787(S432),DP0001061
+colorectal cancer,increased,P37231-2,26718225,2,0,1,,,P37231-2(Y74),DP0000702
+PAAND,mutation of site,O15553,27030597,4,6,0,,,O15553(S242),DP0000703
+CRPC,increased,P06748,26993766,21,27,30,3541,,P06748(T199),DP0000704
+CRPC,increased,P06748,26993766,7,25,21,,,P06748(T237),DP0000705
+CRPC,increased,P06748,26993766,7,20,17,,,P06748(T234),DP0000706
+ASD autism spectrum,decreased,Q8N0W4,25675530,1,1,0,,phosphorylation of this site is eliminated in individuals carrying the autism-associated mutation R704C,Q8N0W4(T707),DP0000707
+colorectal carcinoma; non-small cell squamous cell lung carcinoma,decreased,Q13131,25679763,211,14,33,5256; 2535; 4188; 50081; 2531,,Q13131(T183),DP0000708
+multiple sclerosis,increased,Q8NB16,25801023,5,0,1,,MS brain samples,Q8NB16(T357),DP0000709
+multiple sclerosis,increased,Q13546,25801023,2,1,0,,MS brain samples,Q13546(S14),DP0000710
+multiple sclerosis,increased,Q13546,25801023,9,2,0,31122; 65746; 44590,MS brain samples,Q13546(S166),DP0000711
+multiple sclerosis,increased,Q9Y572,25801023,13,2,0,57220; 93654; 91702,MS brain samples,Q9Y572(S227),DP0000712
+multiple sclerosis,increased,Q13546,25801023,2,1,1,,MS brain samples,Q13546(S15),DP0000713
+B cell lymphoma; non-Hodgkin's lymphoma; lymphoplasmacytic lymphoma; follicular lymphoma,increased,P67870,25788269,6,44,58,,,P67870(S209),DP0000714
+B cell lymphoma; non-Hodgkin's lymphoma; lymphoplasmacytic lymphoma; follicular lymphoma,increased,Q16543,25788269,12,29,0,13248,,Q16543(S13),DP0000715
+rheumatoid arthritis; SLE,increased,P28799,26005049,1,0,0,,,P28799(S81),DP0000716
+kidney cancer,,Q14247,21696810,40,61,745,4569,correlated with sarcomatoid renal cell carcinoma,Q14247(Y421),DP0000717
+T-ALL,increased,P51617,26068967,2,1,0,,,P51617(T209),DP0000718
+glioblastoma multiforme,increased,Q07912,25257795,1,2,5,,,Q07912(Y635),DP0000719
+non-small cell squamous cell lung carcinoma,increased,Q16555,26555036,20,47,84,,CRMP2A is present within the nucleus in cancer cells,Q16555(S522),DP0000720
+"obesity, hyperphagic",,Q9Y4H2,26657864,3,37,80,,,Q9Y4H2(S391),DP0000721
+HNSCC,increased,P08559,27498883,34,77,7,,worse clinical outcome,P08559(S232),DP0000722
+tuberous sclerosis,increased,O60716,27516388,11,71,56,,,O60716(S268),DP0000723
+Alzheimer's disease,increased,P29966,27557632,1,33,3,,,P29966(S147),DP0000724
+Alzheimer's disease,increased,P29966,27557632,1,7,0,,,P29966(S132),DP0000725
+Alzheimer's disease,increased,P29966,27557632,1,40,0,,,P29966(S46),DP0000726
+Alzheimer's disease,increased,P29966,27557632,1,68,8,,,P29966(T150),DP0000727
+breast cancer,increased,P49841,27494834,413,40,227,9325; 14332; 8566; 8466; 14310; 14630; 9323; 9336; 9322; 9331; 14026; 9327; 5558,sites correlated and low expression associates with better survival in human breast cancers,P49841(S9),DP0000728
+LBD,increased,Q16555,27609071,22,34,35,9397,,Q16555(T514),DP0000729
+Parkinson's disease,decreased,P49841,27609071,413,40,227,9325; 14332; 8566; 8466; 14310; 14630; 9323; 9336; 9322; 9331; 14026; 9327; 5558,Parkinson's disease dementia,P49841(S9),DP0000730
+Parkinson's disease; LBD,decreased,P49841,27609071,75,125,4206,,Parkinson's disease dementia,P49841(Y216),DP0000731
+leukemia,increased,P24752,27867011,2,1,0,,,P24752(Y407),DP0000732
+Parkinson's disease,decreased,Q6UUV9,27903866,1,0,0,,,Q6UUV9(S215),DP0000733
+mesothelioma,increased,P35240,18835652,26,39,1,9163; 13281,"in patient samples, merlin was truncated or phosphorylated on S518",P35240(S518),DP0000734
+HSAN1,mutation of site,O15270,25567748,1,0,0,,,O15270(S384),DP0000735
+gastric carcinoma,increased,Q9Y6X9,25888627,2,36,8,,associated with the poor prognosis of clinical gastric cancer,Q9Y6X9(S739),DP0000736
+colorectal cancer,increased,P04637,25860929,402,8,0,9235; 8695; 9284; 9286; 8514; 12571; 4030,FBXW7-mutations,P04637(S15),DP0000737
+Alzheimer's disease,increased,P56817,26317805,1,0,0,,,P56817(T252),DP0000738
+ASD autism spectrum,mutation of site,Q05086-2,26255772,3,1,0,,,Q05086-2(T485),DP0000739
+psoriasis,increased,Q16539,24863062,8,1,0,,,Q16539(Y323),DP0000740
+myelodysplastic syndrome,increased,P35611,26578796,21,55,158,,,P35611(S726),DP0000741
+hypertrophic cardiomyopathy,increased,Q92784-2,26582913,1,3,1,,S348 phosphorylation is required for hypertrophy,Q92784-2(S348),DP0000742
+T cell lymphoma,mutation of site,Q9BXL7,26551667,3,0,0,,"Sezary syndrome, cutaneous T cell lymphoma (CTCL)",Q9BXL7(S615),DP0000743
+multiple myeloma,increased,Q15910,26517694,2,0,1,,,Q15910(S21),DP0000744
+microlissencephaly,,Q9NXR1,21529751,2,13,31,,T246 in maybe involved in disease,Q9NXR1(T246),DP0000745
+non-small cell lung adenocarcinoma,increased,P28290,26947549,1,48,2,,high levels of phosphorylation had significantly reduced relapse-free survival (p < 0.01),P28290(S92),DP0000746
+"breast cancer; breast cancer, triple negative",increased,P12931,26923594,346,100,3046,70926; 6943; 2101,higher in basal subtype BC;TNBC,P12931(Y419),DP0000747
+"obesity, hyperphagic",increased,P33778,27151441,7,12,47,,,P33778(S36),DP0000748
+breast cancer,decreased,P46531,27335110,4,1,0,,,P46531(T2511),DP0000749
+breast cancer,decreased,P02786,21859709,1,44,1048,,enhances breast cancer cell survival,P02786(Y20),DP0000750
+breast cancer,increased,Q9UQM7,27605043,127,30,72,12716,primary breast cancer and lymph node metastases tissues,Q9UQM7(T286),DP0000751
+breast cancer,increased,P15407,27816489,2,0,0,,,P15407(T217),DP0000752
+SBMA,increased,P10275,28003546,8,10,0,,,P10275(S96),DP0000753
+myotonic dystrophy type1,increased,Q92879,24376746,3,8,1,,DM1-E2 (classic phenotype),Q92879(S28),DP0000754
+myotonic dystrophy type1,,Q92879,24376746,3,8,1,,"DM1-E1, DM1-CDM, no change",Q92879(S28),DP0000755
+DM2,,Q92879,24376746,3,8,1,,"DM2-PS, DM2-PDM, DM2-PROMM no change",Q92879(S28),DP0000756
+neuroblastoma,increased,Q13443,24349301,0,3,47,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q13443(Y736),DP0000757
+neuroblastoma,increased,Q9H6X2,24349301,1,11,108,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9H6X2(Y425),DP0000758
+neuroblastoma,increased,Q9UPS8,24349301,0,11,67,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9UPS8(Y296),DP0000759
+neuroblastoma,increased,P05067,24349301,11,19,864,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P05067(Y757),DP0000760
+neuroblastoma,increased,P15529-4,24349301,0,18,604,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P15529-4(Y357),DP0000761
+neuroblastoma,increased,P24941,24349301,31,126,3845,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P24941(Y15),DP0000762
+neuroblastoma,increased,Q00535,24349301,15,47,894,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q00535(Y15),DP0000763
+neuroblastoma,increased,P15529-2,24349301,0,18,604,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P15529-2(Y387),DP0000764
+neuroblastoma,increased,P06493,24349301,151,140,3902,4539; 14566; 9111,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06493(Y15),DP0000765
+neuroblastoma,increased,P06493,24349301,23,115,1764,2543,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06493(T14),DP0000766
+neuroblastoma,increased,O60716,24349301,4,35,735,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O60716(Y96),DP0000767
+neuroblastoma,increased,Q8NE01,24349301,0,5,125,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8NE01(Y301),DP0000768
+neuroblastoma,increased,P14923,24349301,0,4,118,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P14923(Y480),DP0000769
+neuroblastoma,increased,Q16832,24349301,1,9,366,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16832(Y740),DP0000770
+neuroblastoma,increased,Q16832,24349301,1,9,409,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16832(Y736),DP0000771
+neuroblastoma,increased,P29317,24349301,2,55,860,8244; 8862,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P29317(Y772),DP0000772
+neuroblastoma,increased,Q9BSJ8,24349301,0,35,1220,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9BSJ8(Y822),DP0000773
+neuroblastoma,increased,Q99613,24349301,0,7,118,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q99613(Y881),DP0000774
+neuroblastoma,increased,Q3V6T2,24349301,4,12,137,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q3V6T2(Y1799),DP0000775
+neuroblastoma,increased,P21802,24349301,1,8,66,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P21802(Y656),DP0000776
+neuroblastoma,increased,P49841,24349301,75,125,4206,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P49841(Y216),DP0000777
+neuroblastoma,increased,P06899,24349301,0,6,33,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06899(Y43),DP0000778
+neuroblastoma,increased,P52272,24349301,0,14,264,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P52272(Y64),DP0000779
+neuroblastoma,increased,P07948,24349301,20,60,2054,70926; 6943; 2101,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P07948(Y397),DP0000780
+neuroblastoma,increased,P08069,24349301,16,31,455,80732; 3021,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08069(Y1161),DP0000781
+neuroblastoma,increased,P53778,24349301,2,33,804,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P53778(Y185),DP0000782
+neuroblastoma,increased,P08069,24349301,13,38,707,3918; 3024; 2969,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08069(Y1165),DP0000783
+neuroblastoma,increased,O60674,24349301,8,40,825,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O60674(Y570),DP0000784
+neuroblastoma,increased,P35580,24349301,0,12,449,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P35580(Y1415),DP0000785
+neuroblastoma,increased,Q96BF3,24349301,0,3,126,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96BF3(Y222),DP0000786
+neuroblastoma,increased,Q9Y4K4,24349301,0,7,161,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9Y4K4(Y31),DP0000787
+neuroblastoma,increased,P06213,24349301,34,31,455,80732; 3021,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06213(Y1185),DP0000788
+neuroblastoma,increased,Q96BF3-2,24349301,0,3,117,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96BF3-2(Y188),DP0000789
+neuroblastoma,increased,P06213,24349301,40,36,707,3918; 3024; 2969,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P06213(Y1189),DP0000790
+neuroblastoma,increased,Q9C0B0,24349301,0,1,3,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9C0B0(Y232),DP0000791
+neuroblastoma,increased,P38159,24349301,0,7,70,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P38159(Y255),DP0000792
+neuroblastoma,increased,O95297,24349301,1,57,1101,5543; 8088,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),O95297(Y263),DP0000793
+neuroblastoma,increased,Q9Y4G6,24349301,0,5,19,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9Y4G6(Y72),DP0000794
+neuroblastoma,increased,P08670,24349301,0,50,2170,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P08670(Y61),DP0000795
+neuroblastoma,increased,Q8N5H7,24349301,0,2,22,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8N5H7(Y316),DP0000796
+neuroblastoma,increased,Q08174,24349301,0,7,63,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q08174(Y897),DP0000797
+neuroblastoma,increased,Q9C0H9,24349301,1,18,217,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q9C0H9(Y268),DP0000798
+neuroblastoma,increased,Q8IV08,24349301,0,6,127,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q8IV08(Y7),DP0000799
+breast cancer,increased,P03372,24166501,39,5,0,42101; 64508,"S167/S305 and Ser167 alone, but not Ser305 phosphorylation, are significantly associated disease-free survival in breast cancer patients",P03372(S167),DP0000800
+breast cancer,increased,P03372,24166501,16,0,0,,"S167/S305 and Ser167 alone, but not Ser305 phosphorylation, are significantly associated disease-free survival in breast cancer patients",P03372(S305),DP0000801
+Alzheimer's disease,increased,O00429,25192600,2,1,0,,blocking phosphorylation is neuroprotective in models,O00429(S40),DP0000802
+Alzheimer's disease,increased,O00429,25192600,2,1,0,,blocking phosphorylation is neuroprotective in models,O00429(S44),DP0000803
+Parkinson's disease,increased,P37840,25637461,42,5,0,23706,"Lower pS129 levels correlated with worse clinical condition at early stages, but better condition at later stages.",P37840(S129),DP0000804
+neuroblastoma,increased,P34741,24349301,1,5,6,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P34741(Y191),DP0000805
+neuroblastoma,increased,P62140,24349301,0,8,318,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P62140(Y306),DP0000806
+neuroblastoma,increased,P61006,24349301,0,7,76,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P61006(Y5),DP0000807
+neuroblastoma,increased,Q63HR2,24349301,1,44,1536,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q63HR2(Y483),DP0000808
+neuroblastoma,increased,Q16881,24349301,0,21,566,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q16881(Y281),DP0000809
+neuroblastoma,increased,P25116,24349301,0,6,121,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P25116(Y420),DP0000810
+neuroblastoma,increased,Q92529,24349301,1,3,27,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q92529(Y406),DP0000811
+neuroblastoma,increased,P18077,24349301,0,7,42,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),P18077(Y34),DP0000812
+neuroblastoma,increased,Q96GP6,24349301,0,11,74,,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q96GP6(Y628),DP0000813
+neuroblastoma,increased,Q05655,24349301,35,58,1707,2055,increased in NB10 cells (MYCN amplified neuroblastoma line) compared to NPC cells (normal neural crest line),Q05655(Y313),DP0000814
+vulvar cancer,increased,P06493,25849598,151,140,3902,4539; 14566; 9111,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P06493(Y15),DP0000815
+vulvar cancer,increased,P06493,25849598,24,40,83,9114,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P06493(T161),DP0000816
+vulvar cancer,increased,P14635,25849598,11,2,0,,vulvar squamous cell carcinoma;  advanced tumor behaviors and aggressive features; decreased patient survival,P14635(S126),DP0000817
+prostate cancer,increased,Q13501,26279575,3,77,278,13121,,Q13501(S272),DP0000818
+prostate cancer,increased,Q13501,26279575,3,71,136,13121,,Q13501(T269),DP0000819
+Parkinson's disease,increased,P62988,26389970,19,12,0,62802; 37642; 70973,,P62988(S65),DP0000820
+chronic myelogenous leukemia,increased,P16989,21368869,1,30,1,,,P16989(S134),DP0000821
+breast cancer,increased,Q8N6T7,25074979,2,7,23,,poorer overall survival,Q8N6T7(S338),DP0000822
+breast cancer,decreased,P46527,26701207,24,0,1,,correlates with low level of Myc protein,P46527(T157),DP0000823
+pheochromocytoma,mutation of site,P07949,20080836,2,0,0,,double C634Y/Y791F mutant,P07949(Y791),DP0000824
+Parkinson's disease,,Q9BXM7,22238344,1,1,0,,,Q9BXM7(T313),DP0000825
+AIS,mutation of site,P10275,22334658,1,0,0,,,P10275(R407),DP0000826
+hypertrophic cardiomyopathy,mutation of site,Q9BR39,22389502,1,0,0,,Y141H,Q9BR39(Y141),DP0000827
+breast cancer,increased,P16949,27130664,45,110,166,4191; 3426,higher incidence of recurrence,P16949(S38),DP0000828
+anal carcinoma,increased,Q14790,27325299,4,0,0,,overall survival (OS) was superior for tumors showing a high pT273 caspase-8 signal ,Q14790(T273),DP0000829
+breast cancer,mutation of site,P03372,27748765,9,0,0,,"mutated in breast cancer, CRISPR-Cas9 genome editing mutation Y537S. ",P03372(Y537),DP0000830
+Alzheimer's disease,increased,P31994-2,27834631,4,2,1,,,P31994-2(Y273),DP0000831
+"melanoma skin cancer; cancer, squamous cell carcinoma; BCC",increased,Q14934,27893713,1,1,0,,,Q14934(S259),DP0000832
+cervical cancer,increased,P53350,27899378,1,1,0,,higher  PLK1  tyrosine  phosphorylation show  a  poor  5-year  survival  rate,P53350(Y425),DP0000833
+ALS,increased,Q13148,26192745,40,1,0,,,Q13148(S409),DP0000834
+chronic myelogenous leukemia,decreased,P45983,26147002,234,32,392,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,,P45983(T183),DP0000835
+chronic myelogenous leukemia,decreased,P31947,26147002,5,0,0,,,P31947(S186),DP0000836
+chronic lymphocytic leukemia; mantle cell lymphoma,increased,P09917,26210919,7,0,0,,,P09917(S524),DP0000837
+colorectal cancer,increased,P15923,26212009,1,2,1,,,P15923(S39),DP0000838
+HNSCC,increased,P06400,26265441,12,17,36,,,P06400(T356),DP0000839
+"colorectal carcinoma; ovarian cancer; non-small cell lung adenocarcinoma, surrounding tissue",increased,P11387,26248194,3,0,0,,,P11387(S506),DP0000840
+Fanconi's anaemia,decreased,P16949,26466335,34,94,61,3353,,P16949(S16),DP0000841
+Fanconi's anaemia,decreased,P16949,26466335,45,110,166,4191; 3426,,P16949(S38),DP0000842
+hepatocellular carcinoma,increased,P06748,26536659,7,25,21,,,P06748(T237),DP0000843
+hepatocellular carcinoma,increased,P06748,26536659,7,20,17,,,P06748(T234),DP0000844
+pancreatic cancer,increased,P31749,26676747,585,11,18,43506; 48646; 5106; 13842; 2965; 9275; 4056; 86758; 5056; 13038,high BAP28  or low AktT308 increased survival and response to gemcitabine,P31749(T308),DP0000845
+breast cancer,increased,P56945,26867768,3,22,285,,driving mammary carcinoma progression,P56945(Y267),DP0000846
+breast cancer,increased,P56945,26867768,3,15,191,,driving mammary carcinoma progression,P56945(Y306),DP0000847
+breast cancer,increased,P56945,26867768,2,17,284,,driving mammary carcinoma progression,P56945(Y287),DP0000848
+breast cancer,increased,P56945,26867768,12,43,723,4014,driving mammary carcinoma progression,P56945(Y249),DP0000849
+breast cancer,increased,P56945,26867768,3,30,698,,driving mammary carcinoma progression,P56945(Y234),DP0000850
+RTT,mutation of site,P51608,27064487,1,0,0,,,P51608(T158),DP0000851
+Parkinson's disease,increased,P37840,27348587,4,2,11,,accumulates in Lewy bodies,P37840(Y39),DP0000852
+cystic fibrosis,mutation of site,P13569,27261451,1,0,0,,S1045Y-CFTR mutation,P13569(S1045),DP0000853
+non-small cell lung adenocarcinoma,increased,P10244,27212033,3,2,43,,,P10244(T487),DP0000854
+hypertrophic cardiomyopathy,decreased,Q9NPH5,27525436,1,1,0,,,Q9NPH5(Y566),DP0000855
+cardiomyopathy,increased,O00429,27739424,25,74,114,3455; 4494,,O00429(S616),DP0000856
+"breast cancer; obesity, hyperphagic",,Q13485,28115363,3,0,0,,,Q13485(T277),DP0000857
+atherosclerosis,,Q13133,25825525,5,0,0,,,Q13133(S198),DP0000858
+Alzheimer's disease,decreased,Q9NZC7,15126504,19,0,0,,,Q9NZC7(Y33),DP0000859
+Alzheimer's disease,increased,P10636-8,15126504,70,27,33,29957,,P10636-8(S199),DP0000860
+Alzheimer's disease,increased,P10636-8,15126504,86,38,14,,,P10636-8(T231),DP0000861
+Alzheimer's disease,increased,P10636-8,15126504,19,13,10,,,P10636-8(S198),DP0000862
+Alzheimer's disease,increased,P10636-8,15126504,37,13,5,,,P10636-8(T212),DP0000863
+Alzheimer's disease,increased,P05067,25556395,9,0,0,,accumulation in the parenchyma and vasculature and is largely restricted to late-stage AD,P05067(S679),DP0000864
+hepatocellular carcinoma,,P16104,25537504,197,29,29,2577; 9719; 5438; 9720; 20304; 4309; 5763; 85410; 9718; 80312,recurrence/metastasis of HCC,P16104(S139),DP0000865
+non-small cell lung cancer,increased,Q13153,25956913,33,3,11,2601,"Higher in later stages vs lower stage,  inverse correlation with E-cadherin/p120-catenin expression ",Q13153(T423),DP0000866
+non-small cell lung cancer,increased,P46108,25956913,2,17,17,,"Higher in later stages vs lower stage,  inverse correlation with E-cadherin/p120-catenin expression ",P46108(S41),DP0000867
+schizophrenia; bipolar disprder,increased,Q02446,26049820,3,4,0,,"in BD cerebellum postmortem, in cerebellum schizophrenia postmortem",Q02446(S770),DP0000868
+ovarian epithelial carcinoma,increased,Q13131,26068970,211,14,33,5256; 2535; 4188; 50081; 2531,spheroids,Q13131(T183),DP0000869
+ovarian epithelial carcinoma,increased,Q15831,26068970,25,2,3,3482,spheroids,Q15831(S428),DP0000870
+colorectal cancer,,Q7L5N1,26267535,1,0,0,,,Q7L5N1(S148),DP0000871
+PAH,increased,P17655,26248159,3,1,0,,,P17655(S50),DP0000872
+PAH,decreased,P17655,26248159,2,1,2,,,P17655(S369),DP0000873
+"breast cancer, triple negative",,Q15910,26279746,2,5,7,,,Q15910(T416),DP0000874
+melanoma skin cancer,increased,Q13315,26275218,167,22,4,13050; 4526; 5883,"nuclear S1981 is associated with melanoma progression, strong S1981 was associated with worse overall survival ",Q13315(S1981),DP0000875
+breast cancer,decreased,P50552,26336132,3,15,45,,Patients with high expression of PRKD2 showed an increase in relapse-free survival.,P50552(S322),DP0000876
+anal carcinoma,increased,Q14790,27462786,4,0,0,,elevated levels of Plk3 and pT273 caspase-8  are correlated with favorable clinical outcome with  mitomycin C-based chemoradiotherapy (CRT),Q14790(T273),DP0000877
+glioblastoma multiforme,increased,P30304,27485204,1,0,0,,High Cdc25A pY59 levels indicate poor prognosis.,P30304(Y59),DP0000878
+prostate cancer,increased,Q16643,28319065,5,83,28,,,Q16643(S142),DP0000879
+ovarian cancer,increased,Q00613,28415561,34,21,13,,shorter overall survival (OS) ,Q00613(S326),DP0000880
+melanoma skin cancer,increased,Q15046,28394346,4,1,0,,,Q15046(S207),DP0000881
+pancreatic carcinoma,increased,O60331,28388589,3,0,0,,,O60331(Y639),DP0000882
+breast ductal carcinoma,increased,P10275,28415597,9,3,0,,improved cancer-specifc survival in ductal breast cancer ,P10275(S516),DP0000883
+"breast cancer, triple negative",increased,P10275,28415597,9,3,0,,poorer patient survival,P10275(S516),DP0000884
+breast ductal carcinoma,increased,P27361,28415597,1154,100,2017,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P27361(T202),DP0000885
+breast ductal carcinoma,increased,P28482,28415597,1126,149,4003,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P28482(Y187),DP0000886
+breast ductal carcinoma,increased,P27361,28415597,1177,129,3549,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P27361(Y204),DP0000887
+breast ductal carcinoma,increased,P28482,28415597,1104,117,2416,9106; 4370; 4374; 14196; 9101; 4375; 8544; 75165; 54240; 4376; 3510; 5726; 13148; 33370; 13214; 14227; 9488; 15892; 4377; 98168; 14095; 14474,improved cancer-specifc survival in ductal breast cancer ,P28482(T185),DP0000888
+colorectal cancer,increased,Q96S44,28412249,3,0,7,,,Q96S44(S250),DP0000889
+glioma,increased,Q9NR19,28552616,2,1,0,,,Q9NR19(S659),DP0000890
+lung cancer,decreased,Q6U7Q0,28581525,1,1,0,,,Q6U7Q0(S391),DP0000891
+breast cancer,increased,P11802,28566333,8,3,3,,CDK4 T172 phosphorylation best correlated with sensitivity to PD0332991,P11802(T172),DP0000892
+pancreatic cancer,increased,P31749,28363942,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0000893
+FMD,increased,P21333,28348077,16,79,999,4761,,P21333(S2152),DP0000894
+breast cancer,increased,P00338,28218905,3,24,374,8176,progression of metastatic cancer,P00338(Y10),DP0000895
+NAFLD,increased,Q96EB6,28533219,1,4,0,,,Q96EB6(S172),DP0000896
+Alzheimer's disease,increased,P49768,28132667,2,0,0,,,P49768(S310),DP0000897
+chronic lymphocytic leukemia,increased,Q93009,28418900,2,63,5,,,Q93009(S18),DP0000898
+ovarian cancer,increased,P06400,28319064,63,43,112,8974; 8957; 8516; 4277; 9308; 11917,,P06400(S807),DP0000899
+ovarian cancer,increased,P06400,28319064,12,17,36,,,P06400(T356),DP0000900
+CCA,increased,P08047,28574228,5,16,0,,,P08047(S59),DP0000901
+Parkinson's disease,increased,P37840,28636593,42,5,0,23706,,P37840(S129),DP0000902
+Parkinson's disease,increased,P37840,28636593,4,2,11,,,P37840(Y39),DP0000903
+non-small cell lung cancer,increased,O00767,28724430,1,2,6,,poor prognosis,O00767(Y55),DP0000904
+non-small cell lung cancer,increased,P00533,28724430,115,27,352,2236; 3777; 2234; 14565; 8543,poor prognosis,P00533(Y1092),DP0000905
+clear cell kidney cancer,increased,P29350,28692056,16,24,637,,advanced pathologic stage,P29350(Y536),DP0000906
+Alzheimer's disease,increased,Q99538,28826672,1,0,0,,,Q99538(S226),DP0000907
+Alzheimer's disease,increased,P78362,28826672,3,6,0,,,P78362(T492),DP0000908
+Alzheimer's disease,increased,P10636-8,28760828,8,6,2,,,P10636-8(S324),DP0000909
+breast cancer; ovarian cancer,increased,Q15910,29351847,1,1,0,27888,better survival,Q15910(T311),DP0000910
+nephrosis,increased,P29350,28811476,16,24,637,,protects mice against lethal nephritis,P29350(Y536),DP0000911
+SLE,,P29350,28811476,8,2,15,,,P29350(S591),DP0000912
+Alzheimer's disease,increased,P10636-8,28814543,119,41,90,9632,,P10636-8(S396),DP0000913
+Alzheimer's disease,increased,P10636-8,28814543,106,50,116,39357,,P10636-8(S202),DP0000914
+Alzheimer's disease,increased,P10636-8,28814543,105,48,69,91600; 35834; 20194; 98523,,P10636-8(S404),DP0000915
+Alzheimer's disease,increased,P05412,28814543,110,41,4,9261; 5464; 91952; 2361,,P05412(S63),DP0000916
+Alzheimer's disease,decreased,P56817,28946017,6,3,0,,decreased in AD brains,P56817(S498),DP0000917
+Huntington's disease,decreased,P42858,29162692,7,1,0,,,P42858(T3),DP0000918
+hepatocellular carcinoma,increased; mutation of site,P04637,29225033,1,0,0,,,P04637(R249),DP0000919
+chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(S254),DP0000920
+chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(T314),DP0000921
+chronic lymphocytic leukemia,increased,P06734,29763855,1,0,0,,,P06734(S265),DP0000922
+acute myelogenous leukemia,increased,P23443,18056483,367,6,1,9209; 9206; 97596; 9234; 9205,,P23443(T412),DP0000923
+non-small cell lung cancer,mutation of site,P00533,20522446,6,0,0,,,P00533(S768),DP0000924
+non-small cell lung cancer,mutation of site,P00533,26870223,6,0,0,,,P00533(S768),DP0000925
+atrial fibrillation,mutation of site,P23327,30840693,2,4,0,,"rs3745297 (T>G, Ser96Ala) single nucleotide polymorphism (SNP) of HRC",P23327(S96),DP0000926
+liver cancer,increased,Q9NZQ7,31305264,1,1,0,,required for liver cancer tumorigenesis in immunocompetent mice,Q9NZQ7(Y112),DP0000927
+lung cancer; non-small cell lung adenocarcinoma; glioblastoma,increased,O95819,12612079,1,9,102,,,O95819(T187),DP0000928
+Parkinson's disease,increased,P30086,25104559,1,15,0,,,P30086(T42),DP0000929
+breast cancer,increased,Q12933,23007157,5,15,0,13908,,Q12933(S11),DP0000930
+Alzheimer's disease,increased,Q16555,17683481,20,47,84,,,Q16555(S522),DP0000931
+Alzheimer's disease,decreased,Q99683,24985705,15,3,1,3764,,Q99683(S966),DP0000932
+depression,increased,Q9UNF0,23918399,1,3,0,,,Q9UNF0(S372),DP0000933
+depression,increased,Q9UNF0,23918399,1,9,0,,,Q9UNF0(S375),DP0000934
+Kaposi's sarcoma,increased,Q16236,25505069,23,0,0,,Inhhibition of NRF2 signaling may serve as a therapeutic approach to improve Kaposi's sarcoma pathology.,Q16236(S40),DP0000935
+HNSCC,increased,O14965,17895985,3,3,0,,,O14965(S51),DP0000936
+Parkinson's disease,increased,P37840,21400129,42,5,0,23706,,P37840(S129),DP0000937
+breast cancer; lung cancer; colorectal cancer; esophageal cancer; gastric cancer,increased,P98170,23749209,8,0,0,,,P98170(S87),DP0000938
+breast cancer,increased,P23771,25479686,4,0,0,,,P23771(S308),DP0000939
+non-small cell squamous cell lung carcinoma,increased,P31749,20008839,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,predicts poor prognosis,P31749(S473),DP0000940
+non-small cell squamous cell lung carcinoma,increased,P06730,20008839,50,3,0,9741,predicts poor prognosis,P06730(S209),DP0000941
+Alzheimer's disease,increased,P05067,21527912,9,0,0,,,P05067(S679),DP0000942
+type 2 diabetes,increased,P45983,21931634,233,47,1269,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,after LPS treatment,P45983(Y185),DP0000943
+HES,mutation of site,P16234,21224473,3,9,59,3170,mutated to Y849S,P16234(Y849),DP0000944
+HER2 positive breast cancer,increased,P08727,25342465,3,14,115,,,P08727(S35),DP0000945
+ovarian epithelial carcinoma,decreased,P51532,25083560,1,56,6,,,P51532(S1452),DP0000946
+multiple myeloma,decreased,Q9NQ25,25312647,1,3,14,,,Q9NQ25(Y284),DP0000947
+HNSCC,increased,O15350,25379016,3,0,0,,,O15350(T27),DP0000948
+type 2 diabetes,increased,P45983,21931634,234,32,392,4306; 5136; 4668; 4671; 9257; 9255; 5755; 9251,after LPS treatment,P45983(T183),DP0000949
+type 2 diabetes,decreased,Q13131,21931634,211,14,33,5256; 2535; 4188; 50081; 2531,increased in Normal Glucose tolerance (NGT) volunteers after LPS treatment,Q13131(T183),DP0000950
+ovarian cancer,increased,P08559,25237928,77,105,675,31866,,P08559(S293),DP0000951
+ovarian cancer,decreased,Q8NEB9,25416196,2,1,0,,,Q8NEB9(S164),DP0000952
+ovarian cancer,decreased,Q15121,25416196,10,92,1092,,,Q15121(S116),DP0000953
+spinocerebellar ataxia type 1,increased,P54253,24903464,16,25,3,,,P54253(S775),DP0000954
+glioblastoma,increased,P30530,28881571,2,1,2,,significantly shorter overall survival,P30530(Y779),DP0000955
+Alzheimer's disease,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000956
+ADLB,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000957
+DLB,decreased,P27348,28695147,4,16,0,,Triton X-100 insoluble fraction; associated with clinical and pathological severity,P27348(S232),DP0000958
+Alzheimer's disease,increased,Q8NB16,28758999,16,1,0,91689; 37333,,Q8NB16(S358),DP0000959
+Alzheimer's disease,increased,Q8NB16,28758999,5,0,1,,,Q8NB16(T357),DP0000960
+colorectal cancer,increased,P09651,29344170,2,93,4,,poor prognosis,P09651(S6),DP0000961
+CTE,increased,P10636-8,29298849,86,38,14,,colocalization of pT175 tau with the active pGSK3B,P10636-8(T231),DP0000962
+CTE,increased,P10636-8,29298849,8,8,0,,colocalization of pT175 tau with the active pGSK3B,P10636-8(T175),DP0000963
+ALS; CTE,increased,P10636-8,29298849,8,8,0,,CTE with ALS,P10636-8(T175),DP0000964
+ALS; CTE,increased,P10636-8,29298849,86,38,14,,CTE with ALS,P10636-8(T231),DP0000965
+ALS,mutation of site,P41002,29021214,1,1,0,,,P41002(S621),DP0000966
+hypertrophic cardiomyopathy,increased,Q14738,29294329,7,51,347,,S573 is increased in the setting of pressure overload-induced cardiac hypertrophy.,Q14738(S573),DP0000967
+PAH,increased,P08559,29070699,77,105,675,31866,,P08559(S293),DP0000968
+glioblastoma,increased,Q9Y4P1,29232556,2,37,2,19386,,Q9Y4P1(S383),DP0000969
+acute myelogenous leukemia,increased,Q06413,29431698,1,32,1,,AML chemotherapy resistance ,Q06413(S222),DP0000970
+diabetes mellitus,decreased,P02489,29467334,2,5,0,,,P02489(T148),DP0000971
+glioblastoma,increased,Q9C026-5,29669288,1,0,0,,"stability of TRIM9s-MKK6-p38 complex, and it maintains the high activation state of p38 signaling to suppress glioblastoma progression",Q9C026-5(S76),DP0000972
+glioblastoma,increased,Q9C026-5,29669288,1,0,0,,"stability of TRIM9s-MKK6-p38 complex, and it maintains the high activation state of p38 signaling to suppress glioblastoma progression",Q9C026-5(S80),DP0000973
+Alzheimer's disease; Huntington's disease,decreased,P55212,22433863,3,0,0,,,P55212(S257),DP0000974
+liver disease,,P05783,15368451,14,26,13,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05783(S34),DP0000975
+liver disease,,P05787,15368451,26,8,23,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05787(S432),DP0000976
+liver disease,,P05783,15368451,16,12,14,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05783(S53),DP0000977
+liver disease,,P05787,15368451,26,8,9,,chronic noncirrhotic hepatitis C virus (HCV) or cirrhosis,P05787(S74),DP0000978
+mutation causing Brugada Syndrom,mutation of site,Q14524,24795344,4,1,1,,expression of R526H and S528A channels were reduced compared with WT,Q14524(S528),DP0000979
+spinocerebellar ataxia type 1,increased,P54253,29758256,16,25,3,,Inhibition of phosphorylation at S776 results in degradation of ataxin which leads to delayed onset of ataxia,P54253(S775),DP0000980
+atherosclerosis,deletion of site,Q96EB6,23754392,4,19,1,2327,,Q96EB6(S27),DP0000981
+atherosclerosis,deletion of site,Q96EB6,23754392,6,48,9,2314,,Q96EB6(S47),DP0000982
+Alzheimer's disease; AD,increased,Q13148,25134727,40,1,0,,,Q13148(S410),DP0000983
+breast cancer,decreased,P21333,20179208,16,79,999,4761,,P21333(S2152),DP0000984
+breast cancer,decreased,P21333,20179208,2,69,16,,,P21333(S1459),DP0000985
+Huntington's disease; LBD; ADLB,increased,P19419,20126313,6,0,1,,,P19419(T417),DP0000986
+"cancer, squamous cell carcinoma",increased,P31749,21795477,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0000987
+Alzheimer's disease; AD,increased,Q13148,25134727,40,1,0,,,Q13148(S409),DP0000988
+breast cancer,decreased,P01106,21808024,56,37,30,46650,,P01106(T58),DP0000989
+"breast cancer, triple negative",increased,Q13323,24637719,1,0,0,,,Q13323(S124),DP0000990
+colorectal cancer,decreased,Q9GZT9,28199842,1,24,5,,,Q9GZT9(S125),DP0000991
+multiple myeloma,increased,Q9UJZ1,24676687,2,1,0,,,Q9UJZ1(S17),DP0000992
+Alzheimer's disease,increased,P10636-8,24116116,42,29,23,12885,,P10636-8(T181),DP0000993
+Alzheimer's disease,increased,P10636-8,24116116,86,38,14,,,P10636-8(T231),DP0000994
+multiple myeloma,increased,P51812,23012246,12,41,151,3556,,P51812(S227),DP0000995
+occular surface disease,increased,Q9NZC7,26120275,19,0,0,,,Q9NZC7(Y33),DP0000996
+hepatocellular carcinoma,decreased,P01106,25893300,52,33,33,13748,,P01106(S62),DP0000997
+hepatocellular carcinoma,decreased,Q9GZU7,25893300,1,0,0,,,Q9GZU7(S245),DP0000998
+T-ALL,mutation of site,P46531,25344755,1,1,0,,,P46531(S2513),DP0000999
+T-ALL,mutation of site,P46531,25344755,4,1,0,,,P46531(T2511),DP0001000
+T-ALL,mutation of site,P46531,25344755,1,1,0,,,P46531(S2516),DP0001001
+breast adenocarcinoma,increased,O75116,22273145,2,4,0,,,O75116(S1366),DP0001002
+glioblastoma,increased,P30530,28881571,1,3,52,44463,significantly shorter overall survival,P30530(Y698),DP0001003
+neuroblastoma,increased,O75116,28739902,1,0,0,,,O75116(T396),DP0001004
+pancreatic ductal adenocarcinoma,increased,Q9NWZ3,29363544,6,3,0,12914; 87995; 80738; 11927,,Q9NWZ3(T345),DP0001005
+pancreatic ductal adenocarcinoma,increased,Q04206,29363544,139,4,0,4887; 3036; 5733; 3031; 4886; 4025; 3033; 13346,,Q04206(S536),DP0001006
+psoriasis,increased,Q15418,29290690,17,16,180,9346,increase in western blot and in nuclei in lesion skin,Q15418(T573),DP0001007
+psoriasis,decreased,Q15418,29290690,55,47,64,13397; 13588; 9341; 9335; 12032; 11989; 13575,increase in western blot and cytosolic in lesion skin,Q15418(S380),DP0001008
+psoriasis,increased,P51812,29290690,9,14,180,,increase in western blot and in nuclei in lesion skin,P51812(T577),DP0001009
+psoriasis,decreased,P51812,29290690,11,18,59,13397; 13588; 9341; 9335; 12032; 11989; 13575,increase in western blot and cytosolic in lesion skin,P51812(S386),DP0001010
+HBL,decreased,P49715,29159818,13,0,0,,C/EBPa-dependent CSCs are observed in patients with aggressive hepatoblastoma and in patients with a predisposition for liver cancer. ,P49715(S190),DP0001011
+lung cancer,increased,P17096,29038488,5,60,173,,involved in lung cancer cell proliferation,P17096(S99),DP0001012
+breast cancer,,O75330,28993511,1,10,6,,predictor  of  breast  cancer-specific  survival  and  relapse-free  survival  in  patients  with  estrogen  receptor (ER)-negative breast cancer,O75330(T703),DP0001013
+pancreatic cancer,increased,Q15691,29228685,3,1,0,,correlated with high ASK1 expression; ASK1-mediated phosphorylation of EB1 may contribute to pancreatic cancer cell proliferation ,Q15691(T206),DP0001014
+hepatocellular carcinoma,increased,P36956,29514980,1,0,0,,T59  phosphorylation is correlated with poor prognosis in HCC patients.,P36956(T59),DP0001015
+non-small cell lung cancer,increased,O94925-3,29515166,1,0,0,,poor survival of NSCLC patients,O94925-3(S314),DP0001016
+T cell lymphoma,increased,O43318,29511289,1,1,0,,,O43318(T344),DP0001017
+T cell lymphoma,increased,O43318,29511289,1,6,0,,,O43318(T444),DP0001018
+breast ductal carcinoma,decreased,P16471,16278670,4,0,0,,,P16471(S349),DP0001019
+colorectal carcinoma,increased,Q9Y3F4,29783958,3,1,0,,,Q9Y3F4(T175),DP0001020
+colorectal carcinoma,increased,Q14680,29783958,2,0,0,,,Q14680(S171),DP0001021
+colorectal carcinoma,increased,Q14680,29783958,3,1,0,,,Q14680(T167),DP0001022
+colorectal carcinoma,increased,Q9Y3F4,29783958,3,0,0,,,Q9Y3F4(S179),DP0001023
+glioblastoma,mutation of site,Q14185,23728337,2,0,0,,"citated in this paper : TCGA portal, https://tcga-data.nci.nih.gov).  "" Dock180 was found to be mutated to L1250 in a clinical glioblastoma sample from a patient after treatment with temozolomide"".",Q14185(S1250),DP0001024
+breast cancer,mutation of site,Q13480,22751113,1,6,0,,T387N mutation,Q13480(T387),DP0001025
+breast ductal carcinoma,mutation of site,Q13480,22751113,2,0,0,,Y83C mutation,Q13480(Y83),DP0001026
+breast cancer,molecular association,Q13761,22580604,1,2,4,,,Q13761(T212),DP0001027
+breast cancer,molecular association,Q13761,22580604,1,6,6,,,Q13761(S214),DP0001028
+breast cancer,molecular association,Q13761,22580604,2,3,0,,,Q13761(T209),DP0001029
+breast cancer,molecular association,Q13761,22580604,1,5,21,,,Q13761(T231),DP0001030
+kidney cancer,increased,Q2PPJ7,22580611,2,19,39,,,Q2PPJ7(S486),DP0001031
+kidney cancer,increased,Q2PPJ7,22580611,2,7,54,,,Q2PPJ7(T715),DP0001032
+kidney cancer,increased,P31749,22580611,1404,19,44,88106; 9271; 3787; 4060; 5315; 9563; 4070; 9018; 15116; 4051; 5102; 4075; 5012; 4071; 4054; 4058; 11962; 2336; 2337; 12694,,P31749(S473),DP0001033
+FXS,decreased,Q06787,17376973,19,6,0,,Dephosphorylated FMRP leads to decrease in synapse number and function.,Q06787(S500),DP0001034
+Alzheimer's disease; DLB,increased,P10636-8,17761554,42,29,23,12885,,P10636-8(T181),DP0001035
+AC,increased,P17302,18065522,20,19,1,,in UM-X7.1 hamsters,P17302(S255),DP0001036
+glioma,increased,Q13224,25434386,36,11,31,,,Q13224(S1303),DP0001037
+Alzheimer's disease,decreased,Q96C19,24917152,2,79,42,,,Q96C19(S74),DP0001038
+Alzheimer's disease,increased,P05067,25023775,9,0,0,,,P05067(S679),DP0001039
+occular surface disease,increased,O15392,25468890,13,6,7,8888,,O15392(T34),DP0001040
+breast cancer,increased,P38398,21706030,2,13,3,,,P38398(S1191),DP0001041
+breast cancer,increased,O60331,25486426,3,0,0,,metastasis,O60331(Y639),DP0001042
+colorectal cancer,increased,P53355,17803936,1,0,0,,,P53355(Y490),DP0001043
+glioblastoma multiforme,increased,Q14185,25468898,2,0,0,,,Q14185(S1250),DP0001044
+breast cancer,increased,P38398,21706030,4,15,6,,,P38398(S1189),DP0001045
+breast cancer,increased,P38398,21706030,6,4,2,,,P38398(S1497),DP0001046
+prostate cancer,increased,P50549,23774214,3,3,2,,,P50549(S216),DP0001047
+hypertrophic cardiomyopathy,increased,P23443,20190034,367,6,1,9209; 9206; 97596; 9234; 9205,,P23443(T412),DP0001048
+colorectal cancer,increased,P53355,17803936,1,0,0,,,P53355(Y491),DP0001049
+mantle cell lymphoma,mutation of site,O00165,25419709,1,0,0,,,O00165(S210),DP0001050
+"cancer, squamous cell carcinoma",decreased,P05787,22114688,26,8,9,,,P05787(S74),DP0001051
+nephrosis,decreased,O60500,25404734,10,0,0,,,O60500(Y1217),DP0001052
+breast cancer,increased,P01106,21808024,52,33,33,13748,,P01106(S62),DP0001053
+Alzheimer's disease,increased,P10636-8,24757378,70,27,33,29957,,P10636-8(S199),DP0001054
+atrial fibrillation,,O14649,25437921,3,0,0,,Phosphorylation of T383 is not responsible for the phosphorylation-dependent loss of current in chronic AF.,O14649(T383),DP0001055
+mantle cell lymphoma,deletion of site,Q8TCJ0,25419709,1,0,0,,,Q8TCJ0(S178),DP0001056
+Alzheimer's disease,increased,P10636-8,24757378,74,21,26,43964; 49561; 53001,,P10636-8(T205),DP0001057
+Alzheimer's disease,increased,P10636-8,24757378,84,20,2,,,P10636-8(S262),DP0001058
+Alzheimer's disease,increased,P10636-8,24757378,32,7,0,,,P10636-8(S422),DP0001059
+Alzheimer's disease,increased,P10636-8,24757378,106,50,116,39357,,P10636-8(S202),DP0001060
+Alzheimer's disease,increased,P10636-8,24757378,86,38,14,,,P10636-8(T231),DP0001061
+"cancer, squamous cell carcinoma",decreased,P05787,22114688,26,8,23,,,P05787(S432),DP0001062
