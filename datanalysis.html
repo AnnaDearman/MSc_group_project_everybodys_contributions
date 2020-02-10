@@ -41,7 +41,7 @@
 </div>
 
 
-<h2> Phosphoproteomics Data Analysis </h2>
+<h2> Quantitative Phosphoproteomics Data Analysis </h2>
 
 <form style="float: left">
 <table border="1" >
@@ -94,150 +94,150 @@
 
 {%for i in range(0, len)%}
 
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:white;
-        font-size:20px;
-        border: 2px solid grey; font-weight: bold; padding-right: 740px">
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:white;
+            font-size:20px;
+            border: 2px solid grey; font-weight: bold; padding-right: 740px">
 
-        <a id="{{Inhibitor[i]}}"> {{Inhibitor[i]}}</a>
+            <a id="{{Inhibitor[i]}}"> {{Inhibitor[i]}}</a>
 
-</div>
+    </div>
 
-<div style="float: right; line-height: 25px; width: 300px; height: 10px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+    <div style="float: right; line-height: 25px; width: 300px; height: 10px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
 
- <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+     <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
- <a> Kinase(s) Relative Activity </a>
+     <a> Kinase(s) Relative Activity </a>
 
-</div>
+    </div>
 
-<div style="float: right; line-height: 25px; padding-right: 280px">
+    <div style="float: right; line-height: 25px; padding-right: 280px">
 
-    <a href="/download/table4"> Download this table </a>
+        <a href="/download/table4"> Download this table </a>
 
-    {% for row in tables4 %}
-            {{titles4[loop.index]}}
-            {{ table|safe }}
-    {% endfor %}
+        {% for table in tables4 %}
+            <!-- {{titles4[loop.index]}} -->
+            {{ table[i]|safe }}
+        {% endfor %}
 
-</div>
+    </div>
 
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
-
-
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
-
- <a> Kinase(s) Relative Activity Plot </a>
-
-</div>
-
-<div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
-        font-size:13px;
-        border: 2px solid #FFFAFA">
-
-<a href="/RKAplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
-
-</div>
-
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
 
 
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
-   
-<div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+     <a> Kinase(s) Relative Activity Plot </a>
 
-<a>Kinase-Phosphosite: All phosphosites </a>
+    </div>
 
-</div>
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
 
-<div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
-        font-size:13px;
-        border: 2px solid #FFFAFA">
+    <a href="/RKAplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
 
-    <a href="/download/table1"> Download this table </a>
-</div>
+    </div>
 
-<div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
 
 
 
+       
+    <div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+    <a>Kinase-Phosphosite: All phosphosites </a>
 
-<a id="Volc">Volcano plot of phosphosites </a>
+    </div>
 
-</div>
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
 
-<div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
-        font-size:13px;
-        border: 2px solid #FFFAFA, overflow:scroll">
+        <a href="/download/table1"> Download this table </a>
+    </div>
 
-<a href="/volcanoplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
-
-</div>
-
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+    <div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
 
 
 
 
-<div style="float: right; line-height: 50px; width: 300px; height: 90px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
-<a>Kinase-Phosphosite: Phosphosites with a kinase match </a>
+    <a id="Volc">Volcano plot of phosphosites </a>
 
-</div>
+    </div>
 
-<div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
-        font-size:13px;
-        border: 2px solid #FFFAFA">
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA, overflow:scroll">
 
-    <a href="/download/table2"> Download this table </a>
+    <a href="/volcanoplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
 
-</div>
+    </div>
 
-<div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
 
 
-<div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
-        font-size:20px;
-        border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
-<a> Kinase-Phosphosite: Phosphosites with no kinase match </a>
 
-</div>
+    <div style="float: right; line-height: 50px; width: 300px; height: 90px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
 
-<div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
-        font-size:13px;
-        border: 2px solid #FFFAFA">
+    <a>Kinase-Phosphosite: Phosphosites with a kinase match </a>
 
-    <a href="/download/table3"> Download this table </a>
+    </div>
 
-</div>
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
 
-<div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
-        font-size:20px;
-        border: 2px solid #F0F8FF; font-weight: bold; padding-left: 100px"></div>
+        <a href="/download/table2"> Download this table </a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+    <a> Kinase-Phosphosite: Phosphosites with no kinase match </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
+
+        <a href="/download/table3"> Download this table </a>
+
+    </div>
+
+    <div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-left: 100px"></div>
 
 {%endfor%}
 
@@ -248,5 +248,3 @@
 
 
 </body>
-
-

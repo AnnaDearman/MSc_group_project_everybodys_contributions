@@ -261,6 +261,8 @@ def data_analysis(path, filename):
         ################################
     global inh_len
     inh_len = len(Inhibitor)
+    global df_submeans
+    df_submeans = []
     ### import sample data
     for i in range(inh_len):
         global inh
@@ -362,6 +364,7 @@ def data_analysis(path, filename):
         global df_submean2_top10
         global df_submean2_bot10
         global df_submean2_20
+        global RKA_cols
         df_submean2_top10 = df_submean2.sort_values(by=['Kinase_RAS'],ascending=False)
         df_submean2_top10 = df_submean2_top10.reset_index(drop=True)
         df_submean2_top10 = df_submean2_top10.loc[0:10]
@@ -372,7 +375,9 @@ def data_analysis(path, filename):
         df_submean2_bot10 = df_submean2_bot10.reset_index(drop=True)
         df_submean2_20 = pd.concat([df_submean2_top10,df_submean2_bot10],axis=0)
         df_submean2_20 = df_submean2_20.reset_index(drop=True)
-        
+        RKA_cols = df_submean2_20.columns.values
+        df_submean2_20 = df_submean2_20.to_html(classes="data")
+        df_submeans.append(df_submean2_20)
 
         Bon_cor = -math.log10(0.05/len(df1['p_value']))
 
@@ -567,7 +572,7 @@ def redgen():
 @application.route('/uploads/<filename>')
 def uploaded_file(filename):
     form = SearchForm()
-    return render_template('datanalysis.html', len= len(Inhibitor), Inhibitor= Inhibitor, tables4=[df_submean2_20.to_html(classes='data')], titles4=df_submean2_20.columns.values, form=form)
+    return render_template('datanalysis.html', len= len(Inhibitor), Inhibitor= Inhibitor, tables4=[df_submeans], titles4=RKA_cols, form=form)
 
 #Download the phosphosites-kinases table with kinases match, and phosphosites with no kinase match (from the downloads folder)
 @application.route('/download/table1/<inhibitor>')
@@ -754,4 +759,3 @@ def inhibitor(inhibitor_name):
 #--------------------------------------------------------------------------------------------------------------------------  
 if __name__ == '__main__':
     application.run()
-
