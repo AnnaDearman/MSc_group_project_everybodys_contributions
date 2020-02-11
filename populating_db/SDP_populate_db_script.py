@@ -28,9 +28,7 @@ import pandas as pd
 # In[ ]:
 
 
-# engine = create_engine('sqlite:///c:\\sqlite\\final_database.db', echo=True)
-
-engine = create_engine('sqlite:///c__sqlite_final_database.db', echo=True)
+engine = create_engine('sqlite:///c__sqlite_final_database_v8.db', echo=True)
 
 Session = sessionmaker(bind=engine)
 session = Session()
@@ -100,15 +98,19 @@ class Phosphosites(Base):
 
 class Inhibitors(Base):
     __tablename__ = 'inhibitors'
-    Inhibitor = Column(String(150), primary_key=True)
-    Ki_nM = Column(Integer) 
-    IC50_nM = Column(Integer) 
-    Kd_nM = Column(Integer) 
-    EC50_nM = Column(Integer) 
-    POC = Column(Integer) 
-    Source = Column(String(15))
-    IMG_URL = Column(String(100))
-    ID_IN = Column(String(10))
+    BindingDB_ID = Column(String(30))
+    chEMBL_ID = Column(String(30))
+    Ki_nM = Column(String(20))
+    IC50_nM = Column(String(20))
+    Kd_nM = Column(String(20))
+    EC50_nM = Column(String(20))
+    Molecule_name = Column(String(100))
+    Molecule_type = Column(String(50))
+    Molecular_formula = Column(String(50))
+    Molecular_weight = Column(String(20))
+    Synonyms = Column(String(1000))
+    IN_ID = Column(String(20), primary_key=True)
+    chEMBL_URL = Column(String(100))
 
 
 # In[ ]:
@@ -156,10 +158,11 @@ class PhosphositesDiseases(Base):
 
 class InhibKin(Base):
     __tablename__ = 'inhib_kin'
-    Kinase = Column(String(8))
-    Inhibitor = Column(String(134), ForeignKey('inhibitors.Inhibitor'))
-    UniProt_ID = Column(String(6), ForeignKey('human_kinases.UniProt_ID'))
-    ID_KI = Column(String(9), primary_key=True)
+    UniProt_ID = Column(String(20), ForeignKey('human_kinases.UniProt_ID'))
+    BindingDB_ID = Column(String(30)) 
+    chEMBL_ID = Column(String(30))
+    Molecule_name = Column(String(100), ForeignKey('inhibitors.Molecule_name'))
+    IN_KI = Column(String(20), primary_key=True)
 
 
 # __Step 4:__ Define the relationships between the tables within our database
@@ -193,13 +196,13 @@ kinases=pd.read_csv("human_kinase_dataframe.csv")
 
 phosphosites=pd.read_csv("phosphosites.csv")
 
-inhibs=pd.read_csv("inhibitors.csv")
+inhibs=pd.read_csv("final_inhibitors_dataframe.csv")
 
 phospho_kinases=pd.read_csv("kinases_phosphosites.csv")
 
 phospho_diseases=pd.read_csv("phosphosites_diseases.csv")
 
-inhib_kinases=pd.read_csv("inhib_kin.csv")
+inhib_kinases=pd.read_csv("final_inhib_kin_dataframe.csv")
 
 
 # __Step 7:__ Iterating over the columns of the .csv files, row by row to insert the information into the tables of the database
@@ -274,15 +277,19 @@ print ("Finished")
 
 for i in range(len(inhibs)):
     record = Inhibitors(**{
-        "Inhibitor" : inhibs.iloc[i, 0],
-        "Ki_nM" : inhibs.iloc[i, 1],
-        "IC50_nM" : inhibs.iloc[i, 2],
-        "Kd_nM" : inhibs.iloc[i, 3],
-        "EC50_nM" : inhibs.iloc[i, 4],
-        "POC" : inhibs.iloc[i, 5],
-        "Source" : inhibs.iloc[i, 6],
-        "IMG_URL" : inhibs.iloc[i, 7],
-        "ID_IN" : inhibs.iloc[i, 8]
+        "BindingDB_ID" : inhibs.iloc[i, 0], 
+        "chEMBL_ID" : inhibs.iloc[i, 1],
+        "Ki_nM" : str(inhibs.iloc[i, 2]), # turning into a string to avoid the data being corrupted
+        "IC50_nM" : str(inhibs.iloc[i, 3]), # turning into a string to avoid the data being corrupted
+        "Kd_nM" : str(inhibs.iloc[i, 4]), # turning into a string to avoid the data being corrupted
+        "EC50_nM" : str(inhibs.iloc[i, 5]), # turning into a string to avoid the data being corrupted
+        "Molecule_name" : inhibs.iloc[i, 6],
+        "Molecule_type" : inhibs.iloc[i, 7],
+        "Molecular_formula" : inhibs.iloc[i, 8],
+        "Molecular_weight" : str(inhibs.iloc[i, 9]), # turning into a string to avoid the data being corrupted
+        "Synonyms" : inhibs.iloc[i, 10],
+        "IN_ID" : inhibs.iloc[i, 11],
+        "chEMBL_URL" : inhibs.iloc[i, 12]
     })
     session.add(record) # add all the records
     
@@ -354,10 +361,11 @@ print ("Finished")
 
 for ik in range(len(inhib_kinases)):
     record = InhibKin(**{
-        "Kinase" : inhib_kinases.iloc[ik, 0],
-        "Inhibitor" : inhib_kinases.iloc[ik, 1],
-        "UniProt_ID" : inhib_kinases.iloc[ik, 2],
-        "ID_KI" : inhib_kinases.iloc[ik, 3]
+        "UniProt_ID" : inhib_kinases.iloc[ik, 0],
+        "BindingDB_ID" : inhib_kinases.iloc[ik, 1],
+        "chEMBL_ID" : inhib_kinases.iloc[ik, 2],
+        "Molecule_name" : inhib_kinases.iloc[ik, 3],
+        "IN_KI" : inhib_kinases.iloc[ik, 4]
     })
     session.add(record) # add all the records
     
