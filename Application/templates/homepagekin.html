@@ -13,7 +13,6 @@
 
     <div style="position: relative;left: 840px; top:18px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
-    <option value="">Search</option>
     <option value="kin/">Kinase</option>
     <option value="phos/">Phosphosite</option>
     <option value="inh/">Inhibitor</option>
@@ -38,16 +37,6 @@
 </div>
 
 <div class="subheader">
-
-<div style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
-<span style="font-family: verdana">Upload phosphoproteomics data:</span>
-</div>  
-    <form enctype="multipart/form-data" method="POST">
-    <input type="file" name="file" />
-    <input type= "submit" />
-    
-    </form>
-    
 
 </div>
 
@@ -85,7 +74,6 @@ JACKY was built by retrieving data from the following websites: </p>
 </p>
 </div>
 
-
 <h3 style="color: #142C8D;font-family: verdana ; padding-left: 3px; font-size: 15px"> Using JACKY</h3> 
 
 
@@ -110,7 +98,6 @@ JACKY was built by retrieving data from the following websites: </p>
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">
 <b>The file should follow the following format</b>. The correct ordering of the columns is essential for the analysis to work, though the column headers do not matter. For <b>one</b> inhibitor, follow the format below, noting that <b>the last two columns are optional</b>. For <b>multiple</b> inhibitors, columns 1-2 must only be present once, columns 6-7 are optional, and columns 3-5 (or 3-7) should be repeated once for each inhibitor. </p>
-
 <img src="/static/file_structure.jpg" style="width:640px;height:220px;">
 
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px">Each substrate in the file is matched to the kinase that phosphorylates it by searching JACKY, and the relative activity score (RAS) of each kinase is calculated. This information is returned as four tables and two figures, all of which can be downloaded. 

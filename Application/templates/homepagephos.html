@@ -11,16 +11,25 @@
 
 <div class="header">
 
-    <div style="position: relative;left: 840px; top:18px">
+    <div style="position: relative;left: 700px; top:21px">
     <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
-    <option value="">Search</option>
-    <option value="kin/">Kinase</option>
     <option value="phos/">Phosphosite</option>
+    <option value="kin/">Kinase</option>
     <option value="inh/">Inhibitor</option>
     </select>
     </div>
 
-    <div style="position: relative; left: 990px; bottom:5px">
+    <div style="position: relative;left: 810px; top:0px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="">Browse by</option>
+    <option value="/prot/">Protein</option>
+    <option value="/phoskin/">Phosphorylated by</option>
+    <option value="/nseq/">Neighbouring Sequence</option>
+    <option value="/gen/">Genomic Location</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 990px; bottom:23px">
     <form method="POST">
     {{ form.csrf_token }}
     {{ form.protein_name.label }} {{ form.protein_name() }}
@@ -32,23 +41,12 @@
     <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
     </map>
 
-    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:55px; width: 150px; height: 45px">
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:75px; width: 150px; height: 45px">
   
 
 </div>
 
 <div class="subheader">
-
-<div style="float:left;display:inline-block;line-height:25px;padding-left:10px"> 
-<span style="font-family: verdana">Upload phosphoproteomics data:</span>
-</div>  
-    <form enctype="multipart/form-data" method="POST">
-    <input type="file" name="file" />
-    <input type= "submit" />
-    
-    </form>
-    
-
 </div>
 
 <div class="homepage">
@@ -84,7 +82,6 @@ JACKY was built by retrieving data from the following websites: </p>
     <a href="https://www.ebi.ac.uk/unichem/"> UniChem </a>
 </p>
 </div>
-
 
 <h3 style="color: #142C8D;font-family: verdana ; padding-left: 3px; font-size: 15px"> Using JACKY</h3> 
 
@@ -123,6 +120,8 @@ The first table will appear on the website, and shows the RAS of the 10 most enh
 For some substrates, a kinase match may not be found on JACKY. The third table has the same columns as the second one, but contains only the substrates for which a kinase match was not found, while the fourth table contains only the substrates for which a kinase match was found. </p>
 <p style="font-family: verdana ; padding-left: 3px; padding-right: 3px; font-size: 11px"> A volcano plot shows the substrates plotted according to their log fold change (x axis) and their negative log10p (y axis).</p>
 </div>
+</div>
 
 </body>
 </html>
+
