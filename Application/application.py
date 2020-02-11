@@ -27,7 +27,7 @@ from sqlalchemy import Column, Integer, String, ForeignKey, create_engine, or_
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, relationship
 
-engine = create_engine('sqlite:///c__sqlite_final_database.db', echo = True, connect_args={'check_same_thread': False}) #Connect database to Flask app
+engine = create_engine('sqlite:///c__sqlite_final_database_v8.db', echo = True, connect_args={'check_same_thread': False}) #Connect database to Flask app
 Base = declarative_base() #Construct a base class for declarative class definitions.
 Session = sessionmaker(bind = engine) #Set Session, necessary to query the database (see any of the classes under #Hits pages for example)
 session = Session()
@@ -110,15 +110,19 @@ class Phosphosites(Base):
 
 class Inhibitors(Base):
     __tablename__ = 'inhibitors'
-    Inhibitor = Column (String(150), primary_key=True)
-    Ki_nM = Column (Integer) # does entry n/a affect?
-    IC50_nM = Column (Integer) # does entry n/a affect?
-    Kd_nM = Column (Integer) # does entry n/a affect?
-    EC50_nM = Column (Integer) # does entry n/a affect?
-    POC = Column (Integer) # does entry n/a affect?
-    Source = Column (String(15))
-    IMG_URL = Column (String(100))
-    ID_IN = Column (String(10))
+    BindingDB_ID = Column(String(30))
+    chEMBL_ID = Column(String(30))
+    Ki_nM = Column(String(20))
+    IC50_nM = Column(String(20))
+    Kd_nM = Column(String(20))
+    EC50_nM = Column(String(20))
+    Molecule_name = Column(String(100))
+    Molecule_type = Column(String(50))
+    Molecular_formula = Column(String(50))
+    Molecular_weight = Column(String(20))
+    Synonyms = Column(String(1000))
+    IN_ID = Column(String(20), primary_key=True)
+    chEMBL_URL = Column(String(100))
 
 class KinasesPhosphosites(Base):
     __tablename__ = 'kinases_phosphosites'
@@ -154,10 +158,11 @@ class PhosphositesDiseases(Base):
 
 class InhibKin(Base):
     __tablename__ = 'inhib_kin'
-    Kinase = Column(String(30)) #ForeignKey('human_kinases.Entry_name')) 
-    Inhibitor = Column (String(150), ForeignKey('inhibitors.Inhibitor'))
-    ID_KI = Column (String(10), primary_key=True)
-    UniProt_ID = Column(String(6), ForeignKey('human_kinases.UniProt_ID'))
+    UniProt_ID = Column(String(20), ForeignKey('human_kinases.UniProt_ID'))
+    BindingDB_ID = Column(String(30))
+    chEMBL_ID = Column(String(30))
+    Molecule_name = Column(String(100), ForeignKey('inhibitors.Molecule_name'))
+    IN_KI = Column(String(20), primary_key=True)
     
     
 #Relationships between the database tables
@@ -614,7 +619,8 @@ def RKAplot(inhibitor):
 def inhibitorsearch(inhibitor_search):
     form = SearchForm()
     inhibitor_search = inhibitor_search.upper() #Make sure that the inhibitor entered by the user is in uppercase
-    resultss = session.query(Inhibitors).filter(Inhibitors.Inhibitor.startswith(inhibitor_search)).all() #Query the Inhibitors table on the database for entries on the Inhibitor column that start with the inhibitor entered by the user
+    # resultss = session.query(Inhibitors).filter(Inhibitors.Inhibitor.startswith(inhibitor_search)).all() #Query the Inhibitors table on the database for entries on the Inhibitor column that start with the inhibitor entered by the user
+    resultss = session.query(Inhibitors).filter(or_(Inhibitors.BindingDB_ID.startswith(inhibitor_search), Inhibitors.chEMBL_ID.startswith(inhibitor_search), Inhibitors.Molecule_name.startswith(inhibitor_search), Inhibitors.Synonyms.contains(inhibitor_search)) ).all()
     protein_name = None
     if form.validate_on_submit(): #If the user searches for an inhibitor while on this page
         protein_name = form.protein_name.data
@@ -650,7 +656,7 @@ def phosphositesearchnseq(phosphosite_search):
 @application.route('/prot/<phosphosite_search>', methods=['GET', 'POST'])
 def phosphositesearchprot(phosphosite_search):
     form = SearchForm()
-    resultss = session.query(Phosphosites).filter(Phosphosites.PROTEIN.startswith(phosphosite_search)).all() #Query the Phosphosites table on the database for entries on the PROTEIN column that start with the protein entered by the user
+    resultss = session.query(Phosphosites).filter(or_(Phosphosites.PROTEIN.startswith(phosphosite_search),Phosphosites.GENE.startswith(phosphosite_search))).all() #Query the Phosphosites table on the database for entries on the PROTEIN column that start with the protein entered by the user
     protein_name = None
     if form.validate_on_submit(): #If the user searches a phosphosite by protein while being on this page
         protein_name = form.protein_name.data
@@ -745,13 +751,13 @@ def phosphositepage(phosphosite_search, phosphosite_name):
 @application.route('/inh/redirect/<inhibitor_name>', methods=['GET', 'POST'])
 def inhibitor(inhibitor_name):
     form = SearchForm()
-    searchinh = session.query(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).first() #Query the Inhibitor table on the database for entries on the Inhibitor columns that start with the inhibitor selected on the inhibitor hits page
-    searchinhkin = session.query(HumanKinases).join(InhibKin).join(Inhibitors).filter(Inhibitors.Inhibitor==inhibitor_name).all() #Join three tables from the database (HumanKinases, InhibKin, Inhibitors) to isolate the entries on the HumanKinase table that are for kinases that on the InhibKin table are on the same row as the inhibitor selected on the inhibitor hits page
+    searchinh = session.query(Inhibitors).filter(Inhibitors.Molecule_name==inhibitor_name).first() #Query the Inhibitor table on the database for entries on the Inhibitor columns that start with the inhibitor selected on the inhibitor hits page
+    searchinhkin = session.query(HumanKinases).join(InhibKin).join(Inhibitors).filter(Inhibitors.Molecule_name==inhibitor_name).all() #Join three tables from the database (HumanKinases, InhibKin, Inhibitors) to isolate the entries on the HumanKinase table that are for kinases that on the InhibKin table are on the same row as the inhibitor selected on the inhibitor hits page
     protein_name = None
     if form.validate_on_submit(): #If the user searches an Inhibitor from this page
         protein_name = form.protein_name.data
         return redirect(url_for('inhibitorsearch', inhibitor_search=protein_name))
-    return render_template('inhibitorpage.html', Inhibitor=inhibitor_name, Ki_nM=searchinh.Ki_nM, IC50_nM=searchinh.IC50_nM, Kd_nM=searchinh.EC50_nM, Source=searchinh.Source, IMG_URL=searchinh.IMG_URL, searchinhkin=searchinhkin, form=form)
+    return render_template('inhibitorpage.html', Molecular_weight=searchinh.Molecular_weight, Molecular_formula=searchinh.Molecular_formula, Molecule_type=searchinh.Molecule_type, Synonyms=searchinh.Synonyms, chEMBL_URL=searchinh.chEMBL_URL, BindingDB_ID=searchinh.BindingDB_ID, Molecule_name=inhibitor_name, Ki_nM=searchinh.Ki_nM, EC50_nM=searchinh.EC50_nM, IC50_nM=searchinh.IC50_nM, Kd_nM=searchinh.EC50_nM, chEMBL_ID=searchinh.chEMBL_ID, searchinhkin=searchinhkin, form=form)
 
 #--------------------------------------------------------------------------------------------------------------------------  
 
