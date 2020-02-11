@@ -1,0 +1,249 @@
+<doctype html>
+
+<html>
+<head>
+    <title>JACKY</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+</head>
+
+
+<body>
+
+<div class="header">
+
+    <div style="position: relative;left: 840px; top:18px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="">Search</option>
+    <option value="kin/">Kinase</option>
+    <option value="phos/">Phosphosite</option>
+    <option value="inh/">Inhibitor</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 990px; bottom:5px">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.protein_name.label }} {{ form.protein_name() }}
+    {{ form.submit() }}  
+    </form>
+    </div>
+  
+<map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:75px; width: 150px; height: 45px">
+
+</div>
+
+<div class="subheader">
+
+</div>
+
+
+<h2> Quantitative Phosphoproteomics Data Analysis </h2>
+
+<form style="float: left">
+<table border="1" >
+<tr>
+<th>Go to:</th>
+</tr>
+
+{%for i in range(0, len)%}
+
+<tr>
+    <td style="background-color: white"><p> <a href="#{{Inhibitor[i]}}"> <b>{{Inhibitor[i]}} </b> </a> </p> </td>
+</tr>
+
+<tr>
+    <td><a href="/download/table4/{{Inhibitor[i]}} "> <p> Download table:</p> </a><p>Kinase(s) Relative </p> <p>Activity</p> </td>
+</tr>
+
+<tr>
+<td>
+<a href="/RKAplot/{{Inhibitor[i]}}" target="_blank"> <p>Kinase(s) Relative </p> <p>Activity Bar Plot</p> </a>
+</td> 
+</tr>
+
+
+<tr>
+    <td><a href="/download/table1/{{Inhibitor[i]}} "> <p>Download table: </p> </a> <p>Kinase-Phosphosite </p> <p>(All phosphosites) </p></td>
+</tr>
+
+<tr>
+<td>
+<a href="/volcanoplot/{{Inhibitor[i]}}" target="_blank">Volcano Plot of phosphosites</a><p> 
+</td>
+</tr>
+
+
+
+<tr>
+    <td><a href="/download/table2/{{Inhibitor[i]}} "> <p>Download table: </p> </a><p>Kinase-Phosphosite </p>  <p>(Phosphosites with </p> <p>a kinase match) </p></td>
+</tr>
+
+
+<tr>
+    <td><a href="/download/table3/{{Inhibitor[i]}} "> <p> Download table : </p></a><p>Kinase-Phosphosite </p> <p>(Phosphosites with </p> <p>no kinase match) </p> </td>
+</tr>
+
+{%endfor%}
+
+</table>
+</form> 
+
+{%for i in range(0, len)%}
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:white;
+            font-size:20px;
+            border: 2px solid grey; font-weight: bold; padding-right: 740px">
+
+            <a id="{{Inhibitor[i]}}"> {{Inhibitor[i]}}</a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 10px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+     <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+     <a> Kinase(s) Relative Activity </a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; padding-right: 280px">
+
+        <a href="/download/table4/{{Inhibitor[i]}}"> Download this table </a>
+
+        {% for table in tables4 %}
+            {{ table[i]|safe }}
+        {% endfor %}
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+     <a> Kinase(s) Relative Activity Plot </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
+
+    <a href="/RKAplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+
+       
+    <div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+    <a>Kinase-Phosphosite: All phosphosites </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
+
+        <a href="/download/table1/{{Inhibitor[i]}}"> Download this table </a>
+    </div>
+
+    <div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+    <a id="Volc">Volcano plot of phosphosites </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA, overflow:scroll">
+
+    <a href="/volcanoplot/{{Inhibitor[i]}}" target="_blank"> Click here to see plot </a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+
+
+    <div style="float: right; line-height: 50px; width: 300px; height: 90px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+    <a>Kinase-Phosphosite: Phosphosites with a kinase match </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
+
+        <a href="/download/table2/{{Inhibitor[i]}}"> Download this table </a>
+
+    </div>
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-right: 100px"></div>
+
+
+    <div style="float: right; line-height: 25px; width: 300px; height: 50px; background-color:#ECECEC;
+            font-size:20px;
+            border: 2px solid #FFFAFA; font-weight: bold; padding-right: 740px">
+
+    <a> Kinase-Phosphosite: Phosphosites with no kinase match </a>
+
+    </div>
+
+    <div style="width: 300px; height: 24px; float: right; padding-right: 740px; background-color:#ECECEC;
+            font-size:13px;
+            border: 2px solid #FFFAFA">
+
+        <a href="/download/table3/{{Inhibitor[i]}}"> Download this table </a>
+
+    </div>
+
+    <div style="float: left; line-height: 25px; width: 300px; height: 23px; background-color:#F0F8FF;
+            font-size:20px;
+            border: 2px solid #F0F8FF; font-weight: bold; padding-left: 100px"></div>
+
+{%endfor%}
+
+
+
+
+
+
+
+</body>

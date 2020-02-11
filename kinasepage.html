@@ -208,13 +208,15 @@ $(document).ready( function () {
     
 <tr>
 <th><b>Name</b></th>
-<th ><b>Source</b></th>
+<th ><b>BindingDB ID</b></th>
+<th ><b>chEMBL ID</b></th>
 </tr>
 
 {% for x in searchkininhibitors %}
 <tr>
-<td> <a href="/inh/redirect/{{x.Inhibitor}}"> {{x.Inhibitor}}</a></td>
-<td> {{x.Source}} </td>
+<td> <a href="/inh/redirect/{{x.Molecule_name}}"> {{x.Molecule_name}}</a></td>
+<td> {{x.BindingDB_ID}} </td>
+<td> {{x.chEMBL_ID}} </td>
 </tr>
     {% endfor %}
 

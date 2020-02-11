@@ -53,7 +53,7 @@
 <th>Go to:</th>
 </tr>
 <tr>
-<td><a href="#Entry">Entry</a></td>
+<td><a href="#Entry">Inhibitor</a></td>
 </tr>
 <tr>
 <td><a href="#targets">Targets</a></td>
@@ -64,7 +64,7 @@
 
 <div id="boxheader">
 
-<a id="Entry">Entry</a>
+<a id="Entry">Inhibitor</a>
 
 </div>
 
@@ -72,15 +72,20 @@
         font-size:13px;
         border: 2px solid #FFFAFA; overflow: scroll">
 
-<p> <b>Inhibitor Name</b> &nbsp;{{Inhibitor}}</p>
-<p> <b>Source</b> &nbsp;{{Source}}</p>
+<p> <b>Inhibitor Name</b> &nbsp;{{Molecule_name}}</p>
+<p> <b>BindingDB ID</b> &nbsp;{{BindingDB_ID}}</p>
+<p> <b>chEMBL ID</b> &nbsp;{{chEMBL_ID}}</p>
+<p> <b>Synonyms</b> &nbsp;{{Synonyms}}</p>
+<p> <b>Molecule type</b> &nbsp;{{Molecule_type}}</p>
+<p> <b>Molecular formula</b> &nbsp;{{Molecular_formula}}</p>
+<p> <b>Molecular weight</b> &nbsp;{{Molecular_weight}}</p>
 <p> <b>Ki(nM)</b> &nbsp;{{Ki_nM}}</p>
 <p> <b>IC50(nM)</b> &nbsp;{{IC50_nM}}</p>
 <p> <b>Kd(nM)</b> &nbsp;{{Kd_nM}}</p>
 <p> <b>EC50(nM)</b> &nbsp;{{EC50_nM}}</p>
 
-<p>Structure of {{Inhibitor}}: </p>
-<img src="{{IMG_URL}}"> 
+<p>Structure of {{Molecule_name}}: </p>
+<img src="{{chEMBL_URL}}"> 
 
 </div>
     

@@ -53,16 +53,20 @@ $(document).ready( function () {
 <table id="inhibitorhits" border="1" style="position: relative;right: 5px; top:10px">
     <thead>
     <tr>
-        <th><b>Inhibitor name</b></th>
-        <th><b>Source</b></th>
+        <th><b>Molecule name</b></th>
+        <th><b>BindingDB_ID</b></th>
+        <th><b>chEMBL_ID</b></th>
+        <th><b>Synonyms</b></th>
     </tr>
     </thead>
 
     <tbody>
         {% for result in resultss %}
     <tr>
-        <td><a href="/inh/redirect/{{result.Inhibitor}}">{{result.Inhibitor}}</a> </td>
-        <td> {{result.Source}}</td>
+        <td><a href="/inh/redirect/{{result.Molecule_name}}">{{result.Molecule_name}}</a> </td>
+        <td> {{result.BindingDB_ID}}</td>
+        <td> {{result.chEMBL_ID}}</td>
+        <td> {{result.Synonyms}}</td>
     </tr>
     </tr>
         {% endfor %}
