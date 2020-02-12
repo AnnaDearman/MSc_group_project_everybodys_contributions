@@ -1,5 +1,5 @@
 ## JACKY: Software Development Group Project 2020
-**JACKY** is a new web-based software that unifies kinase, phosphosite, disease and inhibitor information collected from different sources (UniProt, PDB, phosphosite.org, phospho.ELM and KIDFamMap) in a single tool. 
+**JACKY** is a new web-based software that unifies kinase, phosphosite, disease and inhibitor information collected from different sources (UniProt, PDB, phosphosite.org, phospho.ELM, BindingDB and chEMBL) in a single tool. 
 
 The user, individuals interested in kinases in an academic or research setting, will not only find any required information on the topic available on the internet in this platform but also they will be able to upload their experimental quantitative phosphoproteomics results to our data analysis tool to compute estimated relative kinase activity scores.
 
@@ -160,4 +160,6 @@ This project is totally free. Please cite our repository if you are using JACKY 
 ### Acknowledgments
 JACKY team would like to thank all the people who have helped and supported us with their comments and help during the development of the software.
 
-Juan Ledesma Moreno wants to thank to the National Infection Service from Public Health England (PHE) for the financial support, to Dr Jean Lutamyo Mbisa, Dr Eileen Gallagher, Dr David Williams and Dr Ana Penedos from PHE for their unconditional support, and, in special to my partner Diana for her love.  
+Juan Ledesma Moreno wants to thank to the National Infection Service from Public Health England (PHE) for the financial support, to Dr Jean Lutamyo Mbisa, Dr Eileen Gallagher, Dr David Williams and Dr Ana Penedos from PHE for their unconditional support, and, in special to my partner Diana for her love.
+
+I, Katie Skinner, would like to thank my friends, for giving me help and advice when I got stuck on a problem. Also thank you to the rest of the JACKY team, who were so determined, hard working and pleasant to work with. Finally, I thank my mum, who has always been my greatest advocate, and always gives me all of her love and support. 
