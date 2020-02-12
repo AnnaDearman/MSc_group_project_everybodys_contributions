@@ -46,15 +46,19 @@ class Phosphosites(Base):
     
 class Inhibitors(Base):
     __tablename__ = 'inhibitors'
-    Inhibitor = Column(String(150), primary_key=True)
-    Ki_nM = Column(Integer) 
-    IC50_nM = Column(Integer) 
-    Kd_nM = Column(Integer) 
-    EC50_nM = Column(Integer) 
-    POC = Column(Integer) 
-    Source = Column(String(15))
-    IMG_URL = Column(String(100))
-    ID_IN = Column(String(10))
+    BindingDB_ID = Column(String(30))
+    chEMBL_ID = Column(String(30))
+    Ki_nM = Column(String(20))
+    IC50_nM = Column(String(20))
+    Kd_nM = Column(String(20))
+    EC50_nM = Column(String(20))
+    Molecule_name = Column(String(100))
+    Molecule_type = Column(String(50))
+    Molecular_formula = Column(String(50))
+    Molecular_weight = Column(String(20))
+    Synonyms = Column(String(1000))
+    IN_ID = Column(String(20), primary_key=True)
+    chEMBL_URL = Column(String(100))
 
 class KinasesPhosphosites(Base):
     __tablename__ = 'kinases_phosphosites'
@@ -86,15 +90,16 @@ class PhosphositesDiseases(Base):
     MS_CST = Column(String(20))
     CST_CAT = Column(String(141))
     NOTES = Column(String(314))
-    PHOS_ID = Column(String(22), ForeignKey('phosphosites.PHOS_ID5'))  # duplicates
+    PHOS_ID = Column(String(22), ForeignKey('phosphosites.PHOS_ID5'))
     ID_DP = Column(String(9), primary_key=True)
 
 class InhibKin(Base):
     __tablename__ = 'inhib_kin'
-    Kinase = Column(String(8))
-    Inhibitor = Column(String(134), ForeignKey('inhibitors.Inhibitor'))
-    UniProt_ID = Column(String(6), ForeignKey('human_kinases.UniProt_ID'))
-    ID_KI = Column(String(9), primary_key=True)
+    UniProt_ID = Column(String(20), ForeignKey('human_kinases.UniProt_ID'))
+    BindingDB_ID = Column(String(30))
+    chEMBL_ID = Column(String(30))
+    Molecule_name = Column(String(100), ForeignKey('inhibitors.Molecule_name'))
+    IN_KI = Column(String(20), primary_key=True)
 
 kinases_phosphosites = relationship("KinasesPhosphosites", backref="human_kinases")
 inhibitors_kinases = relationship("Inhibitors", backref="human_kinases")
