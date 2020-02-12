@@ -1,0 +1,16 @@
+Inhibitors Dataframe Explanation File
+
+COLUMN HEADER MEANINGS
+- BindingDB_ID: BindingDB ID for the inhibitor
+- chEMBL_ID: chEMBL ID for the inhibitor
+- Ki_nM: Inhibitor constant of the inhibitor
+- IC50_nM: The concentration of an inhibitor where the response (or binding) is reduced by half
+- Kd_nM: The dissociation constant of the inhibitor
+- EC50_nM: The concentration of a drug that gives half-maximal response
+- Molecule_name: The name of the inhibitor
+- Molecule_type: Type of molecule
+- Molecular_formula: Molecular formula of the inhibitor
+- Molecular_mass: Molecular mass of the inhibitor
+- Synonyms: Alternate names the inhibitor is known by
+- IN_ID: A unique accession number for each inhibitor
+- chEMBL_URL: An image URL for the structure of the inhibitor
