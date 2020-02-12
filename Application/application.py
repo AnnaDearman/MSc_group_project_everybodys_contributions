@@ -264,14 +264,21 @@ def data_analysis(path, filename):
         df_transform = pd.concat([df_multiple, df3, Inh_series], axis = 1)
 
         ################################
-    global inh_len
-    inh_len = len(Inhibitor)
+    
+    ### Create list to store each inhibitor's kinase RAS table
     global df_submeans
     df_submeans = []
-    ### import sample data
+    
+    ### Store number of inhibitors
+    global inh_len
+    inh_len = len(Inhibitor)
+      
+    ### For each inhibitor...
     for i in range(inh_len):
         global inh
         inh = Inhibitor[i]
+         
+        # Take the relevant rows from the table
         df1 = df_transform[df_transform.Inhibitor == inh] 
         df1 = df1.drop(['Inhibitor'], axis = 1)
         if len(df1.columns) == 7:
@@ -284,10 +291,10 @@ def data_analysis(path, filename):
         df1[["Residue", "junk"]] = df1.sites.str.split(")", expand = True,)
         df1 = df1[['Substrate','Fold_change','p_value', 'Gene', 'Residue']]
 
-        ### drop rows contain None in Residue column
+        ### drop rows containing None in Residue column
         df1 = df1[df1.Residue != "None"]
 
-        ### drop rows contain 0 in Fold_change column
+        ### drop rows containing 0 in Fold_change column
         df1 = df1[df1.Fold_change != 0]
 
         ### transform Fold_change to Log2 and then drop original Fold_change column
@@ -308,7 +315,7 @@ def data_analysis(path, filename):
         df8 = df1.copy()
         df8 = df8[['Substrate','Log_Fold_Change','p_value','Kinase']]
  
-        df8.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], f'table1{inh}_analysis.csv')) #Convert table to csv and save on the downloads folder
+        df8.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], f'table1{inh}_analysis.csv')) #Convert table to csv and save in the downloads folder
 
         ### drop rows contain Not_Found in Kinase column
         global df_kinase
@@ -317,7 +324,7 @@ def data_analysis(path, filename):
         df_kinase2 = df_kinase.copy()
         df_kinase2 = df_kinase2[['Substrate','Kinase','p_value','Log_Fold_Change']]
 
-        df_kinase2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], f'table2{inh}_analysis.csv')) #Convert table to csv and save on the downloads folder
+        df_kinase2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], f'table2{inh}_analysis.csv')) #Convert table to csv and save in the downloads folder
 
     
 ##########################################################################
@@ -336,13 +343,12 @@ def data_analysis(path, filename):
         df_submean = df_kinase.groupby(['Kinase']).mean()
         df_submean = df_submean.drop(['p_value'], axis = 1)
         df_submean = df_submean.drop(['-log10p'], axis = 1)
+         
     ### calculate Z_score and convert Z_score to P_value
         def Z_score(mS):
             Z_score = (mS - df1['Log_Fold_Change'].mean())*(len(df1['Log_Fold_Change'])**(1/2))/np.std(df1['Log_Fold_Change'])
             P_value = norm.sf(abs(Z_score))
             return(P_value)
-    #Z_score = (mS - df1['Log_Fold_Change'].mean())*(len(df1['Log_Fold_Change'])**(1/2))/np.std(df1['Log_Fold_Change'])
-    #P_value = norm.sf(abs(Z_score))
 
     ### calculate Z_score and convert Z_score to P_value
         df_submean['p_value'] = df_submean['Log_Fold_Change'].apply(Z_score)
@@ -363,9 +369,12 @@ def data_analysis(path, filename):
         df_submean['Number_of_substrates'] = list(df_kinase['Kinase'].value_counts().sort_index())
         global df_submean2
         df_submean2 = df_submean.copy()
+      
+    ### Produce relative activity score table for download
         df_submean2 = df_submean2[['Kinase','Kinase_RAS','Log_Fold_Change','p_value','Number_of_substrates','Std_Dev']]
         df_submean2.to_csv(os.path.join(application.config['DOWNLOAD_FOLDER'], f'table4{inh}_analysis.csv'))
-
+      
+    ### Produce relative activity score table for most up- and down-regulated kinases for website
         global df_submean2_top10
         global df_submean2_bot10
         global df_submean2_20
@@ -384,6 +393,7 @@ def data_analysis(path, filename):
         df_submean2_20 = df_submean2_20.to_html(classes="data")
         df_submeans.append(df_submean2_20)
 
+    ### Make bonferroni-corrected significance threshold
         Bon_cor = -math.log10(0.05/len(df1['p_value']))
 
     ### set a Significant? colum to show significance of the p_value
