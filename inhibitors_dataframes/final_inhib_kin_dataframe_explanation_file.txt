@@ -1,0 +1,9 @@
+Inhib-kin Dataframe Explanation file
+
+COLUMN HEADER MEANINGS
+- UniProt_ID: UniProt accession ID of the protein that is targetted by the inhibitor
+- BindingDB_ID: BindingDB ID of the inhibitor
+- chEMBL_ID: chEMBL ID of the inhibitor
+- Molecule_name: Molecule name of the inhibitor
+- IN_KI: Unique accession number for the inhibitor-kinase relationship
+
