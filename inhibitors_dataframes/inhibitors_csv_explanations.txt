@@ -1,0 +1,24 @@
+Explanations for all .csv files used to create the final_inhibitors_dataframe.csv and final_inhib_kin_dataframe.csv
+
+* uniprot_acc_nums.csv
+- A list of UniProt accession numbers extracted from the generation of the human_kinase_dataframe.csv
+
+* chembl_inhibitors.csv
+- A dataframe that contains the cleaned data that was extracted from chEMBL
+- This dataframe doesn't contain any information from BindingDB
+
+* inhibitors_dataframe.csv
+- Full inhibitors dataframe with information from both BindingDB and chEMBL
+- This dataframe was created before adding extra inhibitors 
+
+* inhib_kin_dataframe.csv
+- Full inhibitors-kinase relationships  dataframe with information from both BindingDB and chEMBL
+- This dataframe was created before adding extra inhibitors
+
+* extra_chembls.txt
+- A list of chEMBL IDs that were present in http://www.icoa.fr/pkidb/ but not in the inhibitor_dataframe.csv
+- This list was manually curated by searching chEMBL IDs from http://www.icoa.fr/pkidb/ in the inhibitors_dataframe.csv
+
+* extra_inhibs.csv
+- The full cleaned  dataframe containing information from both chEMBL and BindingDB on the extra kinases from extra_chembls.txt
+- This was then merged with inhibitors_dataframe.csv to form the final dataframe
