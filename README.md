@@ -1,7 +1,7 @@
 ## JACKY: Software Development Group Project 2020
-**JACKY** is a new web-based software that unifies kinase, phosphosite, disease and inhibitor information collected form different sources (UniProt, PDB, phosphosite.org, phospho.ELM and KIDFamMap) in a single tool. 
+**JACKY** is a new web-based software that unifies kinase, phosphosite, disease and inhibitor information collected from different sources (UniProt, PDB, phosphosite.org, phospho.ELM and KIDFamMap) in a single tool. 
 
-The user, individuals interesting in kinases in an academic or research setting, not olny will find any required information on the topic available in the internet in this platform but also they will be allowed to upload their experimental quantitative phosphoproteomics results to our data analysis tool to compute estimated relative kinase activity scores.
+The user, individuals interested in kinases in an academic or research setting, will not only find any required information on the topic available on the internet in this platform but also they will be able to upload their experimental quantitative phosphoproteomics results to our data analysis tool to compute estimated relative kinase activity scores.
 
 Visit JACKY at http://jacky-03.ehym3crjpy.eu-west-2.elasticbeanstalk.com/
 
@@ -64,8 +64,8 @@ git clone https://github.com/celiaccb/Software-Development-Group-Project-2020
 
 ```
 The following folder should be donwloaded in your computer:
- * "Generating phosphosite and inhibitor files" and "Kinase dataframe", these two folder contains explanations and the codes with the steps to extract the data from external websites and store it in csv files.  
- * "database schema", which contains a the script to create the schema of the database and a diagram withg the tables.
+ * "Generating phosphosite files", "inhibitors_dataframes" and "kinase dataframe", these folders contain explanations and the codes with the steps to extract the data from external websites and store it in csv files.  
+ * "database_schema", which contains a the script to create the schema of the database and a diagram withg the tables.
  * "population_db", which contains the csv files with the data, the final database with all the information transferred and the code to transfer the data from csv files to the database.
  * "application", this folder contains all the files to deploy the software in a live system. The structure of the folder should follow the organisation below:
 ```
@@ -91,13 +91,12 @@ The following folder should be donwloaded in your computer:
 │ └── kinasehits.html
 │ └── kinasepage.html
 │ └── phoshits.html
-│ └── phoshitsgen.html
 │ └── phosphositepage.html
 │ └── zphoshitsgen.html
 │ └── zphoshitsgenalt.html
 ├── uploads/
 ├── application.py
-├── c__sqlite_final_database.db
+├── c__sqlite_final_database_v8.db
 ├── requirements.txt
 ```
 ### Executing the software
@@ -141,13 +140,13 @@ If you want to test the scripts to extract data from the external sources on kin
 1. **Flask**  - The web framework used
 2. **SQLite** - The Relational Database Management System
 3. **KSEA (Kinase-Substrate Enrichment Analysis)** - method to calculate the relative activity of the kinases based on the phosphoproteomics data
-4. **Amazon Web Services** - to deplot the software on a live system
+4. **Amazon Web Services** - to deploy the software on a live system
 
 ### Version History
 * 0.1, Initial release (Feburary 14th 2020)
 
 ### Authors and contacts
-The developers of this software were the students of the Msc in Bioinformatics at Queen Mary Univeristy of London:
+The developers of this software were students of the Msc in Bioinformatics at Queen Mary Univeristy of London:
 
 * **Yutang Chen**, y.chen@se19.qmul.ac.uk
 * **Celia De Los Angeles Colomina Basanta**, c.colominabasanta@se16.qmul.ac.uk
