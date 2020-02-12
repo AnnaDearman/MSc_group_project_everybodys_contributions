@@ -161,4 +161,4 @@ This project is totally free. Please cite our repository if you are using JACKY 
 ### Acknowledgments
 JACKY team would like to thank all the people who have helped and supported us with their comments and help during the development of the software.
 
-Juan Ledesma Moreno wants to thank to the National Infection Service from Public Health England (PHE) for the financial support, to Dr Jeanlutamyo Mbisa, Dr Eileen Gallagher, Dr David Williams and Dr Ana Penedos from PHE for their unconditional support, and, in special to my partner Diana for her love.  
+Juan Ledesma Moreno wants to thank to the National Infection Service from Public Health England (PHE) for the financial support, to Dr Jean Lutamyo Mbisa, Dr Eileen Gallagher, Dr David Williams and Dr Ana Penedos from PHE for their unconditional support, and, in special to my partner Diana for her love.  
