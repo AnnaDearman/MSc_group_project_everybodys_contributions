@@ -17,7 +17,6 @@ get_ipython().system('pip install pandas')
 import pandas as pd # import pandas
 import re # import regular expression
 import urllib.request # import url library module
-from datetime import datetime
 
 
 # __Step 1:__ Load in the list of UniProt accession numbers to put into BindingDB
