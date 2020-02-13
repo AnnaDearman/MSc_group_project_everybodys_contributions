@@ -1,0 +1,163 @@
+2020_02_08
+
+N.B. Do not save any of these files after opening in Excel! Some gene names are e.g. MARCH1 and they become converted to dates!
+
+phosphosites.csv
+- GENE
+--- Gene name / GENENAME
+--- Longest string = 20
+- PROTEIN
+--- Protein name
+--- Longest string = 20
+- ACC_ID
+--- Accession number / UniProtKB
+--- Longest string = 19
+- HU_CHR_LOC
+--- Human chromosome location
+--- Longest string = 26
+- MOD_RSD
+--- Modified residue
+--- Longest string = 6
+- SITE_GRP_ID
+--- Site group ID (awaiting e-mail response from phosphosite.org for further clarification)
+--- Longest string = 10
+- MW_kD
+--- Molecular weight in kD
+--- Integer
+- DOMAIN
+--- Domain information
+--- Longest string = 30
+- SITE_+/-7_AA
+--- Neighbouring amino acid sequence
+--- Longest string = 15
+- LT_LIT
+--- Number of supporting publications (to confirm)
+--- Integer
+- MS_LIT
+--- Number of supporting mass spec studies (to confirm)
+--- Integer
+- MS_CST
+--- Number of supporting mass spec studies performed by Cell Signaling Technology (to confirm)
+--- Integer
+- CST_CAT#
+--- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";".
+--- Longest string = 141
+- SOURCE
+--- URL for the substrate's phosphosite.org web page, where applicable
+--- or "http://phospho.elm.eu.org/"
+--- Longest string = 66
+- PMID
+--- Evidentiary research article's PubMed ID for records from phospho.ELM
+--- Longest string = 8
+- PHOS_ID5
+--- Phosphosite ID made by combining ACC_ID and MOD_RSD
+--- FOREIGN KEY FOR phosphosites_diseases.csv and kinases_phosphosites.csv
+--- Longest string = 24
+- PHOS_ID
+--- Phosphosite ID made by combining GENE, ORGANISM and MOD_RSD. 
+--- Longest string = 31
+- PHOS_ID2
+--- Phosphosite ID made by combining PROTEIN and MOD_RSD
+--- Longest string = 26
+- PHOS_ID3
+--- Phosphosite ID made by combining PROTEIN, ORGANISM and MOD_RSD
+--- Longest string = 32
+- PHOS_ID4
+--- Phosphosite ID made by combining GENE and MOD_RSD
+--- Longest string = 25
+- ISOFORM
+--- "0" or "1" to indicate whether record relates to an isoform ("1" = isoform). Use records with "0" for canonical protein.
+--- Integer
+- ID_PH
+--- PRIMARY KEY
+--- Longest string = 9
+
+kinases_phosphosites.csv
+- GENE
+--- Gene name / GENENAME for the kinase
+--- Longest string = 13
+- KIN_ACC_ID
+--- UniProt accession ID for the kinase
+--- Longest string = 9
+- SUB_ACC_ID
+--- UniProt accession ID for the substrate
+--- Longest string = 17
+- IN_VIVO_RXN
+--- Evidence is from in vivo reaction (to confirm)
+--- Longest string = 1
+- IN_VITRO_RXN
+--- Evidence is from in vitro reaction (to confirm)
+--- Longest string = 1
+- CST_CAT#
+--- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";"
+--- Longest string = 141
+- SOURCE
+--- URL for the substrate's phosphosite.org web page, where applicable
+--- or "http://phospho.elm.eu.org/"
+--- MUST BE DISPLAYED ON WEB SITE AS PER TERMS AND CONDITIONS OF DATA USAGE
+--- Longest string = 64
+- SEQUENCE
+--- Protein amino acid sequence for records from phospho.ELM
+--- Longest string = 8797
+- PMID
+--- Evidentiary research article's PubMed ID for records from phospho.ELM
+--- Longest string = 8
+- PHOS_ID5
+--- Phosphosite ID made by combining SUB_ACC_ID and SUB_MOD_RSD
+--- FOREIGN KEY FOR phosphosites.csv
+--- Longest string = 23
+- PHOS_ID
+--- Phosphosite ID made by combining SUB_GENE, SUB_ORGANISM and SUB_MOD_RSD.
+--- Longest string = 31
+- PHOS_ID2
+--- Phosphosite ID made by combining SUBSTRATE and SUB_MOD_RSD
+--- Longest string = 23
+- PHOS_ID3
+--- Phosphosite ID made by combining SUBSTRATE, SUB_ORGANISM and SUB_MOD_RSD
+--- Longest string = 29
+- PHOS_ID4
+--- Phosphosite ID made by combining SUB_GENE and SUB_MOD_RSD
+--- Longest string = 25
+- KIN_ACC_ID_2
+--- UniProt accession ID for the kinase MINUS ISOFORM FLAG IF PREVIOUSLY PRESENT
+--- FOREIGN KEY FOR human_kinase_dataframe.csv
+--- Longest string = 6
+- ID_KS
+--- PRIMARY KEY
+--- Longest string = 9
+
+phosphosites_diseases.csv
+- DISEASE
+--- Disease associated with phosphosite
+--- Longest string = 92
+- ALTERATION
+--- Change observed in the phosphosite. Sometimes multiples separated by ";".
+--- Longest string = 32
+- ACC_ID
+--- UniProt accession ID for the substrate
+--- Longest string = 16
+- PMIDs
+--- Evidentiary research article's PubMed ID
+--- Longest string = 8
+- LT_LIT
+--- Number of supporting publications (to confirm)
+--- Integer
+- MS_LIT
+--- Number of supporting mass spec studies (to confirm)
+--- Integer
+- MS_CST
+--- Number of supporting mass spec studies performed by Cell Signaling Technology (to confirm)
+--- Integer
+- CST_CAT#
+--- Catalogue number(s) of assay(s) used. Sometimes multiples separated by ";".
+--- Longest string = 141
+- NOTES
+--- Notes from the database curators.
+--- Longest string = 314
+- PHOS_ID
+--- Phosphosite ID made by combining ACC_ID and MOD_RSD.
+--- FOREIGN KEY FOR phosphosites.csv
+--- Longest string = 22
+- ID_DP
+--- PRIMARY KEY
+--- Longest string = 9

@@ -1,0 +1,135 @@
+<doctype html>
+
+<html>
+<head>
+    <title>Kinase Database</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+
+</head>
+
+
+<body>
+
+<div class="header">
+
+  <div style="position: relative;left: 840px; top:18px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="inh/">Inhibitor</option>
+    <option value="kin/">Kinase</option>
+    <option value="phos/">Phosphosite</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 990px; bottom:5px">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.protein_name.label }} {{ form.protein_name() }}
+    {{ form.submit() }}  
+    </form>
+    </div>
+    
+    <map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:55px; width: 150px; height: 45px">
+
+</div>
+
+<div class="subheader">
+
+
+
+</div>
+
+<h2> {{inhibitor_name}} </h2>
+
+<form style="float:left;display:inline-block;line-height:25px;padding-left:10px">
+<table border="1" >
+<tr>
+<th>Go to:</th>
+</tr>
+<tr>
+<td><a href="#Entry">Inhibitor</a></td>
+</tr>
+<tr>
+<td><a href="#targets">Targets</a></td>
+</tr>
+</table>
+</form>
+
+
+<div id="boxheader">
+
+<a id="Entry">Inhibitor</a>
+
+</div>
+
+<div id="entrybox" style="width: 300px; height: 430px; float: right; padding-right: 810px; background-color:#ECECEC;
+        font-size:13px;
+        border: 2px solid #FFFAFA; overflow: scroll">
+
+<p> <b>Inhibitor Name</b> &nbsp;{{Molecule_name}}</p>
+<p> <b>BindingDB ID</b> &nbsp;{{BindingDB_ID}}</p>
+<p> <b>chEMBL ID</b> &nbsp;{{chEMBL_ID}}</p>
+<p> <b>Synonyms</b> &nbsp;{{Synonyms}}</p>
+<p> <b>Molecule type</b> &nbsp;{{Molecule_type}}</p>
+<p> <b>Molecular formula</b> &nbsp;{{Molecular_formula}}</p>
+<p> <b>Molecular weight</b> &nbsp;{{Molecular_weight}}</p>
+<p> <b>Ki(nM)</b> &nbsp;{{Ki_nM}}</p>
+<p> <b>IC50(nM)</b> &nbsp;{{IC50_nM}}</p>
+<p> <b>Kd(nM)</b> &nbsp;{{Kd_nM}}</p>
+<p> <b>EC50(nM)</b> &nbsp;{{EC50_nM}}</p>
+
+<p>Structure of {{Molecule_name}}: </p>
+<img src="{{chEMBL_URL}}"> 
+
+</div>
+    
+<script>
+$(document).ready( function () {
+    $('#inhibitortargets').DataTable();
+} );
+</script>
+
+<div id="spacebox"></div>
+
+<div id="boxheader">
+
+<a id="targets">Targets</a>
+
+</div>
+
+<div id="targetbox">
+
+<table border="1" id="inhibitortargets">
+
+<tr>
+<th><b>Kinase Name</b></th>
+<th><b>UniProt ID</b></th>
+<th><b>Families</b></th>
+<th><b>Cellular location</b></th>
+</tr>
+
+{% for x in searchinhkin %}
+<tr>
+<td> <a href="/kin/redirect/{{x.Entry_name}}"> {{x.Entry_name}} </a> </td>
+<td> {{x.UniProt_ID}} </td>
+<td> {{x.Families}} </td>
+<td> {{x.Subcellular_Location}} </td>
+</tr>
+{% endfor %}
+
+</table>
+
+</div>
+
+
+
+
+</body>
+
+</html>

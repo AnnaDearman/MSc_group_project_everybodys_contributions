@@ -1,0 +1,90 @@
+<doctype html>
+
+<html>
+<head>
+    <title>Kinase Database</title>
+    <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='aesthetic.css') }}">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.20/css/jquery.dataTables.css"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.js"></script>
+</head>
+
+
+<body>
+
+<div class="header">
+
+
+<div style="position: relative;left: 700px; top:21px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="/phos/">Phosphosite</option>
+    <option value="kin/">Kinase</option>
+    <option value="inh/">Inhibitor</option>
+    </select>
+    </div>
+
+    <div style="position: relative;left: 810px; top:0px">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);" >>
+    <option value="">Browse by</option>
+    <option value="/prot/">Protein</option>
+    <option value="/phoskin/">Phosphorylated by</option>
+    <option value="/nseq/">Neighbouring Sequence</option>
+    <option value="/gen/">Genomic Location</option>
+    </select>
+    </div>
+
+    <div style="position: relative; left: 990px; bottom:23px">
+    <form method="POST">
+    {{ form.csrf_token }}
+    {{ form.protein_name.label }} {{ form.protein_name() }}
+    {{ form.submit() }}  
+    </form>
+    </div>
+    
+<map name="JACKY">
+    <area target="" alt="Go back to the homepage" title="Go back to the homepage" href="/home" coords="4,4,282,91" shape="rect">
+    </map>
+
+    <img src="/static/JACKY.jpg" alt="image map example"usemap="#JACKY" style="position: relative;right: 0px; bottom:75px; width: 150px; height: 45px">
+
+</div>
+
+<div class="subheader">
+
+</div>
+    
+<script>
+$(document).ready( function () {
+    $('#phoshits').DataTable();
+} );
+</script>
+
+<table id="phoshits" border="1" style="position: relative;right: 10px; top:10px">
+    <thead>
+    <tr>
+        <th><b>Phosphosite</b></th>
+        <th><b>Protein</b></th>
+        <th><b>Residue</b></th>
+        <th><b>Gene</b></th>
+        <th><b>Neighbouring sequence</b></th>
+        <th><b>Genomic Location</b></th>
+    </tr>
+    </thead>
+
+    <tbody>
+        {% for result in resultss %}
+    <tr>
+        <td><a href="/phos/redirect/{{result.PHOS_ID5}}">{{result.ID_PH}}</a> </td>
+        <td> {{result.PROTEIN}}</td>
+        <td> {{result.MOD_RSD}}</td>
+        <td> {{result.GENE}}</td>
+        <td> {{result.SITE_7_AA}}</td>
+        <td> <a href="/gen/{{result.HU_CHR_LOC}}" target="_blank"> {{result.HU_CHR_LOC}} </a></td>
+    </tr>
+    </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+
+
