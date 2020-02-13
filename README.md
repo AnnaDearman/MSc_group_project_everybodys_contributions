@@ -162,4 +162,6 @@ JACKY team would like to thank all the people who have helped and supported us w
 
 Juan Ledesma Moreno wants to thank to the National Infection Service from Public Health England (PHE) for the financial support, to Dr Jean Lutamyo Mbisa, Dr Eileen Gallagher, Dr David Williams and Dr Ana Penedos from PHE for their unconditional support, and, in special to my partner Diana for her love.
 
+Anna Dearman thanks all four of her teammates for impressing her every week and delivering a great website.
+
 I, Katie Skinner, would like to thank my friends, for giving me help and advice when I got stuck on a problem. Also thank you to the rest of the JACKY team, who were so determined, hard working and pleasant to work with. Finally, I thank my mum, who has always been my greatest advocate, and always gives me all of her love and support. 
