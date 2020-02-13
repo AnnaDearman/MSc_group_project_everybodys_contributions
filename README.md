@@ -143,7 +143,7 @@ If you want to test the scripts to extract data from the external sources on kin
 4. **Amazon Web Services** - to deploy the software on a live system
 
 ### Version History
-* 0.1, Initial release (Feburary 14th 2020)
+* 1.0, Initial release (Feburary 14th 2020)
 
 ### Authors and contacts
 The developers of this software were students of the Msc in Bioinformatics at Queen Mary Univeristy of London:
