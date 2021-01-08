@@ -3,7 +3,7 @@
 
 The user, individuals interested in kinases in an academic or research setting, will not only find any required information on the topic available on the internet in this platform but also they will be able to upload their experimental quantitative phosphoproteomics results to our data analysis tool to compute estimated relative kinase activity scores.
 
-Visit JACKY at http://jacky-03.ehym3crjpy.eu-west-2.elasticbeanstalk.com/
+Visit JACKY at http://jacky-03.ehym3crjpy.eu-west-2.elasticbeanstalk.com/ (now deactivated)
 
 ## Getting Started
 The following instructions will guide you on how to install JACKY on your local machine for development and testing purposes.
